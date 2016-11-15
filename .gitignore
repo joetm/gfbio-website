@@ -5,6 +5,7 @@
 .github/
 .idea/
 .vagrant
+node_modules
 Movefile
 _site
 npm-debug.log
