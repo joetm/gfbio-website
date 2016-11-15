@@ -3,10 +3,8 @@ var path = require('path'),
     ProvidePlugin = new require('webpack/lib/ProvidePlugin');
 
 var TPL_DIR = path.resolve(__dirname, './wordpress/wp-content/themes/gfbio'),
-    WEBROOT = path.resolve(__dirname, './'),
+    WEBROOT = path.resolve(__dirname, './wordpress'),
     APPROOT = path.resolve(__dirname, './gfbio');
-
-console.log('Processing ' + path.join(APPROOT, 'main.js'));
 
 module.exports = {
     entry: {
