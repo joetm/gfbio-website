@@ -18,6 +18,14 @@ vendor
 wp-cli.yml
 
 *.log
+./wordpress/index.php
+./wordpress/wp-cron.php
+./wordpress/wp-admin
+./wordpress/wp-includes
+./wordpress/license.txt
+./wordpress/wp-trackback.php
+./wordpress/xmlrpc.php
+./wordpress/readme.html
 ./wordpress/wp-config.php
 ./wordpress/wp-content/advanced-cache.php
 ./wordpress/wp-content/backup-db/
