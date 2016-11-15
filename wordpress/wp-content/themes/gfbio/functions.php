@@ -28,9 +28,11 @@
 // The style is stored in a custom location.
 // Enqueue it here.
 function inject_stylesheet() {
+	// $gfbio_app_folder = '/gfbio';
+	$static_folder = '/gfbio';
 	$version = time(); // development
-	wp_enqueue_style('gfbio-style', "/styles.css", [], $version, 'all');
-	wp_enqueue_style('gfbio-style-print', "/print.css",  [], $version, 'print');
+	wp_enqueue_style('gfbio-style', $static_folder . "/styles.css", [], $version, 'all');
+	// wp_enqueue_style('gfbio-style-print', $static_folder . "/print.css",  [], $version, 'print');
 }
 add_action('wp_enqueue_scripts', 'inject_stylesheet');
 
