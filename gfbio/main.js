@@ -1,10 +1,20 @@
+// ------------------------------------------------------
 // CSS/SASS
+// ------------------------------------------------------
 
-// import './bootstrap/css/bootstrap.css';
-import './style.scss';
+// materialize-css
+import 'materialize-css/dist/css/materialize.min.css';
 
+// custom styles
+import './styles.scss';
+import './print.scss';
+
+// ------------------------------------------------------
 // JavaScript
-// window.$ = require('jquery');
-// window.jQuery = require('jquery');
+// ------------------------------------------------------
 
-// import '../../bootstrap/js/bootstrap.js';
+import 'materialize-css/dist/js/materialize.min.js';
+
+window.$ = require('jquery');
+window.jQuery = require('jquery');
+

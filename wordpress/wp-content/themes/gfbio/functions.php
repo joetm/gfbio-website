@@ -25,16 +25,22 @@
  * @since Twenty Sixteen 1.0
  */
 
-// The style is stored in a custom location.
-// Enqueue it here.
-function inject_stylesheet() {
+define('BUILD_FOLDER', '/dist');
+
+function inject_gfbio() {
+
 	// $gfbio_app_folder = '/gfbio';
-	$static_folder = '/gfbio';
-	$version = time(); // development
-	wp_enqueue_style('gfbio-style', $static_folder . "/styles.css", [], $version, 'all');
-	// wp_enqueue_style('gfbio-style-print', $static_folder . "/print.css",  [], $version, 'print');
+	// $version = time(); // development
+	$version = null;
+
+	wp_enqueue_style('gfbio-style', BUILD_FOLDER . "/styles.css", [], $version, 'all');
+	// wp_enqueue_style('gfbio-style-print', STATIC_FOLDER . "/print.css",  [], $version, 'print');
+
+    wp_enqueue_script('gfbio-vendor', BUILD_FOLDER . "/libs.js", [], $version, 'all');
+    wp_enqueue_script('gfbio-app', BUILD_FOLDER . "/app.js", [], $version, 'all');
 }
-add_action('wp_enqueue_scripts', 'inject_stylesheet');
+add_action('wp_enqueue_scripts', 'inject_gfbio');
+
 
 // remove the emoji code
 function disable_wp_emojicons() {
