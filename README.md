@@ -6,8 +6,10 @@ To get started, check out <http://vccw.cc/>
 
 ## Usage
 
-1. Run `vagrant up`.
-2. Go to vccw.dev or 192.168.33.10
+1. `npm install`
+1. `git submodule update`
+1. `vagrant up`
+1. Go to `vccw.dev` or `192.168.33.10`
 
 ## Testing
 
