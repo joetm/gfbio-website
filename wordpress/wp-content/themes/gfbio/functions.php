@@ -36,10 +36,14 @@ function inject_gfbio() {
 	wp_enqueue_style('gfbio-style', BUILD_FOLDER . "/styles.css", [], $version, 'all');
 	// wp_enqueue_style('gfbio-style-print', STATIC_FOLDER . "/print.css",  [], $version, 'print');
 
-    wp_enqueue_script('gfbio-vendor', BUILD_FOLDER . "/libs.js", [], $version, 'all');
+	// material font
+	wp_enqueue_style('material-font-style', "https://fonts.googleapis.com/icon?family=Material+Icons", [], $version, 'all');
+
+    wp_enqueue_script('gfbio-libs', BUILD_FOLDER . "/libs.js", [], $version, 'all');
     wp_enqueue_script('gfbio-app', BUILD_FOLDER . "/app.js", [], $version, 'all');
 }
 add_action('wp_enqueue_scripts', 'inject_gfbio');
+
 
 
 // remove the emoji code
@@ -217,6 +221,18 @@ add_action('wp_default_scripts', 'dequeue_jquery_migrate');
 
 
 
+
+/** Script injection **/
+// function add_scripts_to_footer() {
+// ? >
+// <script>
+// 	console.log('browse script');
+// </script>
+// < ? php
+// }
+// //if (is_page('browse')) {
+// 	add_action('wp_footer', 'add_scripts_to_footer', 99);
+// //}
 
 
 

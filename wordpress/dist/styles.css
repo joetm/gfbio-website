@@ -44,4 +44,8 @@ div.nav-wrapper #nav-mobile a, div.nav-wrapper #nav-mobile a:visited {
 div.nav-wrapper #nav-mobile a:hover {
   color: #f48fb1; }
 
+/* page content */
+.home-action-icon i {
+  font-size: 64px; }
+
 /*# sourceMappingURL=styles.css-0.map*/

@@ -15,5 +15,7 @@ n/a
 endwhile;
 ?>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
+
+</body>
+</html>

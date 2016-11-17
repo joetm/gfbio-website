@@ -6,8 +6,9 @@ To get started, check out <http://vccw.cc/>
 
 ## Usage
 
+Install wordpress into `wordpress` folder (keeping the custom theme).
+
 1. `npm install`
-1. `git submodule update`
 1. `vagrant up`
 1. Go to `vccw.dev` or `192.168.33.10`
 

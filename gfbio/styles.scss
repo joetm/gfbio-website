@@ -23,6 +23,7 @@ $primary-text-color-hover: #f48fb1;
 	clear: both;
 }
 
+
 /* navigation */
 
 div.nav-wrapper .brand-logo img{
@@ -35,4 +36,9 @@ div.nav-wrapper #nav-mobile a, div.nav-wrapper #nav-mobile a:visited {
 }
 div.nav-wrapper #nav-mobile a:hover {
 	color: $primary-text-color-hover;
+}
+
+/* page content */
+.home-action-icon i {
+	font-size:64px;	
 }
