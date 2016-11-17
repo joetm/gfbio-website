@@ -23,7 +23,7 @@
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
             <?php
                 $pages = get_pages([
-                    'exclude' => [24,26,18,20],
+                    'exclude' => [24,26,18,20,5,141],
                     'sort_column' => 'menu_order'
                 ]);
                 foreach ($pages as $page) {
