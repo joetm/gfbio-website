@@ -12,6 +12,7 @@
     "flexboxgrid": "^6.3.1",
     "imports-loader": "^0.6.5",
     "jquery": "^3.1.1",
+    "jquery-match-height": "^0.7.0",
     "materialize-css": "^0.97.8"
   },
   "devDependencies": {

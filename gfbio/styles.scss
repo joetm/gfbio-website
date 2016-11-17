@@ -12,7 +12,9 @@ $primary-text-color: #000;
 $primary-text-color-hover: #f48fb1;
 
 
+/* ------------ */
 /* work-arounds */
+/* ------------ */
 
 .clearfix:before, 
 .clearfix:after {
@@ -23,22 +25,111 @@ $primary-text-color-hover: #f48fb1;
 	clear: both;
 }
 
+/* ------- */
+/* general */
+/* ------- */
 
+section {
+	padding-bottom: 1.78rem;
+	margin-bottom:0;
+}
+
+.bold {
+	font-weight:bold;
+}
+
+/* ---------- */
 /* navigation */
+/* ---------- */
 
 div.nav-wrapper .brand-logo img{
 	width:auto;
 	height:64px;
 	padding:8px 0;
 }
-div.nav-wrapper #nav-mobile a, div.nav-wrapper #nav-mobile a:visited {
-	color: $primary-text-color;
+div.nav-wrapper {
+	#nav-mobile a, #nav-mobile a:visited {
+		color: $primary-text-color;
+	}
 }
-div.nav-wrapper #nav-mobile a:hover {
-	color: $primary-text-color-hover;
+div.nav-wrapper {
+	#nav-mobile a:hover {
+		color: $primary-text-color-hover;
+	}
 }
 
+
+/* ------------ */
 /* page content */
+/* ------------ */
+
 .home-action-icon i {
 	font-size:64px;	
 }
+
+/* ------ */
+/* footer */
+/* ------ */
+
+footer.page-footer {
+	margin-top:0;
+}
+
+/* ----------- */
+/* browse page */
+/* ----------- */
+
+#browse {
+
+	#terminologies table {
+		padding-bottom: 2em;
+	}
+
+}
+
+/* --------- */
+/* home page */
+/* --------- */
+
+#home {
+
+	.card {
+		cursor:pointer;
+	}
+	.box {
+		cursor:pointer;
+	}
+
+	.card {
+		/*
+		.card-action {
+			position: absolute;
+			bottom: 0;
+			left:0;
+		}
+		*/
+	}
+
+}
+
+/* ------------------------ */
+/* terminology details page */
+/* ------------------------ */
+
+#term-details .key {
+	font-weight:bold;
+}
+
+/* -------- */
+/* faq page */
+/* -------- */
+
+#faq .faq-subheadline {
+	font-weight:bold;
+	display:block;
+	clear:both;
+}
+#faq ul.faq-list {
+	padding-bottom:0;
+}
+

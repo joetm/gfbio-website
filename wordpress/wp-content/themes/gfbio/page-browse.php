@@ -5,8 +5,9 @@
 
 get_header(); ?>
 
-<div class="container">
+<div class="container" id="browse">
 <div class="row">
+
 
 <h1 class="flow-text center-align">Terminologies</h1>
 
@@ -52,6 +53,7 @@ get_header(); ?>
 </div>
 
 
+
 <?php get_footer(); ?>
 
 <script type="text/javascript">
@@ -66,7 +68,7 @@ $(document).ready(function () {
       if (data && data.results) {
           $.each(data.results, function(key, item) {
             tpl += '<tr>'+
-              '<td><a href="/terminologies/' + item.acronym + '" target="_blank">' + item.name + ' (' + item.acronym + ')' + '</a></td>' +
+              '<td><a href="/terminology/?ontology=' + item.acronym + '">' + item.name + ' (' + item.acronym + ')' + '</a></td>' +
               '<td>' + item.description + '</td>' +
             '</tr>';
           });
