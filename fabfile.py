@@ -38,6 +38,8 @@ dbPassword = os.environ.get("db_password")
 dbRootUser = os.environ.get("db_rootuser")
 dbRootPass = os.environ.get("db_rootpass")
 
+devServer = "vccw.dev";
+
 
 @task
 def local_cleanup():
@@ -91,6 +93,8 @@ def deploy():
         local("sed -i \"s/'DB_NAME', 'wordpress'/'DB_NAME\','%s'/\" %s" % (dbName, deployConfigFile))
         local("sed -i \"s/'DB_USER', 'wordpress'/'DB_USER\','%s'/\" %s" % (dbUsername, deployConfigFile))
         local("sed -i \"s/'DB_PASSWORD', 'wordpress'/'DB_PASSWORD','%s'/\" %s" % (re.escape(dbPassword), deployConfigFile))
+        # replace the local server url with the remote server url
+        local("sed -i \"s/%s/%s/\" %s" % (devServer, os.environ.get("host_deploy"), deployConfigFile))
         # transfer the wp-config.php to the remote server
         # sudo("rm -f %s", join(remotedir, "wordpress", "wp-config.php"))
         put(deployConfigFile, join(remotedir, "wordpress", "wp-config.php"), use_sudo=True, mirror_local_mode=True)
