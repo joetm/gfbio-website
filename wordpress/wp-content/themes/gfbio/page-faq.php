@@ -19,6 +19,8 @@ endwhile;
 
 <h1 class="flow-text center-align"><?php the_title() ?></h1>
 
+<?php edit_post_link(__('Edit page', 'gfbio'), '<div class="right-align">', "</div>", null, "") ?>
+
 <ul id="faqlist" class="collapsible" data-collapsible="expandable">
 
     <li>

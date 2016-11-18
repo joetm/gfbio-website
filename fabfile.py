@@ -6,6 +6,7 @@ from fabric.api import *
 from fabric.contrib.console import confirm
 
 import os, sys
+import re
 
 # .dotenv
 from os.path import join, dirname
@@ -15,18 +16,34 @@ from dotenv import load_dotenv
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
-env.hosts = [ os.environ.get("host_deploy") ]
-env.user = 'root'
-
 
 remotedir = '/var/www/html/gfbio'
 localdir = "wordpress"
-tarfilename = "gfbio.tar.gz"
+tarFilename = "deploy/gfbio.tar.gz"
+dbDumpFilename = "deploy/gfbio.sql"
+
+# credentials are stored in .env file
+env.user = 'root'
+env.hosts = [ os.environ.get("host_deploy") ]
+
+# local db
+localdbName = "wordpress"
+localdbUsername = "wordpress"
+localdbPassword = "wordpress"
+
+# remote db
+dbName = os.environ.get("db")
+dbUsername = os.environ.get("db_username")
+dbPassword = os.environ.get("db_password")
+dbRootUser = os.environ.get("db_rootuser")
+dbRootPass = os.environ.get("db_rootpass")
 
 
 @task
 def local_cleanup():
-    local("rm -rf " + tarfilename)
+    local("rm -f " + tarFilename)
+    local("rm -f " + dbDumpFilename)
+    local("rm -f " + join("deploy", "wp-config.php"))
 
 @task
 def deploy():
@@ -36,23 +53,47 @@ def deploy():
 
     try:
 
-
         # cleanup
         local_cleanup()
 
-        # compress
-        local("tar -zcvf %s %s" % (tarfilename, localdir))
+        # compress the folder
+        local("tar -zcvf %s %s" % (tarFilename, localdir))
 
-        # upload
-        put(tarfilename, join(remotedir, tarfilename), use_sudo=True, mirror_local_mode=True)
+        # upload the folder
+        put(tarFilename, join(remotedir, tarFilename), use_sudo=True, mirror_local_mode=True)
+
+        # get a mysql dump from the vagrant VM
+        local("mysqldump -h 192.168.33.10 -u%s -p\"%s\" %s > ./%s" % (localdbUsername, localdbPassword, localdbName, dbDumpFilename))
+
+        # transfer the db dump to the remote host
+        put(dbDumpFilename, join(remotedir, dbDumpFilename), use_sudo=True, mirror_local_mode=True)
 
         with cd(remotedir):
 
-            # untar
-            sudo("tar -xvf " + tarfilename)
+            # untar the folder
+            sudo("tar -xvf " + tarFilename)
 
             # modify perms # TODO: check if this is necessary
-            # sudo("chmod 755 " + remoteplugindir)
+            # sudo("chmod 755 " + remotedir)
+
+            # drop the database
+            # sudo("mysqladmin -f -u%s -p\"%s\" drop %s" % (dbUsername, dbPassword, dbName))
+
+            # import the database
+            sudo("mysql -u%s -p\"%s\" %s < %s" % (dbRootUser, dbRootPass, dbName, join(remotedir, dbDumpFilename)))
+
+
+        # wordpress configuration
+        deployConfigFile = join("deploy", "wp-config.php")
+        # copy wp-config.php to deployment folder
+        local("cp %s %s" % (join("wordpress", "wp-config.php"), deployConfigFile))
+        # rewrite the db info in wp-config.php
+        local("sed -i \"s/'DB_NAME', 'wordpress'/'DB_NAME\','%s'/\" %s" % (dbName, deployConfigFile))
+        local("sed -i \"s/'DB_USER', 'wordpress'/'DB_USER\','%s'/\" %s" % (dbUsername, deployConfigFile))
+        local("sed -i \"s/'DB_PASSWORD', 'wordpress'/'DB_PASSWORD','%s'/\" %s" % (re.escape(dbPassword), deployConfigFile))
+        # transfer the wp-config.php to the remote server
+        # sudo("rm -f %s", join(remotedir, "wordpress", "wp-config.php"))
+        put(deployConfigFile, join(remotedir, "wordpress", "wp-config.php"), use_sudo=True, mirror_local_mode=True)
 
     finally:
 
@@ -60,8 +101,9 @@ def deploy():
         # local_cleanup()
 
         # remote cleanup
-        # with cd(remotedir):
-        sudo("rm -rf " + join(remotedir, tarfilename))
+
+        # remove the tar file and sql file
+        sudo("rm -f " + join(remotedir, "deploy/*.*"))
 
 
 if __name__ == "__main__":

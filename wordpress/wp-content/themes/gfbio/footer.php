@@ -20,20 +20,20 @@
                 </ul>
             </div>
             <div class="col s12 offset-l1 l4">
-                <h5 class="white-text">Terminology Service</h5>
+                <h5 class="white-text"><?php _e('Explore', 'gfbio') ?> <span title="<?php _e('Terminology Service', 'gfbio') ?>">TS</span></h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="/browse/">Browse the terminologies</a></li>
-                    <li><a class="grey-text text-lighten-3" href="/search/">Search the terminologies</a></li>
-                    <li><a class="grey-text text-lighten-3" href="/contribute/">Contribute</a></li>
-                    <li><a class="grey-text text-lighten-3" href="/developer/">Developer Section</a></li>
-                    <li><a class="grey-text text-lighten-3" href="/api/">- API</a></li>
-                    <li><a class="grey-text text-lighten-3" href="/widgets/">- Widgets</a></li>
+                    <li><a class="grey-text text-lighten-3" href="/browse/"><?php _e('Browse the terminologies', 'gfbio') ?></a></li>
+                    <li><a class="grey-text text-lighten-3" href="/search/"><?php _e('Search the terminologies', 'gfbio') ?></a></li>
+                    <li><a class="grey-text text-lighten-3" href="/contribute/"><?php _e('Contribute', 'gfbio') ?></a></li>
+                    <li><a class="grey-text text-lighten-3" href="/developer/"><?php _e('Developer Section', 'gfbio') ?></a></li>
+                    <li><a class="grey-text text-lighten-3" href="/api/">- <?php _e('API', 'gfbio') ?></a></li>
+                    <li><a class="grey-text text-lighten-3" href="/widgets/">- <?php _e('Widgets', 'gfbio') ?></a></li>
                 </ul>
             </div>
             <div class="col s12 l3">
                 <h5 class="white-text">GfBio Consortium</h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="/partners/">Partners</a></li>
+                    <li><a class="grey-text text-lighten-3" href="/partners/"><?php _e('Partners', 'gfbio') ?></a></li>
                     <li><a class="grey-text text-lighten-3" href="/contact/"><?php _e('Contact', 'gfbio') ?></a></li>
                     <li><a class="grey-text text-lighten-3" href="/impressum/"><?php _e('Impressum', 'gfbio') ?></a></li>
                 </ul>
@@ -51,7 +51,7 @@
 ?>
     <div class="footer-copyright">
         <div class="container">
-            &copy; 2014-<?php echo date('Y') ?> GFBio - All Rights Reserved.
+            &copy; 2014-<?php echo date('Y') ?> GFBio - <?php _e('All Rights Reserved', 'gfbio') ?>.
             <a class="grey-text text-lighten-3 right" href="/imprint/"><?php _e('Impressum', 'gfbio') ?></a>
             <a class="grey-text text-lighten-4 right" href="/about/#contact"><?php _e('Contact', 'gfbio') ?></a>
         </div>

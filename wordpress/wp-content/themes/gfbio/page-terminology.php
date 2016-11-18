@@ -40,7 +40,6 @@ $loader_html = '
 
 <h1 class="flow-text center-align" id="terminology-title">Loading...</h1>
 
-
 <div id="term-details">
     <div class="left-side col s12 m6">
         <h5 class="flow-text">General Information</h5>

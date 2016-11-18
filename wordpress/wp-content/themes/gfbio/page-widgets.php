@@ -2,8 +2,8 @@
 /**
  * The template for displaying pages
  *
- * -*- coding: utf-8 -*-
- * vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
+# -*- coding: utf-8 -*-
+# vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4
  *
  */
 
@@ -18,6 +18,8 @@ while ( have_posts() ) : the_post();
 <div class="row">
 
     <h1 class="flow-text center-align">Widgets</h1>
+
+    <?php edit_post_link(__('Edit page', 'gfbio'), '<div class="right-align">', "</div>", null, "") ?>
 
     <p>
     	<?php the_content() ?>
