@@ -35,7 +35,7 @@
                 <ul>
                     <li><a class="grey-text text-lighten-3" href="/partners/"><?php _e('Partners', 'gfbio') ?></a></li>
                     <li><a class="grey-text text-lighten-3" href="/contact/"><?php _e('Contact', 'gfbio') ?></a></li>
-                    <li><a class="grey-text text-lighten-3" href="/impressum/"><?php _e('Impressum', 'gfbio') ?></a></li>
+                    <li><a class="grey-text text-lighten-3" href="/imprint/"><?php _e('Imprint', 'gfbio') ?></a></li>
                 </ul>
             </div>
         </div>
@@ -52,13 +52,14 @@
     <div class="footer-copyright">
         <div class="container">
             &copy; 2014-<?php echo date('Y') ?> GFBio - <?php _e('All Rights Reserved', 'gfbio') ?>.
-            <a class="grey-text text-lighten-3 right" href="/imprint/"><?php _e('Impressum', 'gfbio') ?></a>
+            <a class="grey-text text-lighten-3 right" href="/imprint/"><?php _e('Imprint', 'gfbio') ?></a>
             <a class="grey-text text-lighten-4 right" href="/about/#contact"><?php _e('Contact', 'gfbio') ?></a>
         </div>
     </div>
 <?php
 endif;
 ?>
+
 </footer>
 
 <?php wp_footer() ?>

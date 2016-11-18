@@ -1,0 +1,1298 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Terminology Server API Documentation",
+        "description": "The Terminology Server and its public APIs (Application Programming Interfaces) rely on common standards for Semantic Web Technologies and provide users with a machine-readable access to terms, concepts and their relations for a variety of biodiversity related data.",
+        "version": "1.0.0"
+    },
+    "host": "terminologies.gfbio.org",
+    "schemes": [
+        "http"
+    ],
+    "produces": [
+        "*/*"
+    ],
+    "basePath": "/api",
+    "paths": {
+        "/terminologies/": {
+            "get": {
+                "summary": "List all terminologies.",
+                "description": "Returns the list of all available terminologies on the GFBio TS. The result set contains the name, acronym (terminology-id), short description and URI of each terminology.\n",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/format"
+                    }
+                ],
+                "tags": [
+                    "Core services"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of all available terminologies",
+                        "schema": {
+                            "$ref": "#/definitions/ListResult"
+                        }
+                    },
+                    "503": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "520": {
+                        "description": "Error Unknown. An unknown error occurred. Please check your input",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/terminologies/{terminology_id}": {
+            "get": {
+                "summary": "Get the information about a terminology",
+                "description": "Returns the information about a terminology given its acronym. The result set contains the URI, acronym, name, description, domain, ontology language, creation date and Description Logics Expressivity of the terminology.\n",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/terminologyId"
+                    },
+                    {
+                        "$ref": "#/parameters/format"
+                    }
+                ],
+                "tags": [
+                    "Core services"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Information about a terminology",
+                        "schema": {
+                            "$ref": "#/definitions/SingleTerminologyResult"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request. Parameter is missing",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found. The terminology you provided was not found",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "503": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "520": {
+                        "description": "Error Unknown. An unknown error occurred. Please check your input",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/terminologies/{terminology_id}/allterms": {
+            "get": {
+                "summary": "All terms from a terminology",
+                "description": "Returns the list of terms in a given terminology. The result set contains the label and URI of each term.\n",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/terminologyId"
+                    },
+                    {
+                        "$ref": "#/parameters/format"
+                    }
+                ],
+                "tags": [
+                    "Core services"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of terms in a given terminology",
+                        "schema": {
+                            "$ref": "#/definitions/TermResult"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request. Parameter is missing",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found. The terminology you provided was not found",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "503": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "520": {
+                        "description": "Error Unknown. An unknown error occurred. Please check your input",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/terminologies/{terminology_id}/term": {
+            "get": {
+                "summary": "Get the information about a term",
+                "description": "Returns the information about a term given its URI.\n",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/terminologyId"
+                    },
+                    {
+                        "$ref": "#/parameters/format"
+                    },
+                    {
+                        "$ref": "#/parameters/uri"
+                    }
+                ],
+                "tags": [
+                    "Core services"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Information about a term",
+                        "schema": {
+                            "$ref": "#/definitions/TermInformationResult"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request. Parameter is missing",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found. The terminology you provided was not found",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "503": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "520": {
+                        "description": "Error Unknown. An unknown error occurred. Please check your input",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/terminologies/{terminology_id}/synonyms": {
+            "get": {
+                "summary": "Get the synonyms of a term",
+                "description": "Returns the synonyms of a term given its URI.\n",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/terminologyId"
+                    },
+                    {
+                        "$ref": "#/parameters/format"
+                    },
+                    {
+                        "$ref": "#/parameters/uri"
+                    }
+                ],
+                "tags": [
+                    "Core services"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Synonyms of a term",
+                        "schema": {
+                            "$ref": "#/definitions/TermSynonymResult"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request. Parameter is missing",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found. The terminology you provided was not found",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "503": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "520": {
+                        "description": "Error Unknown. An unknown error occurred. Please check your input",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/terminologies/{terminology_id}/metrics": {
+            "get": {
+                "summary": "Display the metrics of a terminology",
+                "description": "Returns the metrics of a terminology.\n",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/terminologyId"
+                    },
+                    {
+                        "$ref": "#/parameters/format"
+                    }
+                ],
+                "tags": [
+                    "Core services"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Metrics of a terminology",
+                        "schema": {
+                            "$ref": "#/definitions/TerminologyMetricResults"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request. Parameter is missing",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found. The terminology you provided was not found",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "503": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "520": {
+                        "description": "Error Unknown. An unknown error occurred. Please check your input",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/terminologies/{terminology_id}/metadata": {
+            "get": {
+                "summary": "Display the metadata of a terminology",
+                "description": "Returns the metadata contained in the RDF file of a given terminology.\n",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/terminologyId"
+                    },
+                    {
+                        "$ref": "#/parameters/format"
+                    }
+                ],
+                "tags": [
+                    "Core services"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Metadata of a terminology",
+                        "schema": {
+                            "$ref": "#/definitions/MetadataResults"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request. Parameter is missing",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found. The terminology you provided was not found",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "503": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "520": {
+                        "description": "Error Unknown. An unknown error occurred. Please check your input",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/terminologies/search": {
+            "get": {
+                "summary": "Search service",
+                "description": "The search service looks for exact, included or regular expression based term matches (default exact). The search looks inside labels, synonyms, common names, accronyms and abreviations. The parameter terminologies can be used to restrict the search to specific terminologies and the first_hit parameter can be used to stop at the first terminology where a match is found (default false). Also searches the external web services (COL, ITIS, WoRMS, PESI, Geonames, DTNtaxonlists, PNU). Search can be limited to internal terminologies by providing the parameter internal_only (default false). If the parameter “terminologies” is empty, all terminologies are searched. The result set contains the label, URI, description, rank, kingdom, source terminology and synonyms or common names of each matching term.\n",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/format"
+                    },
+                    {
+                        "$ref": "#/parameters/query"
+                    },
+                    {
+                        "$ref": "#/parameters/terminologies"
+                    },
+                    {
+                        "$ref": "#/parameters/match_type"
+                    },
+                    {
+                        "$ref": "#/parameters/first_hit"
+                    },
+                    {
+                        "$ref": "#/parameters/internal_only"
+                    }
+                ],
+                "tags": [
+                    "Search services"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search results",
+                        "schema": {
+                            "$ref": "#/definitions/SearchResults"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request. Parameter is missing",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found. The terminology you provided was not found",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "503": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "520": {
+                        "description": "Error Unknown. An unknown error occurred. Please check your input",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/terminologies/suggest": {
+            "get": {
+                "summary": "Suggest service",
+                "description": "Returns all terms containing a given string, limited to 15 suggestions by default.\n",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/format"
+                    },
+                    {
+                        "$ref": "#/parameters/query"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    }
+                ],
+                "tags": [
+                    "Search services"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Suggestions",
+                        "schema": {
+                            "$ref": "#/definitions/SuggestResults"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request. Parameter is missing",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found. The terminology you provided was not found",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "503": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "520": {
+                        "description": "Error Unknown. An unknown error occurred. Please check your input",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/terminologies/{terminology_id}/narrower": {
+            "get": {
+                "summary": "Get narrower terms",
+                "description": "Retrieves the term(s) that are one level narrower than a given one. The result set contains the URI and label of the narrower term(s).\n",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/terminologyId"
+                    },
+                    {
+                        "$ref": "#/parameters/format"
+                    },
+                    {
+                        "$ref": "#/parameters/uri"
+                    }
+                ],
+                "tags": [
+                    "Hierarchy-oriented Services"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Narrower terms",
+                        "schema": {
+                            "$ref": "#/definitions/NarrowerResults"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request. Parameter is missing",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found. The terminology you provided was not found",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "503": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "520": {
+                        "description": "Error Unknown. An unknown error occurred. Please check your input",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/terminologies/{terminology_id}/allnarrower": {
+            "get": {
+                "summary": "Get all narrower terms",
+                "description": "Retrieves all terms that are narrower of a given one including each possible path to the leaves of the hierarchy. The result set contains the URI and label of all narrower terms.\n",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/terminologyId"
+                    },
+                    {
+                        "$ref": "#/parameters/format"
+                    },
+                    {
+                        "$ref": "#/parameters/uri"
+                    }
+                ],
+                "tags": [
+                    "Hierarchy-oriented Services"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "All narrower terms",
+                        "schema": {
+                            "$ref": "#/definitions/NarrowerResults"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request. Parameter is missing",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found. The terminology you provided was not found",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "503": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "520": {
+                        "description": "Error Unknown. An unknown error occurred. Please check your input",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/terminologies/{terminology_id}/broader": {
+            "get": {
+                "summary": "Get broader terms",
+                "description": "Retrieves the term(s) that are one level broader than a given one. The result set contains the URI and label of the broader term(s).\n",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/terminologyId"
+                    },
+                    {
+                        "$ref": "#/parameters/format"
+                    },
+                    {
+                        "$ref": "#/parameters/uri"
+                    }
+                ],
+                "tags": [
+                    "Hierarchy-oriented Services"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Broader terms",
+                        "schema": {
+                            "$ref": "#/definitions/BroaderResults"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/terminologies/{terminology_id}/allbroader": {
+            "get": {
+                "summary": "Get all broader terms",
+                "description": "Retrieves all terms that are broader of a given one including each possible path to the top. The result set contains the URI and label of all broader term(s).\n",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/terminologyId"
+                    },
+                    {
+                        "$ref": "#/parameters/format"
+                    },
+                    {
+                        "$ref": "#/parameters/uri"
+                    }
+                ],
+                "tags": [
+                    "Hierarchy-oriented Services"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "All broader terms",
+                        "schema": {
+                            "$ref": "#/definitions/BroaderResults"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request. Parameter is missing",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found. The terminology you provided was not found",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "503": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "520": {
+                        "description": "Error Unknown. An unknown error occurred. Please check your input",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/terminologies/{terminology_id}/hierarchy": {
+            "get": {
+                "summary": "Get the top hierarchy",
+                "description": "Retrieves the hierarchical path to the top level for a given term. The result set contains the URI, label and the direct broder terms URIs of all terms in the hierarchy.\n",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/terminologyId"
+                    },
+                    {
+                        "$ref": "#/parameters/format"
+                    },
+                    {
+                        "$ref": "#/parameters/uri"
+                    }
+                ],
+                "tags": [
+                    "Hierarchy-oriented Services"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Hierarchical path to the top level",
+                        "schema": {
+                            "$ref": "#/definitions/HierarchyResults"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request. Parameter is missing",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found. The terminology you provided was not found",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "503": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    },
+                    "520": {
+                        "description": "Error Unknown. An unknown error occurred. Please check your input",
+                        "schema": {
+                            "$ref": "#/definitions/DiagnosticsResult"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "parameters": {
+        "terminologyId": {
+            "name": "terminology_id",
+            "in": "path",
+            "description": "Terminology id.",
+            "required": true,
+            "type": "string",
+            "default": "NCBITAXON"
+        },
+        "format": {
+            "name": "format",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "Desired format. Valid values: json, jsonld, xml and csv.",
+            "enum": [
+                "json",
+                "jsonld",
+                "xml",
+                "csv"
+            ]
+        },
+        "uri": {
+            "name": "uri",
+            "in": "query",
+            "type": "string",
+            "required": true,
+            "description": "Term URI.",
+            "default": "http://purl.obolibrary.org/obo/NCBITaxon_45372"
+        },
+        "query": {
+            "name": "query",
+            "in": "query",
+            "type": "string",
+            "required": true,
+            "default": "Acetobacter aceti"
+        },
+        "terminologies": {
+            "name": "terminologies",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "valid values: terminology_name1[, terminology_name2,...]"
+        },
+        "match_type": {
+            "name": "match_type",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "valid values: exact, included, regex",
+            "enum": [
+                "exact",
+                "included",
+                "regex"
+            ]
+        },
+        "first_hit": {
+            "name": "first_hit",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "valid values: true, false",
+            "enum": [
+                true,
+                false
+            ]
+        },
+        "internal_only": {
+            "name": "internal_only",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "valid values: true, false",
+            "enum": [
+                true,
+                false
+            ]
+        },
+        "limit": {
+            "name": "limit",
+            "in": "query",
+            "type": "integer",
+            "required": false,
+            "description": "valid values <integer>"
+        }
+    },
+    "definitions": {
+        "ListResult": {
+            "type": "object",
+            "properties": {
+                "request": {
+                    "$ref": "#/definitions/Request"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TerminologyInformation"
+                    }
+                },
+                "diagnostics": {
+                    "$ref": "#/definitions/Diagnostics"
+                }
+            }
+        },
+        "Request": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string"
+                },
+                "executionTime": {
+                    "type": "string"
+                }
+            }
+        },
+        "TerminologyInformation": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "acronym": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "uri": {
+                    "type": "string"
+                }
+            }
+        },
+        "SingleTerminologyResult": {
+            "type": "object",
+            "properties": {
+                "request": {
+                    "$ref": "#/definitions/Request"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SingleTerminologyInformation"
+                    }
+                },
+                "diagnostics": {
+                    "$ref": "#/definitions/Diagnostics"
+                }
+            }
+        },
+        "SingleTerminologyInformation": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "acronym": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "URI": {
+                    "type": "string"
+                },
+                "hasDlExpressivity": {
+                    "type": "string"
+                },
+                "creationDate": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "hasDomain": {
+                    "type": "string"
+                },
+                "hasOntologyLanguage": {
+                    "type": "string"
+                }
+            }
+        },
+        "TermResult": {
+            "type": "object",
+            "properties": {
+                "request": {
+                    "$ref": "#/definitions/Request"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Term"
+                    }
+                },
+                "diagnostics": {
+                    "$ref": "#/definitions/Diagnostics"
+                }
+            }
+        },
+        "Term": {
+            "type": "object",
+            "properties": {
+                "uri": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                }
+            }
+        },
+        "TermInformationResult": {
+            "type": "object",
+            "properties": {
+                "request": {
+                    "$ref": "#/definitions/Request"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TermInformation"
+                    }
+                },
+                "diagnostics": {
+                    "$ref": "#/definitions/Diagnostics"
+                }
+            }
+        },
+        "TermInformation": {
+            "type": "object",
+            "properties": {
+                "database_cross_reference": {
+                    "type": "string"
+                },
+                "sourceTerminology": {
+                    "type": "string"
+                },
+                "uri": {
+                    "type": "string"
+                },
+                "has_rank": {
+                    "type": "string"
+                },
+                "has_obo_namespace": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "subClassOf": {
+                    "type": "string"
+                },
+                "synonyms": {
+                    "$ref": "#/definitions/Synonyms"
+                }
+            }
+        },
+        "Synonyms": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "TermSynonymResult": {
+            "type": "object",
+            "properties": {
+                "request": {
+                    "$ref": "#/definitions/Request"
+                },
+                "results": {
+                    "$ref": "#/definitions/TermSynonymResults"
+                },
+                "diagnostics": {
+                    "$ref": "#/definitions/Diagnostics"
+                }
+            }
+        },
+        "TermSynonymResults": {
+            "type": "object",
+            "properties": {
+                "synonyms": {
+                    "$ref": "#/definitions/Synonyms"
+                }
+            }
+        },
+        "TerminologyMetricResults": {
+            "type": "object",
+            "properties": {
+                "request": {
+                    "$ref": "#/definitions/Request"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TerminologyMetric"
+                    }
+                },
+                "diagnostics": {
+                    "$ref": "#/definitions/Diagnostics"
+                }
+            }
+        },
+        "TerminologyMetric": {
+            "type": "object",
+            "properties": {
+                "averageNumberOfChildren": {
+                    "type": "integer"
+                },
+                "classesWithASingleChild": {
+                    "type": "integer"
+                },
+                "classesWithMoreThan1Parent": {
+                    "type": "integer"
+                },
+                "classesWithMoreThan25Children": {
+                    "type": "integer"
+                },
+                "classesWithoutDefinition": {
+                    "type": "integer"
+                },
+                "classesWithoutLabel": {
+                    "type": "integer"
+                },
+                "maximumDepth": {
+                    "type": "integer"
+                },
+                "maximumNumberOfChildren": {
+                    "type": "integer"
+                },
+                "numberOfLeaves": {
+                    "type": "integer"
+                },
+                "numClasses": {
+                    "type": "integer"
+                },
+                "numIndividuals": {
+                    "type": "integer"
+                },
+                "numProperties": {
+                    "type": "integer"
+                }
+            }
+        },
+        "MetadataResults": {
+            "type": "object",
+            "properties": {
+                "request": {
+                    "$ref": "#/definitions/Request"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Metadata"
+                    }
+                },
+                "diagnostics": {
+                    "$ref": "#/definitions/Diagnostics"
+                }
+            }
+        },
+        "Metadata": {
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "versionIRI": {
+                    "type": "string"
+                },
+                "saved-by": {
+                    "type": "string"
+                },
+                "default-namespace": {
+                    "type": "string"
+                },
+                "has_obo_format_version": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "comment": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "SearchResults": {
+            "type": "object",
+            "properties": {
+                "request": {
+                    "$ref": "#/definitions/Request"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SearchResult"
+                    }
+                },
+                "diagnostics": {
+                    "$ref": "#/definitions/Diagnostics"
+                }
+            }
+        },
+        "SearchResult": {
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string"
+                },
+                "uri": {
+                    "type": "string"
+                },
+                "kingdom": {
+                    "type": "string"
+                },
+                "rank": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "externalID": {
+                    "type": "string"
+                },
+                "sourceTerminology": {
+                    "type": "string"
+                },
+                "embeddedDatabase": {
+                    "type": "string"
+                }
+            }
+        },
+        "SuggestResults": {
+            "type": "object",
+            "properties": {
+                "request": {
+                    "$ref": "#/definitions/Request"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SuggestResult"
+                    }
+                },
+                "diagnostics": {
+                    "$ref": "#/definitions/Diagnostics"
+                }
+            }
+        },
+        "SuggestResult": {
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string"
+                },
+                "uri": {
+                    "type": "string"
+                },
+                "sourceTerminology": {
+                    "type": "string"
+                }
+            }
+        },
+        "NarrowerResults": {
+            "type": "object",
+            "properties": {
+                "request": {
+                    "$ref": "#/definitions/Request"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/NarrowerResult"
+                    }
+                },
+                "diagnostics": {
+                    "$ref": "#/definitions/Diagnostics"
+                }
+            }
+        },
+        "NarrowerResult": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "narroweruri": {
+                        "type": "string"
+                    },
+                    "narrowerlabel": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "BroaderResults": {
+            "type": "object",
+            "properties": {
+                "request": {
+                    "$ref": "#/definitions/Request"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/BroaderResult"
+                    }
+                },
+                "diagnostics": {
+                    "$ref": "#/definitions/Diagnostics"
+                }
+            }
+        },
+        "BroaderResult": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "broaderuri": {
+                        "type": "string"
+                    },
+                    "broaderlabel": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "HierarchyResults": {
+            "type": "object",
+            "properties": {
+                "request": {
+                    "$ref": "#/definitions/Request"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/HierarchyResult"
+                    }
+                },
+                "diagnostics": {
+                    "$ref": "#/definitions/Diagnostics"
+                }
+            }
+        },
+        "HierarchyResult": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "label": {
+                        "type": "string"
+                    },
+                    "uri": {
+                        "type": "string"
+                    },
+                    "hierarchy": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "DiagnosticsResult": {
+            "type": "object",
+            "properties": {
+                "request": {
+                    "$ref": "#/definitions/Request"
+                },
+                "diagnostics": {
+                    "$ref": "#/definitions/Diagnostics"
+                }
+            }
+        },
+        "Diagnostics": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Error"
+            }
+        },
+        "Error": {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

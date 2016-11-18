@@ -9,6 +9,7 @@
 
 get_header(); ?>
 
+<section id="developer">
 
 <div class="container">
 <div class="row center-align">
@@ -29,6 +30,8 @@ get_header(); ?>
 
 </div>
 </div>
+
+</section>
 
 
 <section id="api_widgets" class="grey lighten-3">

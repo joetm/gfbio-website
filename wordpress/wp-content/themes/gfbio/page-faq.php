@@ -14,6 +14,8 @@ endwhile;
 ?>
 
 
+<section id="faq">
+
 <div class="container" id="faq">
 <div class="row">
 
@@ -101,6 +103,8 @@ endwhile;
 
 </div>
 </div>
+
+</section>
 
 
 <?php get_footer() ?>

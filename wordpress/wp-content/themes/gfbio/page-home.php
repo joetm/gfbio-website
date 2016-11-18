@@ -20,14 +20,10 @@ endwhile;
 <div id="home">
 
     <section id="banner">
-		<div class="container">
-		<div class="row">
-        	<img src="http://placehold.it/1000x400" alt="" class="responsive-img">
-		</div>
-		</div>
+    	<img src="http://placehold.it/1400x400" alt="" class="responsive-img" style="width:100%;height:auto">
     </section>
 
-    <section id="introduction">
+    <section id="introduction" class="grey lighten-3">
 		<div class="container">
 		<div class="row">
 	        <p>
@@ -153,7 +149,7 @@ endwhile;
             </div>
 
 
-            <p>&gt;&gt;&gt;Alternative version:&lt;&lt;&lt;</p>
+            <p class="red-text">&gt;&gt;&gt;Alternative version:&lt;&lt;&lt;</p>
 
 
             <div class="box col s12 m3">
@@ -207,14 +203,162 @@ endwhile;
         </div>
         </div>
 
-	</section>
+	</section><!--scenarios-->
 
+
+
+    <section id="explore" class="grey lighten-3">
+        <div class="container">
+        <div class="row">
+            <h2 class="center-align">Explore</h2>
+            <p>
+            The GFBio TS provides access to all terminologies useful in the GFBio context. The task of terminology mobilization is carried out in close connection with our project partners. There are two different possibilities to explore the terminologies that could be interesting for your research:
+            </p>
+            <div class="col s12 m6">
+              <div class="card hoverable grey lighten-5 z-depth-3" data-href="/browse/">
+                <div class="card-content">
+                <p class="flow-text center-align">Browse</p>
+                  <p>Browsing a terminology hierarchy enables you to understand its structure and content in order to determine if the terminology is useful for your research. A list of all connected terminologies can be found under <a href="/browse/">Browse</a>.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6">
+              <div class="card hoverable grey lighten-5 z-depth-3" data-href="/search/">
+                <div class="card-content">
+                  <p class="flow-text center-align">Search</p>
+                  <p>Under <a href="/search/">Search</a> you can query all connected terminologies for terms to determine their usefulness for your work, e.g. for annotating or connecting controlled vocabulary.</p>
+                </div>
+              </div>
+            </div>
+
+            <p>
+                Terminologies are distinguished between internal (integrated) and external (connected) ones. To search the external terminologies, you need to make use of our search API where the following services have been integrated:
+            </p>
+
+            <div class="collection">
+                <div class="collection-item clearfix">
+                        <div class="col s6">
+                            The Catalogue of Life (CoL)
+                        </div>
+                        <div class="col s6 right-align">
+                            http://cybertaxonomy.eu/cdmlib/rest-api-name-catalogue.html
+                        </div>
+                </div>
+                <div class="collection-item clearfix">
+                        <div class="col s6">
+                            The Integrated Taxonomic Information System (ITIS)
+                        </div>
+                        <div class="col s6 right-align">
+                            http://www.itis.gov/web_service.html
+                        </div>
+                </div>
+                <div class="collection-item clearfix">
+                        <div class="col s6">
+                            The World Register of Marine Species (WoRMS)
+                        </div>
+                        <div class="col s6 right-align">
+                            http://www.marinespecies.org/aphia.php?p=webservice
+                        </div>
+                </div>
+                <div class="collection-item clearfix">
+                        <div class="col s6">
+                            Fauna Europaea via PESI
+                        </div>
+                        <div class="col s6 right-align">
+                            http://www.eu-nomen.eu/pesi/about-pesi
+                        </div>
+                </div>
+                <div class="collection-item clearfix">
+                        <div class="col s6">
+                            The GeoNames geographical database (Geonames)
+                        </div>
+                        <div class="col s6 right-align">
+                            http://www.geonames.org/export/web-services.html
+                        </div>
+                </div>
+                <div class="collection-item clearfix">
+                        <div class="col s6">
+                            The DWB REST Webservice for Taxon Lists (DTNtaxonlists)
+                        </div>
+                        <div class="col s6 right-align">
+                            http://services.snsb.info/DTNtaxonlists/rest/v0.1/static/api-doc.html
+                        </div>
+                </div>
+                <div class="collection-item clearfix">
+                        <div class="col s6">
+                            The Prokaryotic Nomenclature Up-to-Date Taxon list (PNU)
+                        </div>
+                        <div class="col s6 right-align">
+                            http://bacdive.dsmz.de/api/pnu/
+                        </div>
+                </div>
+            </div>
+
+        </div><!--row-->
+        </div><!--container-->
+    </section><!--explore-->
+
+    <section id="access">
+        <div class="container">
+        <div class="row">
+            <h2 class="center-align">Access</h2>
+            <p>
+                The TS provides a web services interface that serves as a generic access point to heterogeneous terminological resources. In our context the term “terminology” refers to any terminological resource – this can be a formal ontology, a taxonomy, or any useful source of Semantic Web compliant collections of terms (e.g. locations available via Geonames). The TS offers a universal access to the various types of terminologies in a uniform and transparent manner. It delivers unified results enabling computational access to the semantic content of the ontologies in combination with the hierarchical and lexical information held in taxonomies. These terminologies are either internally hosted or accessed via their remote web services. Internal terminologies are stored in a local Semantic Web repository (OpenLink Virtuoso). The TS offers additionally access to internally managed terminologies via a Linked Data interface and a SPARQL endpoint. External terminologies must be registered at the TS; they are remotely accessed via a web service requestor. The set of taxonomies registered at the TS include global initiatives like the Catalogue of Life (COL) or the World Register of Marine Species (WoRMS), and taxonomic services from our project partners like the Bacterial Nomenclature Up-to-Date (PNU). The key component of the TS is the adapter that enables the mapping of both internal Semantic Web terminologies and external terminological resources into a common output format (cf. the gear wheel in the figure).
+            </p>
+            <p>
+                To use information in ontologies programmatically to provide semantically enriched web services please have a look beneath in the Developer section. Either you build your own application using our API or you can embed one of our widgets on your website.
+            </p>
+        </div><!--row-->
+        </div><!--container-->
+    </section><!--access-->
+
+    <section id="consume" class="grey lighten-3">
+        <div class="container">
+        <div class="row">
+            <h2 class="center-align">Consume</h2>
+            <p>
+            To re-use the terminologies provided here in your work, you can retrieve and store the data  to your local information system. If you are not sure which terminology fits your needs, please use our <a href="/browse/">Browse</a> functionality.
+            </p>
+        </div><!--row-->
+        </div><!--container-->
+    </section><!--consume-->
+
+    <section id="contribute">
+        <div class="container">
+        <div class="row">
+            <h2 class="center-align">Contribute</h2>
+            <p>
+            GFBio has developed an infrastructure to enable you to share and discover data from colleagues or other researchers worldwide more efficiently. This infrastructure is being extended by semantic components that ensure, in addition to efficient data capture and discovery, the interoperability of data that are extremely heterogeneous in their structure, formats and meaning.
+            </p>
+            <p>
+            <a href="#gfbio-components" class="modal-trigger">The components of GFBio infrastructure</a> are based on the assumption that the “meaning” of the data is provided by a fourth component – the GFBio Terminology Service (bottom left in the figure; for more information see <a href="/developer/#technology">Technology Behind</a>). This service has been built upon considerable efforts that have been undertaken by scientists to describe their domain knowledge in well-structured ontologies and taxonomies. This is where you come into play. Soon you will be able to contribute to this service providing your data to enrich the TS...
+            </p>
+            <p>
+            Figure: Semantically enriched components of the GFBio Data Portal
+            </p>
+        </div><!--row-->
+        </div><!--container-->
+
+        <!-- Modal -->
+        <div id="gfbio-components" class="modal">
+            <div class="modal-content">
+    	        <h4>The components of GFBio infrastructure</h4>
+    	        <p>
+	            The GFBio Repository Network (upper right in the figure) comprises amongst others molecular data (EMBL-EBI), environmental data (PANGAEA), as well as natural history and culture collection data (e.g. MfN , DSMZ  and SNSB). These data repositories register their data through the GFBio Data Portal (upper right in the figure). The GFBio Portal provides researchers with services such as indexing, annotating and searching data sets. These services help you upload, publish, share and discover data in an efficient way.
+				</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+        </div>
+
+    </section><!--contribute-->
 
     <section id="consortium" class="grey lighten-3">
         <div class="container">
         <div class="row">
         <div class="col s12">
-            <h2>Consortium</h2>
+            <h2 class="center-align">Consortium</h2>
 
             <div class="row">
                 <div class="col s12 m3">
@@ -240,53 +384,9 @@ endwhile;
 	</section>
 
 
-
 </div><!--home-->
 
 
-
-
-<!-- Modals -->
-<div id="modal_explore" class="modal">
-    <div class="modal-content">
-        <h4>Explore</h4>
-        <p>
-        A bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of textA bunch of text
-        </p>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-</div>
-
-<div id="modal_consume" class="modal">
-    <div class="modal-content">
-        <h4>Consume</h4>
-        <p>
-            To re-use the terminologies provided here in your work, you can retrieve and store the data  to your local information system. If you are not sure which terminology fits your needs, please use our <a href="/browse/">Browse</a> functionality.
-        </p>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-</div>
-
-<div id="modal_contribute" class="modal">
-    <div class="modal-content">
-        <h4>Contribute</h4>
-        <p>
-            GFBio has developed an infrastructure to enable you to share and discover data from colleagues or other researchers worldwide more efficiently. This infrastructure is being extended by semantic components that ensure, in addition to efficient data capture and discovery, the interoperability of data that are extremely heterogeneous in their structure, formats and meaning.
-        </p>
-        <p>
-            The components of GFBio infrastructure are based on the assumption that the “meaning” of the data is provided by a fourth component – the GFBio Terminology Service (bottom left in the figure; for more information see Technology Behind). This service has been built upon considerable efforts that have been undertaken by scientists to describe their domain knowledge in well-structured ontologies and taxonomies. This is where you come into play. Soon you will be able to contribute to this service providing your data to enrich the TS...
-
-            <div>Figure: Semantically enriched components of the GFBio Data Portal</div>
-        </p>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-</div>
 
 
 
@@ -312,12 +412,15 @@ $(function() {
     // clicking on the boxes
     $('.card, .box').click(function(e){
         e.preventDefault();
-        alert('you clicked the box');
+        var link = $(this).data('href'); //requires event bubbling
+        if (link) {
+            //redirect
+            window.location = link;
+        }
     });
 
-    // intiate the modals
-    // TODO
-    // $('.modal').modal();
+    // init the modals
+    $('.modal').modal();
 
     // equal heights for the cards
     var $cards = $('.card');

@@ -34,6 +34,8 @@ $loader_html = '
 
 ?>
 
+<section id="terminology">
+
 <div class="container">
 <div class="row">
 
@@ -79,7 +81,10 @@ $loader_html = '
 </div><!--row-->
 </div><!--container-->
 
+</section>
+
 <?php get_footer() ?>
+
 
 <script type="text/javascript">
 $(function() {

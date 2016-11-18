@@ -14,16 +14,23 @@ while ( have_posts() ) : the_post();
 ?>
 
 
-<div class="container" id="page">
+<section id="widgets">
+
+<div class="container">
 <div class="row">
 
     <h1 class="flow-text center-align">Widgets</h1>
 
     <?php edit_post_link(__('Edit page', 'gfbio'), '<div class="right-align">', "</div>", null, "") ?>
 
-    <p>
-    	<?php the_content() ?>
-    </p>
+    <?php
+    if($content = get_the_content()) {
+      echo '<p>';
+      echo $content;
+      echo '</p>';
+      unset($content);
+    }
+    ?>
 
         <div class="col s12 m4">
           <div class="card hoverable grey lighten-5 z-depth-3">
@@ -82,17 +89,36 @@ while ( have_posts() ) : the_post();
           </div>
         </div>
 
-
-
-
 </div>
 </div>
+
+</section>
+
 
 <?php
 endwhile;
 ?>
 
 <?php get_footer(); ?>
+
+
+<script type="text/javascript">
+$(function() {
+
+    // clicking on the boxes
+    $('.card, .box').click(function(e){
+        e.preventDefault();
+        alert('you clicked the box');
+    });
+
+    // equal heights for the cards
+    var $cards = $('.card');
+    $cards.matchHeight();
+    $cards.find('.card-action').css('position', 'absolute').css('bottom', '0').css('left', '0');
+
+});
+</script>
+
 
 </body>
 </html>

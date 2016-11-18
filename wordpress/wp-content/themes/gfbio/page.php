@@ -9,6 +9,7 @@ get_header(); ?>
 while ( have_posts() ) : the_post();
 ?>
 
+<section id="page">
 
 <div class="container" id="page">
 <div class="row">
@@ -23,6 +24,8 @@ while ( have_posts() ) : the_post();
 
 </div>
 </div>
+
+</section>
 
 <?php
 endwhile;

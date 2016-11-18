@@ -38,7 +38,7 @@ Definitions
 /* general */
 /* ------- */
 section {
-  padding-bottom: 1.78rem;
+  padding: 1.78rem 0;
   margin-bottom: 0; }
 
 .bold {
@@ -68,13 +68,10 @@ div.nav-wrapper #nav-mobile a:hover {
 /* footer */
 /* ------ */
 footer.page-footer {
-  margin-top: 0; }
-
-/* ----------- */
-/* browse page */
-/* ----------- */
-#browse #terminologies table {
-  padding-bottom: 2em; }
+  margin-top: 0;
+  background-color: #e74b12; }
+  footer.page-footer div.footer-copyright a {
+    margin-left: 2em; }
 
 /* --------- */
 /* home page */
@@ -94,6 +91,20 @@ footer.page-footer {
 		}
 		*/ }
 
+#home #banner {
+  padding: 0;
+  margin: 0;
+  line-height: 0; }
+
+#home #introduction {
+  margin-top: 0; }
+
+/* ----------- */
+/* browse page */
+/* ----------- */
+#browse #terminologies table {
+  padding-bottom: 2em; }
+
 /* ------------------------ */
 /* terminology details page */
 /* ------------------------ */
@@ -110,5 +121,11 @@ footer.page-footer {
 
 #faq ul.faq-list {
   padding-bottom: 0; }
+
+/* ------------ */
+/* widgets page */
+/* ------------ */
+#widgets .card {
+  cursor: pointer; }
 
 /*# sourceMappingURL=styles.css-0.map*/

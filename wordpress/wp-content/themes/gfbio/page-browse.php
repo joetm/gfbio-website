@@ -5,6 +5,8 @@
 
 get_header(); ?>
 
+<section id="browse">
+
 <div class="container" id="browse">
 <div class="row">
 
@@ -51,9 +53,10 @@ get_header(); ?>
     </table>
 </section>
 
-</div>
-</div>
+</div><!--row-->
+</div><!--container-->
 
+</section>
 
 
 <?php get_footer(); ?>

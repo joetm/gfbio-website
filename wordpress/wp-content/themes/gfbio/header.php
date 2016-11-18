@@ -14,35 +14,31 @@
 </head>
 <body <?php body_class(); ?>>
 
-<div class="navbar-fixed">
-<nav class="white clearfix">
+<div class="navbar-fixed hide-on-med-and-down">
+<nav class="white clearfix nav-extended">
     <div class="container">
 	<div class="nav-wrapper clearfix">
 		<a href="<?php echo esc_url(home_url('/')) ?>" class="brand-logo black-text">
 			<img src="/static/logo.png" alt="GfBio Terminology Service">
 		</a>
-		<ul id="nav-mobile" class="right hide-on-med-and-down">
+        <!-- Dropdown Structure -->
+        <ul id="nav_dropdown" class="dropdown-content hide-on-med-and-down">
+            <li><a href="/api/"><?php _e('API', 'gfbio') ?></a></li>
+            <li><a href="/widgets/"><?php _e('Widgets', 'gfbio') ?></a></li>
+        </ul>
+		<ul id="nav-mobile" class="right">
             <?php
                 $current_page_id = get_queried_object_id();
-                $pages = get_pages([
-                //     'exclude' => [24,26,18,20,5,141,225], // TODO
-                    'sort_column' => 'menu_order'
-                ]);
-                $page_links = array(
-                    'browse',
-                    'search',
-                    'contribute',
-                    'developer',
-                    'faq',
-                    'about',
-                );
-                foreach ($pages as $page) {
-                    if (!in_array($page->post_name, $page_links)) {
-                        continue;
-                    }
-                    echo "<li class='" . ($current_page_id === $page->ID ? "active" : "") . "'><a href=\"" . get_page_link($page->ID) . "\">" . $page->post_title . "</a></li>";
-                  }
-
+            ?>
+                <li><a href="/browse/"><?php _e('Browse', 'gfbio') ?></a></li>
+                <li><a href="/search/"><?php _e('Search', 'gfbio') ?></a></li>
+                <!--
+                <li><a href="/contribute/"><?php _e('Contribute', 'gfbio') ?></a></li>
+                -->
+                <li><a class="dropdown-button" data-activates="nav_dropdown" href="/developer/"><?php _e('Developer', 'gfbio') ?><i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a href="/faq/"><?php _e('FAQ', 'gfbio') ?></a></li>
+                <li><a href="/about/"><?php _e('About', 'gfbio') ?></a></li>
+            <?php
                 // $page_links = array(
                 //     [ 'name' => __('Browse', 'gfbio'), 'uri' => 'browse'],
                 //     [ 'name' => __('Search', 'gfbio'), 'uri' => 'search'],
@@ -56,7 +52,33 @@
                 // }
             ?>
 		</ul>
-    </div>
-    </div>
+    </div><!--nav-wrapper-->
+    </div><!--container-->
 </nav>
 </div>
+
+
+
+  <nav class="nav-extended hide-on-large-only">
+    <div class="nav-wrapper">
+      <a href="<?php echo esc_url(home_url('/')) ?>" class="brand-logo black-text">
+        <img src="/static/logo.png" alt="GfBio Terminology Service">
+      </a>
+      <a href="#" class="button-collapse" title="<?php _e('Menu', 'gfbio') ?>"><i class="material-icons">menu</i></a>
+      <ul class="tabs tabs-transparent">
+            <li><a href="/browse/"><?php _e('Browse', 'gfbio') ?></a></li>
+            <li><a href="/search/"><?php _e('Search', 'gfbio') ?></a></li>
+            <!--
+            <li><a href="/contribute/"><?php _e('Contribute', 'gfbio') ?></a></li>
+            -->
+                <li><a href="/api/"><?php _e('API', 'gfbio') ?></a></li>
+                <li><a href="/widgets/"><?php _e('Widgets', 'gfbio') ?></a></li>
+            <li><a href="/faq/"><?php _e('FAQ', 'gfbio') ?></a></li>
+            <li><a href="/about/"><?php _e('About', 'gfbio') ?></a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+

@@ -11,6 +11,8 @@ Definitions
 $primary-text-color: #000;
 $primary-text-color-hover: #f48fb1;
 
+$footer-primary-color: #e74b12;
+
 
 /* ------------ */
 /* work-arounds */
@@ -30,7 +32,7 @@ $primary-text-color-hover: #f48fb1;
 /* ------- */
 
 section {
-	padding-bottom: 1.78rem;
+	padding: 1.78rem 0;
 	margin-bottom:0;
 }
 
@@ -73,19 +75,13 @@ div.nav-wrapper {
 
 footer.page-footer {
 	margin-top:0;
-}
+	background-color:$footer-primary-color;
 
-/* ----------- */
-/* browse page */
-/* ----------- */
-
-#browse {
-
-	#terminologies table {
-		padding-bottom: 2em;
+	div.footer-copyright a {
+		margin-left: 2em;
 	}
-
 }
+
 
 /* --------- */
 /* home page */
@@ -110,6 +106,28 @@ footer.page-footer {
 		*/
 	}
 
+	#banner {
+		padding:0;
+		margin:0;
+		line-height:0;
+	}
+
+	#introduction {
+		margin-top:0;
+	}
+
+}
+
+/* ----------- */
+/* browse page */
+/* ----------- */
+
+#browse {
+
+	#terminologies table {
+		padding-bottom: 2em;
+	}
+
 }
 
 /* ------------------------ */
@@ -131,5 +149,15 @@ footer.page-footer {
 }
 #faq ul.faq-list {
 	padding-bottom:0;
+}
+
+/* ------------ */
+/* widgets page */
+/* ------------ */
+
+#widgets {
+	.card {
+		cursor:pointer;
+	}
 }
 
