@@ -1,0 +1,9 @@
+deploy
+wordpress
+provision
+node_modules
+.ansible
+.git
+.vagrant
+coverage
+webpack.*.js

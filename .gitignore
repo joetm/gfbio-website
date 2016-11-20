@@ -2,9 +2,11 @@
 .ansible
 .bundle
 .editorconfig
-.env
+./.env
 .github/
+fabfile.pyc
 .idea/
+*.scss~
 .vagrant
 node_modules
 Movefile

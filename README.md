@@ -6,11 +6,18 @@ To get started, check out <http://vccw.cc/>
 
 ## Usage
 
-Install wordpress into `wordpress` folder (keeping the custom theme).
+Install wordpress into `wordpress` folder (keeping the custom theme `gfbio`).
 
 1. `npm install`
+1. `make webpack`
 1. `vagrant up`
 1. Go to `vccw.dev` or `192.168.33.10`
+
+
+## Development
+
+Use `make webpack-watch` to monitor the files for changes.
+
 
 ## Testing
 
