@@ -19,26 +19,20 @@ while ( have_posts() ) : the_post();
 <div class="container">
 <div class="row">
 
-    <h1 class="flow-text center-align">Widgets</h1>
 
+    <h1 class="flow-text center-align"><?php _e('Widgets', 'gfbio') ?></h1>
     <?php edit_post_link(__('Edit page', 'gfbio'), '<div class="right-align">', "</div>", null, "") ?>
 
+
     <?php
-    if($content = get_the_content()) {
-      echo '<p>';
-      echo $content;
-      echo '</p>';
-      unset($content);
-    }
+      the_content();
     ?>
 
-        <div class="col s12 m4">
-          <div class="card hoverable grey lighten-5 z-depth-3">
-            <div class="card-image">
-<div class="center-align">
-<img src="http://placehold.it/300x300" class="responsive-img">
-</div>
-              <span class="card-title">Search Bar</span>
+
+        <div class="col s6 m3">
+          <div class="card hoverable grey lighten-5 z-depth-3" data-link="/widgets/search">
+            <div class="card-title widget-title center-align">
+              <?php _e('Search Bar', 'gfbio') ?>
             </div>
             <div class="card-content">
               <p>Researchers can peruse ontologies that are interesting for their research.</p>
@@ -51,13 +45,10 @@ while ( have_posts() ) : the_post();
           </div>
         </div>
 
-        <div class="col s12 m4">
-          <div class="card hoverable grey lighten-5 z-depth-3">
-            <div class="card-image">
-<div class="center-align">
-<img src="http://placehold.it/300x300" class="responsive-img">
-</div>
-              <span class="card-title">Visualization</span>
+        <div class="col s6 m3">
+          <div class="card hoverable grey lighten-5 z-depth-3" data-link="/widgets/visualization">
+            <div class="card-title widget-title center-align">
+              <?php _e('Visualization', 'gfbio') ?>
             </div>
             <div class="card-content">
               <p>Information from the ontologies can be retrieved and stored to your local information system.</p>
@@ -70,13 +61,10 @@ while ( have_posts() ) : the_post();
           </div>
         </div>
 
-        <div class="col s12 m4">
-          <div class="card hoverable grey lighten-5 z-depth-3">
-            <div class="card-image">
-<div class="center-align">
-<img src="http://placehold.it/300x300" class="responsive-img">
-</div>
-              <span class="card-title">Browse</span>
+        <div class="col s6 m3">
+          <div class="card hoverable grey lighten-5 z-depth-3" data-link="/widgets/browse">
+            <div class="card-title widget-title center-align">
+              <?php _e('Browse', 'gfbio') ?>
             </div>
             <div class="card-content">
               <p>Scientists can store or connect their terminologies to the TS in order to access all services provided by the TS automatically.</p>
@@ -89,8 +77,25 @@ while ( have_posts() ) : the_post();
           </div>
         </div>
 
-</div>
-</div>
+        <div class="col s6 m3">
+          <div class="card hoverable grey lighten-5 z-depth-3" data-link="/widgets/suggest">
+            <div class="card-title widget-title center-align">
+              <?php _e('Suggest', 'gfbio') ?>
+            </div>
+            <div class="card-content">
+              <p>Suggest widget................</p>
+            </div>
+            <!--
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+            -->
+          </div>
+        </div>
+
+
+</div><!--row-->
+</div><!--container-->
 
 </section>
 
@@ -108,7 +113,8 @@ $(function() {
     // clicking on the boxes
     $('.card, .box').click(function(e){
         e.preventDefault();
-        alert('you clicked the box');
+        console.log(e.target);
+        window.location = $(e.target).parents('.card').data('link');
     });
 
     // equal heights for the cards

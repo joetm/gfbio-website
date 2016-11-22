@@ -19,9 +19,11 @@ endwhile;
 
 <div id="home">
 
+    <!--
     <section id="banner">
     	<img src="http://placehold.it/1400x400" alt="" class="responsive-img" style="width:100%;height:auto">
     </section>
+    -->
 
     <section id="introduction" class="grey lighten-3">
 		<div class="container">
@@ -75,12 +77,14 @@ endwhile;
     	    </p>
 
             <div class="col s12 m6 l3">
-              <div class="card hoverable grey lighten-5 z-depth-3">
-                <div class="card-image">
-    <div class="center-align">
-    <img src="http://placehold.it/150x150" class="responsive-img">
-    </div>
-                  <span class="card-title">Explore</span>
+              <div class="card hoverable white darken-1 z-depth-3">
+                <div class="center-align">
+
+                  <div class="card-icon">
+                      <img src="/static/browse.svg" alt="<?php _e('Explore') ?>" />
+                  </div>
+                  <span class="card-title"><?php _e('Explore') ?></span>
+
                 </div>
                 <div class="card-content">
                   <p>Researchers can peruse ontologies that are interesting for their research.</p>
@@ -95,11 +99,13 @@ endwhile;
 
             <div class="col s12 m6 l3">
               <div class="card hoverable grey lighten-5 z-depth-3">
-                <div class="card-image">
-    <div class="center-align">
-    <img src="http://placehold.it/150x150" class="responsive-img">
-    </div>
-                  <span class="card-title">Access</span>
+                <div class="center-align">
+
+                  <div class="card-icon">
+                      <img src="/static/access.png" alt="<?php _e('Access') ?>" />
+                  </div>
+                  <span class="card-title"><?php _e('Access') ?></span>
+
                 </div>
                 <div class="card-content">
                   <p>Developers can use information in ontologies programmatically to provide semantically enriched web services.</p>
@@ -113,11 +119,13 @@ endwhile;
             </div>
             <div class="col s12 m6 l3">
               <div class="card hoverable grey lighten-5 z-depth-3">
-                <div class="card-image">
-    <div class="center-align">
-    <img src="http://placehold.it/150x150" class="responsive-img">
-    </div>
-                  <span class="card-title">Consume</span>
+                <div class="center-align">
+
+                  <div class="card-icon">
+                    <img src="/static/consume.png" alt="<?php _e('Consume') ?>" />
+                  </div>
+                  <span class="card-title"><?php _e('Consume') ?></span>
+
                 </div>
                 <div class="card-content">
                   <p>Information from the ontologies can be retrieved and stored to your local information system.</p>
@@ -131,13 +139,15 @@ endwhile;
             </div>
             <div class="col s12 m6 l3">
               <div class="card hoverable grey lighten-5 z-depth-3">
-                <div class="card-image">
-    <div class="center-align">
-    <img src="http://placehold.it/150x150" class="responsive-img">
-    </div>
-                  <span class="card-title">Contribute</span>
+                <div class="center-align">
+
+                  <div class="card-icon">
+                      <img src="/static/contribute.png" alt="<?php _e('Contribute') ?>" />
+                  </div>
+                  <span class="card-title"><?php _e('Contribute') ?></span>
+
                 </div>
-                <div class="card-content">
+                <div class="card-content grey lighten-3">
                   <p>Scientists can store or connect their terminologies to the TS in order to access all services provided by the TS automatically.</p>
                 </div>
                 <!--
@@ -153,8 +163,8 @@ endwhile;
 
 
             <div class="box col s12 m3">
-                <div class="center-align home-action-icon">
-                    <i class="material-icons">info_outline</i>
+                <div class="card-icon center-align">
+                    <img src="/static/browse-copy.png" style="max-width:90%;" alt="<?php _e('Explore') ?>" />
                 </div>
                 <div class="center-align flow-text">
                     Explore
@@ -165,8 +175,8 @@ endwhile;
             </div>
 
             <div class="box col s12 m3">
-                <div class="center-align home-action-icon">
-                    <i class="material-icons">language</i>
+                <div class="card-icon center-align">
+                    <img src="/static/access.png" style="max-width:90%;" alt="<?php _e('Access') ?>" />
                 </div>
                 <div class="center-align flow-text">
                     Access
@@ -177,25 +187,25 @@ endwhile;
             </div>
 
             <div class="box col s12 m3">
-                <div class="center-align home-action-icon">
-                    <i class="material-icons">settings_input_antenna</i>
+                <div class="card-icon center-align">
+                    <img src="/static/consume.png" style="max-width:90%;" alt="<?php _e('Consume') ?>" />
                 </div>
                 <div class="center-align flow-text">
                     Consume
                 </div>
-                <div class="">
+                <div>
                     Information from the ontologies can be retrieved and stored to your local information system.
                 </div>
             </div>
 
             <div class="box col s12 m3">
-                <div class="center-align home-action-icon">
-                    <i class="material-icons">group_work</i>
+                <div class="card-icon center-align">
+                    <img src="/static/contribute.png" style="max-width:90%;" alt="<?php _e('Contribute') ?>" />
                 </div>
                 <div class="center-align flow-text">
                     Contribute
                 </div>
-                <div class="">
+                <div>
                     Scientists can store or connect their terminologies to the TS in order to access all services provided by the TS automatically.
                 </div>
             </div>

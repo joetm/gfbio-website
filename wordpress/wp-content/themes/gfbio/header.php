@@ -6,16 +6,19 @@
  */
 
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
+<!--[if lt IE 7]> <html class="no-js ie6" <?php language_attributes() ?>> <![endif]-->
+<!--[if IE 7]> <html class="no-js ie7" <?php language_attributes() ?>> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie8" <?php language_attributes() ?>> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--> <html class="no-js" <?php language_attributes() ?>> <!--<![endif]-->
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta charset="<?php bloginfo( 'charset' ) ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<?php wp_head(); ?>
+	<?php wp_head() ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class() ?>>
 
 <div class="navbar-fixed hide-on-med-and-down">
-<nav class="white clearfix nav-extended">
+<nav class="nav-extended white clearfix">
     <div class="container">
 	<div class="nav-wrapper clearfix">
 		<a href="<?php echo esc_url(home_url('/')) ?>" class="brand-logo black-text">
@@ -28,16 +31,30 @@
         </ul>
 		<ul id="nav-mobile" class="right">
             <?php
-                $current_page_id = get_queried_object_id();
+                $current_page = get_queried_object();
+                $active_page = null;
+                if (isset($current_page->post_name)) {
+                    $active_page = $current_page->post_name;
+                }
             ?>
-                <li><a href="/browse/"><?php _e('Browse', 'gfbio') ?></a></li>
-                <li><a href="/search/"><?php _e('Search', 'gfbio') ?></a></li>
+                <li class="<?php echo (in_array($active_page, array('browse', 'terminology')) ? 'active' : '') ?>">
+                    <a href="/browse/"><?php _e('Browse', 'gfbio') ?></a>
+                </li>
+                <li class="<?php echo ($active_page === 'search' ? 'active' : '') ?>">
+                    <a href="/search/"><?php _e('Search', 'gfbio') ?></a>
+                </li>
                 <!--
                 <li><a href="/contribute/"><?php _e('Contribute', 'gfbio') ?></a></li>
                 -->
-                <li><a class="dropdown-button" data-activates="nav_dropdown" href="/developer/"><?php _e('Developer', 'gfbio') ?><i class="material-icons right">arrow_drop_down</i></a></li>
-                <li><a href="/faq/"><?php _e('FAQ', 'gfbio') ?></a></li>
-                <li><a href="/about/"><?php _e('About', 'gfbio') ?></a></li>
+                <li class="<?php echo (in_array($active_page, array('developer', 'api', 'widgets')) ? 'active' : '') ?>">
+                    <a class="dropdown-button" data-activates="nav_dropdown" href="/developer/"><?php _e('Developer', 'gfbio') ?><i class="material-icons right">arrow_drop_down</i></a>
+                </li>
+                <li class="<?php echo ($active_page === 'faq' ? 'active' : '') ?>">
+                    <a href="/faq/"><?php _e('FAQ', 'gfbio') ?></a>
+                </li>
+                <li class="<?php echo ($active_page === 'about' ? 'active' : '') ?>">
+                    <a href="/about/"><?php _e('About', 'gfbio') ?></a>
+                </li>
             <?php
                 // $page_links = array(
                 //     [ 'name' => __('Browse', 'gfbio'), 'uri' => 'browse'],

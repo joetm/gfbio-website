@@ -29,9 +29,9 @@ define('BUILD_FOLDER', '/dist');
 
 function inject_gfbio() {
 
-	// $gfbio_app_folder = '/gfbio';
-	// $version = time(); // development
-	$version = null;
+	// cache busting for development
+	$version = time();
+	// $version = null;
 
 	wp_enqueue_style('gfbio-style', BUILD_FOLDER . "/styles.css", [], $version, 'all');
 	// wp_enqueue_style('gfbio-style-print', STATIC_FOLDER . "/print.css",  [], $version, 'print');

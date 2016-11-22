@@ -3,7 +3,7 @@
       if (url && url.length > 1) {
         url = decodeURIComponent(url[1]);
       } else {
-        url = "/dist/swagger/swagger.json";
+        url = "http://vccw.dev/dist/swagger/swagger.json";
       }
 
       hljs.configure({
@@ -26,10 +26,11 @@
             window.SwaggerTranslator.translate();
           }
 
-          // Enable Materialize Select boxes
-          // $(document).ready(function() {
-          //   $('select').material_select();
-          // });
+          //Enable Materialize Select boxes
+          $(document).ready(function() {
+            $('select').material_select();
+            $("#resources_container").removeClass("container"); // fix to make it work with wordpress
+          });
         },
         onFailure: function(data) {
           log("Unable to Load SwaggerUI");
