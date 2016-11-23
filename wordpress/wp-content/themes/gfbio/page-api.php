@@ -3,92 +3,102 @@
  * The template for displaying pages
  */
 
-
 // Add CSS
-add_action('wp_head','hook_css', 0);
-function hook_css() {
-	$output = <<<EOD
-  <link href='/dist/swagger/css/typography.css' media='screen' rel='stylesheet' type='text/css'/>
-  <link href='/dist/swagger/css/reset.css' media='screen' rel='stylesheet' type='text/css'/>
-  <link href='/dist/swagger/css/print.css' media='print' rel='stylesheet' type='text/css'/>
-  <!-- THEME -->
-  <link rel='stylesheet' href='/dist/swagger/css/theme-material.css' />
-EOD;
-	echo $output;
+function hook_api_css() {
+	echo '
+ <link href="/dist/swagger/css/typography.css" media="screen" rel="stylesheet" type="text/css" />
+ <link href="/dist/swagger/css/print.css" media="print" rel="stylesheet" type="text/css" />
+ <!-- THEME -->
+ <link rel="stylesheet" href="/dist/swagger/css/theme-material.css" />
+ ';
 }
-
-// Add js
-add_action('wp_footer','hook_javascript', 100);
-function hook_javascript() {
-	$output = "";
-	// $output .= 	 "<script src='/dist/swagger/lib/jquery-1.8.0.min.js' type='text/javascript'></script>\n";
-	$output .=   "<script src='/dist/swagger//lib/object-assign-pollyfill.js' type='text/javascript'></script>\n";
-	$output .=   "<script src='/dist/swagger/lib/jquery.slideto.min.js' type='text/javascript'></script>\n";
-	$output .=   "<script src='/dist/swagger/lib/jquery.wiggle.min.js' type='text/javascript'></script>\n";
-	$output .=   "<script src='/dist/swagger/lib/jquery.ba-bbq.min.js' type='text/javascript'></script>\n";
-	$output .=   "<script src='/dist/swagger/lib/handlebars-4.0.5.js' type='text/javascript'></script>\n";
-	$output .=   "<script src='/dist/swagger/lib/lodash.min.js' type='text/javascript'></script>\n";
-	$output .=   "<script src='/dist/swagger/lib/backbone-min.js' type='text/javascript'></script>\n";
-	$output .=   "<script src='/dist/swagger/swagger-ui.js' type='text/javascript'></script>\n";
-	$output .=   "<script src='/dist/swagger/lib/highlight.9.1.0.pack.js' type='text/javascript'></script>\n";
-	$output .=   "<script src='/dist/swagger/lib/highlight.9.1.0.pack_extended.js' type='text/javascript'></script>\n";
-	$output .=   "<script src='/dist/swagger/lib/jsoneditor.min.js' type='text/javascript'></script>\n";
-	$output .=   "<script src='/dist/swagger/lib/marked.js' type='text/javascript'></script>\n";
-	// $output .=   "<script src='/dist/swagger/lib/swagger-oauth.js' type='text/javascript'></script>\n";
-	// $output .=   "<script type='text/javascript' src='/dist/swagger/lib/materialize.min.js'></script>\n";
-	$output .=   "<script type='text/javascript' src='/dist/swagger/lib/swagger-ui-settings-and-loading.js'></script>\n";
-	$output .=   "<script type='text/javascript' src='/dist/swagger/lang/en.js'</script>\n";
-	echo $output;
-}
-
+add_action('wp_head','hook_api_css', 0);
 
 get_header();
 ?>
 
 
 <section id="introduction">
-<div class="container">
-<div class="row">
+    <div class="container">
+        <div class="row">
+           <h1 class="center-align flow-text">API</h1>
+           <?php
+           while (have_posts() ) : the_post();
+           if($content = get_the_content()) {
+             echo $content;
+             unset($content);
+         }
+         endwhile;
+         ?>
+     </div><!--row-->
+ </div><!--container-->
+</section><!--introduction-->
 
-	<h1 class="center-align flow-text">API</h1>
-    <?php edit_post_link(__('Edit page', 'gfbio'), '<div class="right-align">', "</div>", null, "") ?>
 
-	<?php
-	while (have_posts() ) : the_post();
-		the_content();
-	endwhile;
-	?>
-</div><!--row-->
-</div><!--container-->
-</section>
+<section class="swagger-section">
+    <div class="container">
+        <div class="row">
 
-
-<div class="swagger-section">
-
-	<div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
-	<div id="swagger-ui-container" class="swagger-ui-wrap">
-	              <!-- Loading START -->
-	              <div class="center-align">
-	              <div class="preloader-wrapper active" title="Loading...">
-	                <div class="spinner-layer spinner-red-only">
-	                  <div class="circle-clipper left">
-	                    <div class="circle"></div>
-	                  </div><div class="gap-patch">
-	                    <div class="circle"></div>
-	                  </div><div class="circle-clipper right">
-	                    <div class="circle"></div>
-	                  </div>
-	                </div>
-	              </div>
-	              </div>
-	              <!-- Loading END -->
-	</div>
-
+           <div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
+           <div id="swagger-ui-container" class="swagger-ui-wrap">
+              <!-- Loading START -->
+              <div class="center-align">
+                  <div class="preloader-wrapper active" title="Loading...">
+                    <div class="spinner-layer spinner-red-only">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Loading END -->
 </div>
 
+</div><!--row-->
+</div><!--container-->
+</section><!--swagger-section-->
 
 
-<?php get_footer(); ?>
+
+<?php get_footer() ?>
+
+
+
+<!--
+<script src='/dist/swagger/lib/jquery-1.8.0.min.js' type='text/javascript'></script>
+-->
+<script src='/dist/swagger/lib/object-assign-pollyfill.js' type='text/javascript'></script>
+<script src='/dist/swagger/lib/handlebars-4.0.5.js' type='text/javascript'></script>
+<script src='/dist/swagger/lib/lodash.min.js' type='text/javascript'></script>
+<script src='/dist/swagger/lib/backbone-min.js' type='text/javascript'></script>
+<script src='/dist/swagger/swagger-ui.min.js' type='text/javascript'></script>
+<script src='/dist/swagger/lib/highlight.9.1.0.pack.js' type='text/javascript'></script>
+<script src='/dist/swagger/lib/highlight.9.1.0.pack_extended.js' type='text/javascript'></script>
+<script src='/dist/swagger/lib/jsoneditor.min.js' type='text/javascript'></script>
+<script src='/dist/swagger/lib/marked.js' type='text/javascript'></script>
+<script src='/dist/swagger/lib/swagger-oauth.js' type='text/javascript'></script>
+<script type='text/javascript' src='/dist/swagger/lib/materialize.min.js'></script>
+<script type='text/javascript'>
+	jQuery.browser = {};
+	(function () {
+       jQuery.browser.msie = false;
+       jQuery.browser.version = 0;
+       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+           jQuery.browser.msie = true;
+           jQuery.browser.version = RegExp.$1;
+       }
+   })();
+</script>
+<script src='/dist/swagger/lib/jquery.slideto.min.js' type='text/javascript'></script>
+<script src='/dist/swagger/lib/jquery.wiggle.min.js' type='text/javascript'></script>
+<script src='/dist/swagger/lib/jquery.ba-bbq.min.js' type='text/javascript'></script>
+<script type='text/javascript' src='/dist/swagger/lib/swagger-ui-settings-and-loading.js'></script>
+<script type='text/javascript' src='/dist/swagger/lang/en.js'</script>
+
 
 </body>
 </html>

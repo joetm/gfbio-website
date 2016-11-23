@@ -29,8 +29,8 @@ endwhile;
 		<div class="container">
 		<div class="row">
 	        <p>
-	        The GFBio Terminology Service helps you to connect to various kinds of terminologies – ranging from simple controlled vocabularies to complex ontologies in the field of biodiversity with a single access point. It provides services and tools to find, explore, share and reuse terminologies for semantic enhancement of research platforms. Furthermore the Terminology Server provides some functionalities that would not be possible with the original terminology or service, e.g. improved search capabilities. The Terminology Service is a core component of the GFBio infrastructure. It is developed by the Institute of Computer Science and the Botanic Garden and Botanical Museum of the Freie Universität Berlin.
-	        <a id="readmore" href="#">Read more...</a>
+	        The GFBio Terminology Service (TS) helps you connect through a single access point to various kinds of terminologies, ranging from simple controlled vocabularies to complex ontologies, in the field of biology. It provides services and tools to find, explore, share and reuse terminologies for semantic enhancement of research platforms.
+	        <a id="readmore" href="#"><?php _e('Read more...', 'gfbio') ?></a>
 		    </p>
             <aside id="more" style="display:none">
                 <p>
@@ -66,7 +66,7 @@ endwhile;
             </aside>
 		</div>
 		</div>
-    </section>
+    </section><!--introduction-->
 
 
     <section id="scenarios">
@@ -77,8 +77,8 @@ endwhile;
     	    </p>
 
             <div class="col s12 m6 l3">
-              <div class="card hoverable white darken-1 z-depth-3">
-                <div class="center-align">
+              <div class="card hoverable grey lighten-3 z-depth-3" data-href="explore">
+                <div class="center-align white">
 
                   <div class="card-icon">
                       <img src="/static/browse.svg" alt="<?php _e('Explore') ?>" />
@@ -86,8 +86,8 @@ endwhile;
                   <span class="card-title"><?php _e('Explore') ?></span>
 
                 </div>
-                <div class="card-content">
-                  <p>Researchers can peruse ontologies that are interesting for their research.</p>
+                <div class="card-content grey lighten-3">
+                  <p>Browse and search for terminologies that can be interesting for your research</p>
                 </div>
                 <!--
                 <div class="card-action">
@@ -98,8 +98,8 @@ endwhile;
             </div>
 
             <div class="col s12 m6 l3">
-              <div class="card hoverable grey lighten-5 z-depth-3">
-                <div class="center-align">
+              <div class="card hoverable grey lighten-3 z-depth-3" data-href="access">
+                <div class="center-align white">
 
                   <div class="card-icon">
                       <img src="/static/access.png" alt="<?php _e('Access') ?>" />
@@ -107,8 +107,8 @@ endwhile;
                   <span class="card-title"><?php _e('Access') ?></span>
 
                 </div>
-                <div class="card-content">
-                  <p>Developers can use information in ontologies programmatically to provide semantically enriched web services.</p>
+                <div class="card-content grey lighten-3">
+                  <p>Use information from terminologies programmatically to provide semantically enriched applications</p>
                 </div>
                 <!--
                 <div class="card-action">
@@ -118,8 +118,8 @@ endwhile;
               </div>
             </div>
             <div class="col s12 m6 l3">
-              <div class="card hoverable grey lighten-5 z-depth-3">
-                <div class="center-align">
+              <div class="card hoverable grey lighten-3 z-depth-3" data-href="consume">
+                <div class="center-align white">
 
                   <div class="card-icon">
                     <img src="/static/consume.png" alt="<?php _e('Consume') ?>" />
@@ -127,8 +127,8 @@ endwhile;
                   <span class="card-title"><?php _e('Consume') ?></span>
 
                 </div>
-                <div class="card-content">
-                  <p>Information from the ontologies can be retrieved and stored to your local information system.</p>
+                <div class="card-content grey lighten-3">
+                  <p>Retrieve and store Information from terminologies in your local information system</p>
                 </div>
                 <!--
                 <div class="card-action">
@@ -138,8 +138,8 @@ endwhile;
               </div>
             </div>
             <div class="col s12 m6 l3">
-              <div class="card hoverable grey lighten-5 z-depth-3">
-                <div class="center-align">
+              <div class="card hoverable grey lighten-3 z-depth-3" data-href="contribute">
+                <div class="center-align white">
 
                   <div class="card-icon">
                       <img src="/static/contribute.png" alt="<?php _e('Contribute') ?>" />
@@ -147,8 +147,8 @@ endwhile;
                   <span class="card-title"><?php _e('Contribute') ?></span>
 
                 </div>
-                <div class="card-content grey lighten-3">
-                  <p>Scientists can store or connect their terminologies to the TS in order to access all services provided by the TS automatically.</p>
+                <div class="card-content">
+                  <p>Store or connect your terminologies to the TS and get access to all provided services automatically</p>
                 </div>
                 <!--
                 <div class="card-action">
@@ -162,48 +162,48 @@ endwhile;
             <p class="red-text">&gt;&gt;&gt;Alternative version:&lt;&lt;&lt;</p>
 
 
-            <div class="box col s12 m3">
+            <div class="box col s12 m3" data-href="explore">
                 <div class="card-icon center-align">
                     <img src="/static/browse-copy.png" style="max-width:90%;" alt="<?php _e('Explore') ?>" />
                 </div>
                 <div class="center-align flow-text">
-                    Explore
+                    <?php _e('Explore', 'gfbio') ?>
                 </div>
                 <div class="">
                     Researchers can peruse ontologies that are interesting for their research.
                 </div>
             </div>
 
-            <div class="box col s12 m3">
+            <div class="box col s12 m3" data-href="access">
                 <div class="card-icon center-align">
                     <img src="/static/access.png" style="max-width:90%;" alt="<?php _e('Access') ?>" />
                 </div>
                 <div class="center-align flow-text">
-                    Access
+                    <?php _e('Access', 'gfbio') ?>
                 </div>
                 <div class="">
                     Developers can use information in ontologies programmatically to provide semantically enriched web services.
                 </div>
             </div>
 
-            <div class="box col s12 m3">
+            <div class="box col s12 m3" data-href="consume">
                 <div class="card-icon center-align">
                     <img src="/static/consume.png" style="max-width:90%;" alt="<?php _e('Consume') ?>" />
                 </div>
                 <div class="center-align flow-text">
-                    Consume
+                    <?php _e('Consume', 'gfbio') ?>
                 </div>
                 <div>
                     Information from the ontologies can be retrieved and stored to your local information system.
                 </div>
             </div>
 
-            <div class="box col s12 m3">
+            <div class="box col s12 m3" data-href="contribute">
                 <div class="card-icon center-align">
                     <img src="/static/contribute.png" style="max-width:90%;" alt="<?php _e('Contribute') ?>" />
                 </div>
                 <div class="center-align flow-text">
-                    Contribute
+                    <?php _e('Contribute', 'gfbio') ?>
                 </div>
                 <div>
                     Scientists can store or connect their terminologies to the TS in order to access all services provided by the TS automatically.
@@ -216,18 +216,17 @@ endwhile;
 	</section><!--scenarios-->
 
 
-
     <section id="explore" class="grey lighten-3">
         <div class="container">
         <div class="row">
-            <h2 class="center-align">Explore</h2>
+            <h2 class="center-align"><?php _e('Explore', 'gfbio') ?></h2>
             <p>
             The GFBio TS provides access to all terminologies useful in the GFBio context. The task of terminology mobilization is carried out in close connection with our project partners. There are two different possibilities to explore the terminologies that could be interesting for your research:
             </p>
             <div class="col s12 m6">
               <div class="card hoverable grey lighten-5 z-depth-3" data-href="/browse/">
                 <div class="card-content">
-                <p class="flow-text center-align">Browse</p>
+                <p class="flow-text center-align"><?php _e('Browse', 'gfbio') ?></p>
                   <p>Browsing a terminology hierarchy enables you to understand its structure and content in order to determine if the terminology is useful for your research. A list of all connected terminologies can be found under <a href="/browse/">Browse</a>.</p>
                 </div>
               </div>
@@ -235,7 +234,7 @@ endwhile;
             <div class="col s12 m6">
               <div class="card hoverable grey lighten-5 z-depth-3" data-href="/search/">
                 <div class="card-content">
-                  <p class="flow-text center-align">Search</p>
+                  <p class="flow-text center-align"><?php _e('Search', 'gfbio') ?></p>
                   <p>Under <a href="/search/">Search</a> you can query all connected terminologies for terms to determine their usefulness for your work, e.g. for annotating or connecting controlled vocabulary.</p>
                 </div>
               </div>
@@ -311,7 +310,7 @@ endwhile;
     <section id="access">
         <div class="container">
         <div class="row">
-            <h2 class="center-align">Access</h2>
+            <h2 class="center-align"><?php _e('Access', 'gfbio') ?></h2>
             <p>
                 The TS provides a web services interface that serves as a generic access point to heterogeneous terminological resources. In our context the term “terminology” refers to any terminological resource – this can be a formal ontology, a taxonomy, or any useful source of Semantic Web compliant collections of terms (e.g. locations available via Geonames). The TS offers a universal access to the various types of terminologies in a uniform and transparent manner. It delivers unified results enabling computational access to the semantic content of the ontologies in combination with the hierarchical and lexical information held in taxonomies. These terminologies are either internally hosted or accessed via their remote web services. Internal terminologies are stored in a local Semantic Web repository (OpenLink Virtuoso). The TS offers additionally access to internally managed terminologies via a Linked Data interface and a SPARQL endpoint. External terminologies must be registered at the TS; they are remotely accessed via a web service requestor. The set of taxonomies registered at the TS include global initiatives like the Catalogue of Life (COL) or the World Register of Marine Species (WoRMS), and taxonomic services from our project partners like the Bacterial Nomenclature Up-to-Date (PNU). The key component of the TS is the adapter that enables the mapping of both internal Semantic Web terminologies and external terminological resources into a common output format (cf. the gear wheel in the figure).
             </p>
@@ -325,7 +324,7 @@ endwhile;
     <section id="consume" class="grey lighten-3">
         <div class="container">
         <div class="row">
-            <h2 class="center-align">Consume</h2>
+            <h2 class="center-align"><?php _e('Consume', 'gfbio') ?></h2>
             <p>
             To re-use the terminologies provided here in your work, you can retrieve and store the data  to your local information system. If you are not sure which terminology fits your needs, please use our <a href="/browse/">Browse</a> functionality.
             </p>
@@ -336,7 +335,7 @@ endwhile;
     <section id="contribute">
         <div class="container">
         <div class="row">
-            <h2 class="center-align">Contribute</h2>
+            <h2 class="center-align"><?php _e('Contribute', 'gfbio') ?></h2>
             <p>
             GFBio has developed an infrastructure to enable you to share and discover data from colleagues or other researchers worldwide more efficiently. This infrastructure is being extended by semantic components that ensure, in addition to efficient data capture and discovery, the interoperability of data that are extremely heterogeneous in their structure, formats and meaning.
             </p>
@@ -369,35 +368,64 @@ endwhile;
         <div class="container">
         <div class="row">
         <div class="col s12">
-            <h2 class="center-align">Consortium</h2>
+            <h2 class="center-align"><?php _e('Consortium', 'gfbio') ?></h2>
 
             <div class="row">
                 <div class="col s12 m3">
-            		<img src="http://placehold.it/200x150" class="responsive-img">
+            		<img src="/static/gf_bio_logo_claim_370x208.png" style="width:200px;height:auto;" class="responsive-img">
                 </div>
                 <div class="col s12 m9">
-                    <img src="http://placehold.it/150x100" class="responsive-img">
-                    <img src="http://placehold.it/150x100" class="responsive-img">
-                    <img src="http://placehold.it/150x100" class="responsive-img">
-                    <img src="http://placehold.it/150x100" class="responsive-img">
-                    <img src="http://placehold.it/150x100" class="responsive-img">
-                    <img src="http://placehold.it/150x100" class="responsive-img">
-                    <img src="http://placehold.it/150x100" class="responsive-img">
-                    <img src="http://placehold.it/150x100" class="responsive-img">
-                    <img src="http://placehold.it/150x100" class="responsive-img">
-                    <img src="http://placehold.it/150x100" class="responsive-img">
-                    <img src="http://placehold.it/150x100" class="responsive-img">
-                    <img src="http://placehold.it/150x100" class="responsive-img">
+                    <div class="row">
+                        <div class="col s4 m3">
+                            <img src="/static/logos/marum.png" class="responsive-img">
+                        </div>
+                        <div class="col s4 m3">
+                            <img src="/static/logos/senckenberg.gif" class="responsive-img">
+                        </div>
+                        <div class="col s4 m3">
+                            <img src="http://placehold.it/150x100" class="responsive-img">
+                        </div>
+                        <div class="col s4 m3">
+                            <img src="http://placehold.it/150x100" class="responsive-img">
+                        </div>
+                        <div class="col s4 m3">
+                            <img src="/static/logos/uni-leipzig.jpg" class="responsive-img">
+                        </div>
+                        <div class="col s4 m3">
+                            <img src="http://placehold.it/150x100" class="responsive-img">
+                        </div>
+                        <div class="col s4 m3">
+                            <img src="http://placehold.it/150x100" class="responsive-img">
+                        </div>
+                        <div class="col s4 m3">
+                            <img src="http://placehold.it/150x100" class="responsive-img">
+                        </div>
+                        <div class="col s4 m3">
+                            <img src="http://placehold.it/150x100" class="responsive-img">
+                        </div>
+                        <div class="col s4 m3">
+                            <img src="http://placehold.it/150x100" class="responsive-img">
+                        </div>
+                        <div class="col s4 m3">
+                            <img src="http://placehold.it/150x100" class="responsive-img">
+                        </div>
+                        <div class="col s4 m3">
+                            <img src="http://placehold.it/150x100" class="responsive-img">
+                        </div>
+                    </div>
                 </div>
         </div>
         </div>
         </div>
-	</section>
+	</section><!--consortium-->
 
+    <div class="navbtn up">
+        <a class=" btn-floating btn-large waves-effect waves-light red">
+            <i class="material-icons">publish</i>
+        </a>
+    </div>
 
 </div><!--home-->
-
-
 
 
 
@@ -406,7 +434,7 @@ endwhile;
 
 <script type="text/javascript">
 //(function($){
-  $(function(){
+$(function(){
 
     // 'read more...' link
     $('#readmore').click(function (e) {
@@ -422,12 +450,33 @@ endwhile;
     });
 
     // clicking on the boxes
-    $('.card, .box').click(function(e){
+    // requires event bubbling
+    $('#scenarios .card, #scenarios .box').click(function(e) {
         e.preventDefault();
-        var link = $(this).data('href'); //requires event bubbling
+        var link = $(this).data('href');
         if (link) {
-            //redirect
-            window.location = link;
+            // save the original position so that we can jump back
+            $('.navbtn').data('origpos', $(window).scrollTop());
+            // scroll down to the section
+            $('html, body').animate({
+                scrollTop: $("#"+link).offset().top - 24
+            }, 800);
+            // show the nav button
+            $('.navbtn').show();
+        }
+    });
+
+    // clicking on the nav button
+    $('.navbtn').click(function(e) {
+        e.preventDefault();
+        // var target = $(this).data('target');
+        var origpos = $(this).data('origpos');
+        if (origpos >= 0) {
+            $('html, body').animate({
+                scrollTop: +origpos
+            }, 800);
+            // hide the nav button
+            $(this).hide();
         }
     });
 
@@ -439,7 +488,18 @@ endwhile;
     // init the modals
     // $('.modal').modal();
 
-  }); // end of document ready
+    // check the scroll position
+    $(window).scroll(function() {
+        let logoHeight,
+            minHeight = 64,
+            maxHeight = 84,
+            startAnimAt = 64,
+            endAnimAt = 164,
+            offset = $(this).scrollTop();
+        console.log('offset', offset);
+    });// $(window).scroll
+
+}); // end of document ready
 //})(window.jQuery); // end of jQuery name space
 
 </script>

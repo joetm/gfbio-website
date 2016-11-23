@@ -13,13 +13,7 @@ import './print.scss';
 // JavaScript
 // ------------------------------------------------------
 
-// materialize JS
-import 'materialize-css/dist/js/materialize.min.js';
-
-// equal height for all
-import 'jquery-match-height/dist/jquery.matchHeight-min.js';
-
 // jquery
-window.$ = require('jquery');
-window.jQuery = require('jquery');
-
+// const $ = require('jquery');
+// window.$ = $
+// window.jQuery = $;

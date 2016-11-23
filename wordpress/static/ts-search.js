@@ -1,20 +1,28 @@
+/*
+    Source: terminologies.gfbio.org/search/facettedSearch/search.js
+*/
+
 var SEARCH = {
+
 	maxResults : 10,
-	
+
 	/*
-	 * initialize the container to displaythe results of the search
+	 * The Server base URL. This needs to be adjusted between live and dev server, or generated automatically.
+	 */	 
+	server : "http://terminologies.gfbio.org",
+
+	/*
+	 * initialize the container to display the results of the search
 	 */
 	init : function(container) {
 		var spinnerImg = $('<img>').attr('src',
 				'/search/openSocialGadget/spinner.gif')
 				.attr('id', 'spinner_image');
-
+		var spinnerImg = $('<div class="preloader-wrapper active" title="Loading..."><div class="spinner-layer spinner-red-only"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div>');
 		var searchResults = $('<div>').attr('id', 'search_results')
-
 		$('#' + container).append(spinnerImg);
 		$('#' + container).append(searchResults);
 		spinnerImg.hide();
-
 	},
 
 	/*
@@ -22,14 +30,9 @@ var SEARCH = {
 	 */
 	cleanUp : function() {
 		SEARCH.dictionary.clear();
-		$('#search_results').html($(''));
+		$('#search_results').html('');
 	},
 
-	/*
-	 * The Server base URL. This needs to be adjusted between live and dev server, or generated automatically.
-	 */	 
-	server : "http://terminologies.gfbio.org",
-	
 	dictionary : {
 		attributes : [],
 		getAttribute : function(attributeName) {
@@ -155,7 +158,7 @@ var SEARCH = {
 	},
 	
 	textSearch : function(){
-		//Create a JQuery autocomplete widget
+		// Create a JQuery autocomplete widget
 		var b = $('#normalSearchInput').autocomplete({
 			source : function(request, response) {
 				//Perform an ajax request

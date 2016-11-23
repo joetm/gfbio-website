@@ -3,7 +3,7 @@
  * The template for displaying all standard pages of gfbio
  */
 
-get_header(); ?>
+get_header() ?>
 
 <?php
 while ( have_posts() ) : the_post();
@@ -15,7 +15,7 @@ n/a
 endwhile;
 ?>
 
-<?php get_footer(); ?>
+<?php get_footer() ?>
 
 </body>
 </html>

@@ -6,7 +6,8 @@
 get_header(); ?>
 
 <?php
-while ( have_posts() ) : the_post();
+// while ( have_posts() ) : the_post();
+the_post();
 ?>
 
 <section id="page">
@@ -14,21 +15,21 @@ while ( have_posts() ) : the_post();
 <div class="container" id="page">
 <div class="row">
 
-<h1 class="flow-text center-align">
-	<?php the_title() ?>
-</h1>
+	<h1 class="flow-text center-align">
+		<?php the_title() ?>
+	</h1>
 
-<?php edit_post_link(__('Edit page', 'gfbio'), '<div class="right-align">', "</div>", null, "") ?>
+	<?php edit_post_link(__('Edit page', 'gfbio'), '<div class="right-align">', "</div>", null, "") ?>
 
-<?php the_content() ?>
+	<?php the_content() ?>
 
-</div>
-</div>
+</div><!--row-->
+</div><!--container-->
 
-</section>
+</section><!--page-->
 
 <?php
-endwhile;
+// endwhile;
 ?>
 
 <?php get_footer(); ?>

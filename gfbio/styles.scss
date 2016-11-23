@@ -27,6 +27,23 @@ $footer-primary-color: #e74b12;
 	clear: both;
 }
 
+/* prevent jumping of content */
+body {
+	overflow-y: scroll;
+}
+
+/* sticky footer */
+/*
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+main {
+	flex: 1 0 auto;
+}
+*/
+
 /* ------- */
 /* general */
 /* ------- */
@@ -40,13 +57,30 @@ section {
 	font-weight:bold;
 }
 
+.card .card-icon img {
+	max-width:100%;
+	height:auto;
+}
+
+div.navbtn {
+	display:none;
+	position: fixed;
+	z-index:999;
+	right:20px;
+	bottom:20px;
+}
+
+
 /* ---------- */
 /* navigation */
 /* ---------- */
 
-div.nav-wrapper .brand-logo img{
+div.nav-wrapper .brand-logo img {
 	width:auto;
 	height:64px;
+	/*
+	height:84px;
+	*/
 	padding:8px 0;
 }
 div.nav-wrapper {
@@ -59,15 +93,12 @@ div.nav-wrapper {
 		color: $primary-text-color-hover;
 	}
 }
-
-
-/* ------------ */
-/* page content */
-/* ------------ */
-
-.home-action-icon i {
-	font-size:64px;	
+/*
+.navbar-fixed, .navbar-fixed .nav-extended {
+	height:84px;
 }
+*/
+
 
 /* ------ */
 /* footer */
@@ -158,6 +189,12 @@ footer.page-footer {
 #widgets {
 	.card {
 		cursor:pointer;
+		.card-title.widget-title {
+			padding-top:1em;
+		}
+		.card-action.white {
+			width:100%;
+		}
 	}
 }
 

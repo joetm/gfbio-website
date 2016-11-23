@@ -32,19 +32,19 @@ endwhile;
 		The term <span class="bold">&quot;terminology&quot;</span> encompasses several meanings ranging from simple lists of terms to semantically rich ontologies. Unfortunately, there are currently no commonly accepted definitions of the different terminology types (in the biological domain) which leaves room for variation causing them to be used interchangeably depending on the context.<br />
 		GFBio distinguishes between five different types or formality levels of terminologies with differing levels of specification which are defined in the following section. Some of the terms may be used in a slightly different way in the scientific domain, a fact the user should be aware of when referring to terminologies outside the context of GFBio.
 
-	    <span class="faq-subheadline">Controlled Vocabulary</span>
+	    <span class="faq-subheadline"><?php _e('Controlled Vocabulary', 'gfbio') ?></span>
 	    The simplest type of terminology consisting in a finite list of terms without definitions or hierarchical ordering.
 
-	    <span class="faq-subheadline">Glossary</span>
+	    <span class="faq-subheadline"><?php _e('Glossary', 'gfbio') ?></span>
 	    A list of terms including an informal definition of their meaning in natural (human-readable) language. Since information expressed in natural language is typically not unambiguous, these specifications are not yet adequate for further processing by computer agents.
 
-	    <span class="faq-subheadline">Taxonomy/Classification</span>
+	    <span class="faq-subheadline"><?php _e('Taxonomy/Classification', 'gfbio') ?></span>
 	    A list of terms organized in a hierarchical structure, e.g., by is-afalse relationships, thus providing additional semantics in the relations between their terms which can be interpreted by computer agents.
 
-	    <span class="faq-subheadline">Thesaurus</span>
+	    <span class="faq-subheadline"><?php _e('Thesaurus', 'gfbio') ?></span>
 	    A controlled vocabulary connected via relations between the terms expressing hierarchies (e.g., “narrower/broader term”), associations (e.g., “related term”), or synonym relationships.
 
-	    <span class="faq-subheadline">Ontology</span>
+	    <span class="faq-subheadline"><?php _e('Ontology', 'gfbio') ?></span>
 	    An Ontology represents the highest level of formality a terminology can reach. It is a formal representation of a set of concepts and the relationships between them using semantically rich descriptions, allowing a    n unambiguous interpretation of classes and term relationships according to logic-based rules.
 		</p>
     </div>
@@ -101,23 +101,27 @@ endwhile;
 </ul>
 
 
-</div>
-</div>
+</div><!--row-->
+</div><!--container-->
 
-</section>
+</section><!--faq-->
 
 
 <?php get_footer() ?>
 
 
 <script>
-$(document).ready(function(){
+$(function(){
+
     $('#faqlist').collapsible({
         accordion: false,
-        onOpen: function(el) { alert('Open'); },
+        onOpen: function(el) {
+        	alert('Open');
+            console.log(el);
+        },
         onClose: function(el) {
             alert('Closed');
-            console.log(el);window.$
+            console.log(el);
         }
     });
 });

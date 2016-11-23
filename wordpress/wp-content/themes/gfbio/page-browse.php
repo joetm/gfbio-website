@@ -7,7 +7,7 @@ get_header(); ?>
 
 <section id="browse">
 
-<div class="container" id="browse">
+<div class="container">
 <div class="row">
 
 
@@ -15,43 +15,46 @@ get_header(); ?>
 
   <?php edit_post_link(__('Edit page', 'gfbio'), '<div class="right-align">', "</div>", null, "") ?>
 
-<p>
     <?php
-    	while (have_posts()) : the_post();
+      // while (have_posts()) : the_post();
+      if (have_posts()) {
+        echo '<p>';
+        the_post();
     		the_content();
-    	endwhile;
+        echo '</p>';
+      }
+    	// endwhile;
     ?>
-</p>
 
-<section id="terminologies">
-    <table class="bordered">
-        <thead>
-          <tr>
-              <th data-field="name"><?php _e('Name', 'gfbio') ?></th>
-              <th data-field="description"><?php _e('Description', 'gfbio') ?></th>
-          </tr>
-        </thead>
+    <section id="terminologies">
+        <table class="bordered">
+            <thead>
+              <tr>
+                  <th data-field="name"><?php _e('Name', 'gfbio') ?></th>
+                  <th data-field="description"><?php _e('Description', 'gfbio') ?></th>
+              </tr>
+            </thead>
 
-        <tbody>
-          <tr class="loading">
-            <td colspan="3" class="center-align">
-                  <!--Loading...-->
-                  <div class="preloader-wrapper active">
-                    <div class="spinner-layer spinner-red-only">
-                      <div class="circle-clipper left">
-                        <div class="circle"></div>
-                      </div><div class="gap-patch">
-                        <div class="circle"></div>
-                      </div><div class="circle-clipper right">
-                        <div class="circle"></div>
+            <tbody>
+              <tr class="loading">
+                <td colspan="3" class="center-align">
+                      <!--Loading...-->
+                      <div class="preloader-wrapper active">
+                        <div class="spinner-layer spinner-red-only">
+                          <div class="circle-clipper left">
+                            <div class="circle"></div>
+                          </div><div class="gap-patch">
+                            <div class="circle"></div>
+                          </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-            </td>
-          </tr>
-        </tbody>
-    </table>
-</section>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </section>
 
 </div><!--row-->
 </div><!--container-->

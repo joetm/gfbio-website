@@ -23,6 +23,8 @@ get_header(); ?>
     </p>
 
 
+
+
     <div id="searchFacet">
         <div class="row">
             <div class="col s12">
@@ -40,8 +42,10 @@ get_header(); ?>
                 <h2 class="flow-text"><?php _e('Precision Search and Find', 'gfbio') ?></h2>
                 <form>
                     <label for="text_search"><?php _e('SearchText', 'gfbio') ?></label>
-                    <input id="text_search" type="text" value="" />
-                    <input type="submit" value="<?php _e('Search', 'gfbio') ?>" class="button" />
+                    <input id="normalSearchInput" autofocus="autofocus" type="search" />
+                    <a class="pink waves-effect waves-light btn">
+                        <i class="material-icons left">search</i> <?php _e('Search', 'gfbio') ?>
+                    </a>
                 </form>
             </div>
             <!-- tab 2 -->
@@ -49,19 +53,27 @@ get_header(); ?>
                 <h2 class="flow-text"><?php _e('Precision Search and Find', 'gfbio') ?></h2>
                 <form>
                     <label for="lookup"><?php _e('Lookup', 'gfbio') ?></label>
-                    <input id="lookup" type="text" value="" />
-                    <input type="submit" value="<?php _e('Lookup', 'gfbio') ?>" class="button" />
+                    <input id="suggestSearchInput" type="search" class="ui-autocomplete-input" autocomplete="off" />
+                    <a class="pink waves-effect waves-light btn">
+                        <i class="material-icons left">search</i> <?php _e('Lookup', 'gfbio') ?>
+                    </a>
                 </form>
             </div>
         </div>
     </div><!--searchFacet-->
+    <!--searchresults-->
     <div id="results"></div>
+    <!--/searchresults-->
 
 
     <?php
-    while (have_posts()) : the_post();
-        the_content();
-    endwhile;
+    // while (have_posts()) : the_post();
+    //     if($content = get_the_content()) {
+    //         echo "<p>";
+    //             echo $content;
+    //         echo "</p>";
+    //     }
+    // endwhile;
     ?>
 
 
@@ -74,22 +86,29 @@ get_header(); ?>
 <?php get_footer() ?>
 
 
+<?php
+    // Inject CSS
+//    function hook_css() {
+//        echo '<link href="/static/jquery-ui-autocomplete/jquery-ui.min.css" rel="stylesheet" type="text/css" />';
+//    }
+//    add_action('wp_head','hook_css', 0);
+?>
+
+
 <!--
-    Source: terminologies.gfbio.org/search/facettedSearch/search.js
-    no changes were made to this script, other than minification
--->
+<script type="text/javascript" src="/static/jquery-ui-autocomplete/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/static/ts-search.js"></script>
-<!--
 <script type="text/javascript" src="/static/ts-TermSearch.js"></script>script>
 -->
+
 
 <script type="text/javascript">
 $(function() {
 
-    SEARCH.init('results');
-    SEARCH.cleanUp();
-    SEARCH.textSearch();
-    SEARCH.lookupSearch();
+    // SEARCH.init('results');
+    // SEARCH.cleanUp();
+    // SEARCH.textSearch();
+    // SEARCH.lookupSearch();
 
     // $('#searchButton').click(function() {
     //     //alert('button clicked');

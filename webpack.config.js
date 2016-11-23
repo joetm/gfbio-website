@@ -1,13 +1,19 @@
 var path = require('path'),
     ProvidePlugin = new require('webpack/lib/ProvidePlugin'),
     CommonsPlugin = new require('webpack/lib/optimize/CommonsChunkPlugin'),
-    ExtractTextPlugin = require("extract-text-webpack-plugin");
+    ExtractTextPlugin = require("extract-text-webpack-plugin"),
+    CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
-        vendor: [
-            "jquery"
-        ],
+        // libs - see also CommonsPlugin
+        vendor: "./gfbio/libs.js",
+        // vendor: [
+        //     "jquery",
+        //     "materialize-css/dist/js/materialize.min.js",
+        //     "jquery-match-height/dist/jquery.matchHeight-min.js"
+        // ],
+        // main app
         app: './gfbio/main.js'
     },
     output: {
@@ -17,24 +23,22 @@ module.exports = {
         filename: '[name].js',
         sourceMapFilename: '[file]-[id].map'
     },
+    // externals: {
+    //     // require("jquery") is external and available
+    //     //  on the global var jQuery
+    //     "jquery": "jQuery",
+    //     "jquery": "$"
+    // }
     resolveLoader: {
         root: path.join(__dirname, 'node_modules'),
     },
-    // resolve: {
-    //     alias: {
-            // bootstrap: vendorPath + '/bootstrap.min.js'
-    //     }
-    // },
+    resolve: {
+        alias: {
+            jquery: path.resolve(__dirname, './node_modules/jquery/dist/jquery.min.js')
+        }
+    },
     module: {
         loaders: [
-            // {
-            //     test: /\.scss$/,
-            //     loaders: ["style", "css", "sass"]
-            // },
-            // {
-            //     test: /\.css$/,
-            //     loaders: ["style", "css"]
-            // },
             {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
@@ -68,11 +72,11 @@ module.exports = {
         ]
     },
     plugins: [
-        new ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            "window.jQuery": "jquery"
-        }),
+        // new ProvidePlugin({
+        //     $: "jquery",
+        //     jQuery: "jquery",
+        //     "window.jQuery": "jquery"
+        // }),
         new ExtractTextPlugin("styles.css", {
             allChunks: true
         }),
@@ -103,7 +107,11 @@ if (process.env.NODE_ENV === 'production') {
         warnings: false
       }
     }),
-    new webpack.optimize.OccurenceOrderPlugin()
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new CopyWebpackPlugin([
+      // {from: './gfbio/print.css', to: './dist/print.css'},
+      {from: './gfbio/swagger', to: './dist/swagger'}
+    ])
   ]);
 
 } else {

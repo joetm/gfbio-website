@@ -4,8 +4,8 @@
  *
  * Displays all of the head element and everything up until the page content.
  */
-
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js ie6" <?php language_attributes() ?>> <![endif]-->
 <!--[if IE 7]> <html class="no-js ie7" <?php language_attributes() ?>> <![endif]-->
 <!--[if IE 8]> <html class="no-js ie8" <?php language_attributes() ?>> <![endif]-->

@@ -1,0 +1,118 @@
+@media print {
+     html, body {
+          margin:0;
+          padding:0;
+     }
+     body {
+          background:white; 
+          font-size:10pt;
+          color:black;
+     }
+     #sidebar {
+          display:none;
+     }
+     .navbar-fixed {
+          display: none;
+     }
+     #content {
+          margin-left:0; 
+          float:none; 
+          width:auto;
+     }
+     .card {
+          /*
+          .card-image img {
+               height: 150px;
+               max-width: 200px;
+          }
+          */
+     }
+     .collapsible-body {
+          display:block;
+     }
+     p {
+     }
+     .col {
+          padding-top: 2em !important;
+     }
+     .card {
+          border: none !important;
+     }
+     .z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
+          box-shadow: none;
+     }
+     .box-shadow {
+          box-shadow: none;
+     }
+     .center-align {
+          text-align: left !important;
+     }
+     .demo .red { 
+          color:black; 
+          font-weight:bold;
+     }
+     a { 
+          font-weight:bold;
+          color:#000066;
+          text-decoration:underline;
+     }
+     #content { 
+          margin-left:0; 
+          float:none; 
+          width:auto;
+     }
+     #footer, .ad {
+          display:none;
+     }
+     h1, h2, h3, h4, h5, h6 { 
+          page-break-after:avoid; 
+          page-break-inside:avoid;
+     }
+     .row { 
+          page-break-after:avoid; 
+          page-break-inside:avoid;
+     }
+     .container { 
+          page-break-after:avoid; 
+          page-break-inside:avoid;
+     }
+     h3 {
+          margin-left:10px; 
+          margin-bottom:0px; 
+          padding-bottom:0px;
+     }
+     section {
+          page-break-before:avoid;
+     }
+     blockquote, table, pre {
+          page-break-inside:avoid;
+     }
+     ul, ol, dl {
+          page-break-before:avoid;
+     }
+     img.centered { 
+          display: block; 
+          margin-left: auto; 
+          margin-right: auto;
+     }
+     img.right { 
+          padding: 4px; 
+          margin: 0 0 2px 7px; 
+          display: inline;
+     }
+     img.left {
+          padding: 4px;
+          margin: 0 7px 2px 0; 
+          display: inline;
+     }
+     .right {
+          float: right;
+     }
+     .left {
+          float: left;
+     }
+     img {
+          page-break-inside: avoid; 
+          page-break-after: avoid;
+     }
+}

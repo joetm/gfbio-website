@@ -36,6 +36,8 @@ function inject_gfbio() {
 	wp_enqueue_style('gfbio-style', BUILD_FOLDER . "/styles.css", [], $version, 'all');
 	// wp_enqueue_style('gfbio-style-print', STATIC_FOLDER . "/print.css",  [], $version, 'print');
 
+	wp_enqueue_style('gfbio-print-style', BUILD_FOLDER . "/print.css", [], $version, 'all');
+
 	// material font
 	wp_enqueue_style('material-font-style', "https://fonts.googleapis.com/icon?family=Material+Icons", [], $version, 'all');
 

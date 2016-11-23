@@ -28,8 +28,8 @@ get_header(); ?>
 	?>
   </p>
 
-</div>
-</div>
+</div><!--row-->
+</div><!--container-->
 
 </section>
 
