@@ -26,7 +26,10 @@ endwhile;
 <ul id="faqlist" class="collapsible" data-collapsible="expandable">
 
     <li>
-      <div class="collapsible-header">What is a &quot;terminology&quot; in the GFBio context?</div>
+      <div class="collapsible-header">
+        What is a &quot;terminology&quot; in the GFBio context?
+        <i class="ico material-icons right">expand_more</i>
+      </div>
       <div class="collapsible-body">
 		<p>
 		The term <span class="bold">&quot;terminology&quot;</span> encompasses several meanings ranging from simple lists of terms to semantically rich ontologies. Unfortunately, there are currently no commonly accepted definitions of the different terminology types (in the biological domain) which leaves room for variation causing them to be used interchangeably depending on the context.<br />
@@ -51,7 +54,10 @@ endwhile;
     </li>
 
     <li>
-      <div class="collapsible-header">Which terminologies are included in the Terminology Server?</div>
+      <div class="collapsible-header">
+          Which terminologies are included in the Terminology Server?
+          <i class="ico material-icons right">expand_more</i>
+      </div>
       <div class="collapsible-body">
         <p>
 			Among the terminologies currently included in the terminology server are:
@@ -71,7 +77,10 @@ endwhile;
     </li>
 
     <li>
-      <div class="collapsible-header">Which external terminologies are connected to the TS?</div>
+      <div class="collapsible-header">
+          Which external terminologies are connected to the TS?
+          <i class="ico material-icons right">expand_more</i>
+      </div>
       <div class="collapsible-body">
          <p>
 			The external terminologies currently connected to the TS are:
@@ -89,7 +98,10 @@ endwhile;
     </li>
 
     <li>
-      <div class="collapsible-header"><i class="material-icons"></i>How to cite us?</div>
+      <div class="collapsible-header">
+          How to cite us?
+          <i class="ico material-icons right">expand_more</i>
+      </div>
       <div class="collapsible-body">
          <p>Our suggested citation is as following:<br/>
          <code>
@@ -116,12 +128,10 @@ $(function(){
     $('#faqlist').collapsible({
         accordion: false,
         onOpen: function(el) {
-        	alert('Open');
-            console.log(el);
+          $(el).find('.ico').text('expand_less');
         },
         onClose: function(el) {
-            alert('Closed');
-            console.log(el);
+          $(el).find('.ico').text('expand_more');
         }
     });
 });

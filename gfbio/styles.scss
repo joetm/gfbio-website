@@ -5,13 +5,16 @@ Author: J. Oppenlaender
 Version: 0.1
 */
 
-/*
-Definitions
-*/
+/* ============= */
+/*  Definitions  */
+/* ============= */
+
 $primary-text-color: #000;
 $primary-text-color-hover: #f48fb1;
 
 $footer-primary-color: #e74b12;
+
+$base-nav-height: 64px;
 
 
 /* ------------ */
@@ -75,29 +78,22 @@ div.navbtn {
 /* navigation */
 /* ---------- */
 
-div.nav-wrapper .brand-logo img {
-	width:auto;
-	height:64px;
-	/*
-	height:84px;
-	*/
-	padding:8px 0;
-}
 div.nav-wrapper {
+	.brand-logo img {
+		width:auto;
+		height:$base-nav-height;
+		padding:8px 0;
+	}
+	ul#nav_dropdown {
+		margin-top:$base-nav-height;
+	}
 	#nav-mobile a, #nav-mobile a:visited {
 		color: $primary-text-color;
 	}
-}
-div.nav-wrapper {
 	#nav-mobile a:hover {
 		color: $primary-text-color-hover;
 	}
 }
-/*
-.navbar-fixed, .navbar-fixed .nav-extended {
-	height:84px;
-}
-*/
 
 
 /* ------ */
@@ -190,7 +186,7 @@ footer.page-footer {
 	.card {
 		cursor:pointer;
 		.card-title.widget-title {
-			padding-top:1em;
+			padding:20px 0 10px 0;
 		}
 		.card-action.white {
 			width:100%;
@@ -198,3 +194,12 @@ footer.page-footer {
 	}
 }
 
+/* ------------ */
+/* widgets page */
+/* ------------ */
+
+#faq {
+	.ico {
+		margin-right:0;
+	}
+}

@@ -20,9 +20,9 @@ http://terminologies.gfbio.org
 Author: J. Oppenlaender
 Version: 0.1
 */
-/*
-Definitions
-*/
+/* ============= */
+/*  Definitions  */
+/* ============= */
 /* ------------ */
 /* work-arounds */
 /* ------------ */
@@ -76,10 +76,10 @@ div.navbtn {
 div.nav-wrapper .brand-logo img {
   width: auto;
   height: 64px;
-  /*
-	height:84px;
-	*/
   padding: 8px 0; }
+
+div.nav-wrapper ul#nav_dropdown {
+  margin-top: 64px; }
 
 div.nav-wrapper #nav-mobile a, div.nav-wrapper #nav-mobile a:visited {
   color: #000; }
@@ -87,11 +87,6 @@ div.nav-wrapper #nav-mobile a, div.nav-wrapper #nav-mobile a:visited {
 div.nav-wrapper #nav-mobile a:hover {
   color: #f48fb1; }
 
-/*
-.navbar-fixed, .navbar-fixed .nav-extended {
-	height:84px;
-}
-*/
 /* ------ */
 /* footer */
 /* ------ */
@@ -156,9 +151,15 @@ footer.page-footer {
 #widgets .card {
   cursor: pointer; }
   #widgets .card .card-title.widget-title {
-    padding-top: 1em; }
+    padding: 20px 0 10px 0; }
   #widgets .card .card-action.white {
     width: 100%; }
+
+/* ------------ */
+/* widgets page */
+/* ------------ */
+#faq .ico {
+  margin-right: 0; }
 @charset "UTF-8";
 @media print {
   html, body {
