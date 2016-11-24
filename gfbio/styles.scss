@@ -95,6 +95,18 @@ div.nav-wrapper {
 	}
 }
 
+#mobile-navigation {
+	.indicator {
+		background-color:black;
+	}
+	ul.tabs {
+		display: block; text-align:center;
+	}
+	ul.tabs li {
+		display: inline-block;
+	}
+}
+
 
 /* ------ */
 /* footer */
@@ -169,13 +181,18 @@ footer.page-footer {
 /* faq page */
 /* -------- */
 
-#faq .faq-subheadline {
-	font-weight:bold;
-	display:block;
-	clear:both;
-}
-#faq ul.faq-list {
-	padding-bottom:0;
+#faq {
+	.faq-subheadline {
+		font-weight:bold;
+		display:block;
+		clear:both;
+	}
+	ul.faq-list {
+		padding-bottom:0;
+	}
+	.ico {
+		margin-right:0;
+	}
 }
 
 /* ------------ */
@@ -194,12 +211,3 @@ footer.page-footer {
 	}
 }
 
-/* ------------ */
-/* widgets page */
-/* ------------ */
-
-#faq {
-	.ico {
-		margin-right:0;
-	}
-}

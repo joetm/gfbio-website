@@ -87,6 +87,16 @@ div.nav-wrapper #nav-mobile a, div.nav-wrapper #nav-mobile a:visited {
 div.nav-wrapper #nav-mobile a:hover {
   color: #f48fb1; }
 
+#mobile-navigation .indicator {
+  background-color: black; }
+
+#mobile-navigation ul.tabs {
+  display: block;
+  text-align: center; }
+
+#mobile-navigation ul.tabs li {
+  display: inline-block; }
+
 /* ------ */
 /* footer */
 /* ------ */
@@ -145,6 +155,9 @@ footer.page-footer {
 #faq ul.faq-list {
   padding-bottom: 0; }
 
+#faq .ico {
+  margin-right: 0; }
+
 /* ------------ */
 /* widgets page */
 /* ------------ */
@@ -154,12 +167,6 @@ footer.page-footer {
     padding: 20px 0 10px 0; }
   #widgets .card .card-action.white {
     width: 100%; }
-
-/* ------------ */
-/* widgets page */
-/* ------------ */
-#faq .ico {
-  margin-right: 0; }
 @charset "UTF-8";
 @media print {
   html, body {

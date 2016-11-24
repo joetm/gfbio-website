@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying pages
+ * The template for displaying the swagger api
  */
 
 // Add CSS
@@ -21,17 +21,17 @@ get_header();
 <section id="introduction">
     <div class="container">
         <div class="row">
-           <h1 class="center-align flow-text">API</h1>
-           <?php
-           while (have_posts() ) : the_post();
-           if($content = get_the_content()) {
-             echo $content;
-             unset($content);
-         }
-         endwhile;
-         ?>
-     </div><!--row-->
- </div><!--container-->
+             <h1 class="center-align flow-text">API</h1>
+             <?php
+             while (have_posts() ) : the_post();
+             if($content = get_the_content()) {
+                 echo $content;
+                 unset($content);
+             }
+            endwhile;
+            ?>
+        </div><!--row-->
+    </div><!--container-->
 </section><!--introduction-->
 
 
@@ -39,24 +39,28 @@ get_header();
     <div class="container">
         <div class="row">
 
-           <div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
-           <div id="swagger-ui-container" class="swagger-ui-wrap">
-              <!-- Loading START -->
-              <div class="center-align">
-                  <div class="preloader-wrapper active" title="Loading...">
-                    <div class="spinner-layer spinner-red-only">
-                      <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div><div class="gap-patch">
-                    <div class="circle"></div>
-                </div><div class="circle-clipper right">
-                <div class="circle"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Loading END -->
-</div>
+            <div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
+            <div id="swagger-ui-container" class="swagger-ui-wrap">
+
+                <!-- Loading START -->
+                <div class="center-align">
+                    <div class="preloader-wrapper active" title="Loading...">
+                        <div class="spinner-layer spinner-red-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Loading END -->
+
+            </div><!--swagger-ui-container-->
 
 </div><!--row-->
 </div><!--container-->
@@ -68,9 +72,6 @@ get_header();
 
 
 
-<!--
-<script src='/dist/swagger/lib/jquery-1.8.0.min.js' type='text/javascript'></script>
--->
 <script src='/dist/swagger/lib/object-assign-pollyfill.js' type='text/javascript'></script>
 <script src='/dist/swagger/lib/handlebars-4.0.5.js' type='text/javascript'></script>
 <script src='/dist/swagger/lib/lodash.min.js' type='text/javascript'></script>
@@ -81,7 +82,6 @@ get_header();
 <script src='/dist/swagger/lib/jsoneditor.min.js' type='text/javascript'></script>
 <script src='/dist/swagger/lib/marked.js' type='text/javascript'></script>
 <script src='/dist/swagger/lib/swagger-oauth.js' type='text/javascript'></script>
-<script type='text/javascript' src='/dist/swagger/lib/materialize.min.js'></script>
 <script type='text/javascript'>
 	jQuery.browser = {};
 	(function () {
@@ -96,9 +96,10 @@ get_header();
 <script src='/dist/swagger/lib/jquery.slideto.min.js' type='text/javascript'></script>
 <script src='/dist/swagger/lib/jquery.wiggle.min.js' type='text/javascript'></script>
 <script src='/dist/swagger/lib/jquery.ba-bbq.min.js' type='text/javascript'></script>
-<script type='text/javascript' src='/dist/swagger/lib/swagger-ui-settings-and-loading.js'></script>
-<script type='text/javascript' src='/dist/swagger/lang/en.js'</script>
-
+<script src='/dist/swagger/lib/swagger-ui-settings-and-loading.js' type='text/javascript'></script>
+<!--
+<script src='/dist/swagger/lang/en.js' type='text/javascript'></script>
+-->
 
 </body>
 </html>

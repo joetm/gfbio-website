@@ -29,3 +29,22 @@ describe('Homepage', function() {
     });
 
 });
+
+/*---------*/
+/*  /faq/  */
+/*---------*/
+describe('FAQ', function() {
+
+    var faqpage = DEVSERVER + 'faq/';
+
+    it('should expand a section when clicked', function() {
+        browser.get(faqpage);
+        // the selectors will work on the first element pair
+        element(by.css('li.collapsible-header')).click();
+        browser.sleep(200);
+        expect(
+            element(by.css('li.collapsible-body')).isDisplayed()
+        ).toBeTruthy();
+    });
+
+});
