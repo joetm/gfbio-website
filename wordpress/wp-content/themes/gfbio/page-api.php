@@ -5,12 +5,21 @@
 
 // Add CSS
 function hook_api_css() {
-	echo '
- <link href="/dist/swagger/css/typography.css" media="screen" rel="stylesheet" type="text/css" />
- <link href="/dist/swagger/css/print.css" media="print" rel="stylesheet" type="text/css" />
- <!-- THEME -->
- <link rel="stylesheet" href="/dist/swagger/css/theme-material.css" />
- ';
+    echo '
+        <link href="/dist/swagger/css/typography.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="/dist/swagger/css/print.css" media="print" rel="stylesheet" type="text/css" />
+        <!-- THEME -->
+        <link rel="stylesheet" href="/dist/swagger/css/theme-material.css" />
+        <style type="text/css">
+        /* fix some of the styles */
+        .swagger-section .swagger-ui-wrap {
+            max-width:none;
+        }
+        #swagger-ui-container .footer h4 {
+            font-size:1em;
+        }
+        </style>
+    ';
 }
 add_action('wp_head','hook_api_css', 0);
 
@@ -21,13 +30,14 @@ get_header();
 <section id="introduction">
     <div class="container">
         <div class="row">
-             <h1 class="center-align flow-text">API</h1>
-             <?php
-             while (have_posts() ) : the_post();
-             if($content = get_the_content()) {
-                 echo $content;
-                 unset($content);
-             }
+            <h1 class="center-align flow-text">API</h1>
+            <?php edit_post_link(__('Edit page', 'gfbio'), '<div class="right-align">', "</div>", null, "") ?>
+            <?php
+            while (have_posts() ) : the_post();
+                if($content = get_the_content()) {
+                    echo $content;
+                    unset($content);
+                }
             endwhile;
             ?>
         </div><!--row-->
@@ -62,8 +72,8 @@ get_header();
 
             </div><!--swagger-ui-container-->
 
-</div><!--row-->
-</div><!--container-->
+        </div><!--row-->
+    </div><!--container-->
 </section><!--swagger-section-->
 
 
