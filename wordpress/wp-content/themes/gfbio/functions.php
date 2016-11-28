@@ -242,14 +242,7 @@ add_action('wp_default_scripts', 'dequeue_jquery_migrate');
 
 /** DEFAULT functions.php of TwentySixteen **/
 
-/**
- * Twenty Sixteen only works in WordPress 4.4 or later.
- */
-if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
-	require get_template_directory() . '/inc/back-compat.php';
-}
-
-if ( ! function_exists( 'twentysixteen_setup' ) ) :
+if ( ! function_exists( 'theme_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -257,18 +250,15 @@ if ( ! function_exists( 'twentysixteen_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  *
- * Create your own twentysixteen_setup() function to override in a child theme.
+ * Create your own theme_setup() function to override in a child theme.
  *
  * @since Twenty Sixteen 1.0
  */
-function twentysixteen_setup() {
+function theme_setup() {
 	/*
 	 * Make theme available for translation.
-	 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/twentysixteen
-	 * If you're building a theme based on Twenty Sixteen, use a find and replace
-	 * to change 'twentysixteen' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'twentysixteen' );
+	load_theme_textdomain( 'gfbio' );
 
 	// Add default posts and comments RSS feed links to head.
 	// add_theme_support( 'automatic-feed-links' );
@@ -282,17 +272,6 @@ function twentysixteen_setup() {
 	add_theme_support( 'title-tag' );
 
 	/*
-	 * Enable support for custom logo.
-	 *
-	 *  @since Twenty Sixteen 1.2
-	 */
-	add_theme_support( 'custom-logo', array(
-		'height'      => 240,
-		'width'       => 240,
-		'flex-height' => true,
-	) );
-
-	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
@@ -301,10 +280,10 @@ function twentysixteen_setup() {
 	set_post_thumbnail_size( 1200, 9999 );
 
 	// This theme uses wp_nav_menu() in two locations.
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'twentysixteen' ),
-		'social'  => __( 'Social Links Menu', 'twentysixteen' ),
-	) );
+	// register_nav_menus( array(
+	// 	'primary' => __( 'Primary Menu', 'twentysixteen' ),
+	// 	'social'  => __( 'Social Links Menu', 'twentysixteen' ),
+	// ) );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -335,31 +314,11 @@ function twentysixteen_setup() {
 		'chat',
 	) );
 
-	/*
-	 * This theme styles the visual editor to resemble the theme style,
-	 * specifically font, colors, icons, and column width.
-	 */
-	add_editor_style( array( 'css/editor-style.css', twentysixteen_fonts_url() ) );
-
 	// Indicate widget sidebars can use selective refresh in the Customizer.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 }
-endif; // twentysixteen_setup
-add_action( 'after_setup_theme', 'twentysixteen_setup' );
-
-/**
- * Sets the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- *
- * @since Twenty Sixteen 1.0
- */
-function twentysixteen_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'twentysixteen_content_width', 840 );
-}
-add_action( 'after_setup_theme', 'twentysixteen_content_width', 0 );
+endif; // theme_setup
+add_action( 'after_setup_theme', 'theme_setup' );
 
 /**
  * Registers a widget area.
@@ -401,17 +360,17 @@ function twentysixteen_widgets_init() {
 }
 add_action( 'widgets_init', 'twentysixteen_widgets_init' );
 
-if ( ! function_exists( 'twentysixteen_fonts_url' ) ) :
+if ( ! function_exists( 'gfbio_fonts_url' ) ) :
 /**
  * Register Google fonts for Twenty Sixteen.
  *
- * Create your own twentysixteen_fonts_url() function to override in a child theme.
+ * Create your own gfbio_fonts_url() function to override in a child theme.
  *
  * @since Twenty Sixteen 1.0
  *
  * @return string Google fonts URL for the theme.
  */
-function twentysixteen_fonts_url() {
+function gfbio_fonts_url() {
 	$fonts_url = '';
 	$fonts     = array();
 	$subsets   = 'latin,latin-ext';
@@ -449,10 +408,10 @@ endif;
  *
  * @since Twenty Sixteen 1.0
  */
-function twentysixteen_javascript_detection() {
+function javascript_detection() {
 	echo "<script type=\"text/javascript\">(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
-add_action('wp_head', 'twentysixteen_javascript_detection', 0);
+add_action('wp_head', 'javascript_detection', 0);
 
 /**
  * Disable Genericons style enqueue
@@ -468,15 +427,9 @@ add_action('wp_head', 'twentysixteen_javascript_detection', 0);
  *
  * @since Twenty Sixteen 1.0
  */
-function twentysixteen_scripts() {
+function gfbio_scripts() {
 	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'twentysixteen-fonts', twentysixteen_fonts_url(), array(), null);
-
-	// Add Genericons, used in the main stylesheet.
-	// wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1');
-
-	// Theme stylesheet.
-	// wp_enqueue_style( 'twentysixteen-style', get_stylesheet_uri());
+	wp_enqueue_style( 'gfbio-fonts', gfbio_fonts_url(), array(), null);
 
 	// Load the Internet Explorer specific stylesheet.
 		// wp_enqueue_style( 'twentysixteen-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentysixteen-style' ), '20160816');
@@ -511,7 +464,7 @@ function twentysixteen_scripts() {
 	// 	'collapse' => __( 'collapse child menu', 'twentysixteen' ),
 	// ) );
 }
-add_action('wp_enqueue_scripts', 'twentysixteen_scripts');
+add_action('wp_enqueue_scripts', 'gfbio_scripts');
 
 /**
  * Adds custom classes to the array of body classes.
@@ -574,16 +527,6 @@ add_action('wp_enqueue_scripts', 'twentysixteen_scripts');
 // }
 
 /**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
  * Add custom image sizes attribute to enhance responsive image functionality
  * for content images
  *
@@ -594,7 +537,7 @@ require get_template_directory() . '/inc/customizer.php';
  *                      values in pixels (in that order).
  * @return string A source size value for use in a content image 'sizes' attribute.
  */
-function twentysixteen_content_image_sizes_attr( $sizes, $size ) {
+function gfbio_content_image_sizes_attr( $sizes, $size ) {
 	$width = $size[0];
 
 	840 <= $width && $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 62vw, 840px';
@@ -608,7 +551,7 @@ function twentysixteen_content_image_sizes_attr( $sizes, $size ) {
 
 	return $sizes;
 }
-add_filter('wp_calculate_image_sizes', 'twentysixteen_content_image_sizes_attr', 10 , 2);
+add_filter('wp_calculate_image_sizes', 'gfbio_content_image_sizes_attr', 10 , 2);
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
@@ -621,14 +564,14 @@ add_filter('wp_calculate_image_sizes', 'twentysixteen_content_image_sizes_attr',
  * @param array $size Registered image size or flat array of height and width dimensions.
  * @return string A source size value for use in a post thumbnail 'sizes' attribute.
  */
-function twentysixteen_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
+function gfbio_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 	if ( 'post-thumbnail' === $size ) {
 		is_active_sidebar( 'sidebar-1' ) && $attr['sizes'] = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 60vw, (max-width: 1362px) 62vw, 840px';
 		! is_active_sidebar( 'sidebar-1' ) && $attr['sizes'] = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 88vw, 1200px';
 	}
 	return $attr;
 }
-add_filter( 'wp_get_attachment_image_attributes', 'twentysixteen_post_thumbnail_sizes_attr', 10 , 3 );
+add_filter( 'wp_get_attachment_image_attributes', 'gfbio_post_thumbnail_sizes_attr', 10 , 3 );
 
 /**
  * Modifies tag cloud widget arguments to have all tags in the widget same font size.
