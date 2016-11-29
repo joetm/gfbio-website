@@ -5,14 +5,25 @@ Author: J. Oppenlaender
 Version: 0.1
 */
 
+
 /* ============= */
 /*  Definitions  */
 /* ============= */
 
-$primary-text-color: #000;
-$primary-text-color-hover: #f48fb1;
+$text-color: #00131A;
 
-$footer-primary-color: #e74b12;
+$black-text: $text-color;
+$white-text: #FFFFFF;
+$grey-text:  #EEEEEE;
+
+$link-color: #E94D18;
+$link-color-hover: #878786;
+$link-color-active: #878786;
+
+$footer-primary-color: #E94D18;
+$footer-secondary-color: #878786;
+
+$section-background: #ECECEA;
 
 $base-nav-height: 64px;
 
@@ -56,6 +67,10 @@ section {
 	margin-bottom:0;
 }
 
+.alt {
+	background-color:$section-background;
+}
+
 .bold {
 	font-weight:bold;
 }
@@ -73,6 +88,12 @@ div.navbtn {
 	bottom:20px;
 }
 
+a, a:visited {
+    color: $link-color;
+}
+a:hover {
+    color: $link-color-hover;
+}
 
 /* ---------- */
 /* navigation */
@@ -88,25 +109,25 @@ div.nav-wrapper {
 		margin-top:$base-nav-height;
 	}
 	#nav-mobile a, #nav-mobile a:visited {
-		color: $primary-text-color;
+		color: $link-color;
 	}
-	#nav-mobile a:hover {
-		color: $primary-text-color-hover;
+	#nav-mobile a:hover, #nav-mobile a:active {
+		color: $text-color;
 	}
 }
 
 #mobile-navigation {
 	.indicator {
-		background-color:black;
+		background-color:$text-color;
 	}
 	ul.tabs {
-		display: block; text-align:center;
+		display:block;
+		text-align:center;
 	}
 	ul.tabs li {
 		display: inline-block;
 	}
 }
-
 
 /* ------ */
 /* footer */
@@ -115,12 +136,23 @@ div.nav-wrapper {
 footer.page-footer {
 	margin-top:0;
 	background-color:$footer-primary-color;
+	color: $grey-text;
 
 	div.footer-copyright a {
 		margin-left: 2em;
 	}
-}
 
+	h1,h2,h3,h4,h5 {
+		color: $white-text;
+	}
+
+	a, a:visited {
+		color: $grey-text;
+	}
+	a:hover {
+		color: $white-text;
+	}
+}
 
 /* --------- */
 /* home page */

@@ -13,29 +13,31 @@
     <div class="container">
         <div class="row">
             <div class="col s12 l4">
-                <h5 class="white-text">About</h5>
-                <p class="grey-text text-lighten-4">The Terminology Service is a ... consortium of partners... gfbio.... lorem ipsum....</p>
+                <h5><?php _e('About', 'gfbio') ?></h5>
+                <p>
+                    The Terminology Service is a ... consortium of partners... gfbio.... lorem ipsum....
+                </p>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="/faq/">FAQ</a></li>
+                    <li><a href="/faq/"><?php _e('FAQ', 'gfbio') ?></a></li>
                 </ul>
             </div>
             <div class="col s12 offset-l1 l4">
-                <h5 class="white-text"><?php _e('Explore', 'gfbio') ?> <span title="<?php _e('Terminology Service', 'gfbio') ?>">TS</span></h5>
+                <h5><?php _e('Explore', 'gfbio') ?> <span title="<?php _e('Terminology Service', 'gfbio') ?>">TS</span></h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="/browse/"><?php _e('Browse the terminologies', 'gfbio') ?></a></li>
-                    <li><a class="grey-text text-lighten-3" href="/search/"><?php _e('Search the terminologies', 'gfbio') ?></a></li>
-                    <li><a class="grey-text text-lighten-3" href="/contribute/"><?php _e('Contribute', 'gfbio') ?></a></li>
-                    <li><a class="grey-text text-lighten-3" href="/developer/"><?php _e('Developer Section', 'gfbio') ?></a></li>
-                    <li><a class="grey-text text-lighten-3" href="/api/">- <?php _e('API', 'gfbio') ?></a></li>
-                    <li><a class="grey-text text-lighten-3" href="/widgets/">- <?php _e('Widgets', 'gfbio') ?></a></li>
+                    <li><a href="/browse/"><?php _e('Browse the terminologies', 'gfbio') ?></a></li>
+                    <li><a href="/search/"><?php _e('Search the terminologies', 'gfbio') ?></a></li>
+                    <li><a href="/contribute/"><?php _e('Contribute', 'gfbio') ?></a></li>
+                    <li><a href="/developer/"><?php _e('Developer Section', 'gfbio') ?></a></li>
+                    <li><a href="/api/">- <?php _e('API', 'gfbio') ?></a></li>
+                    <li><a href="/widgets/">- <?php _e('Widgets', 'gfbio') ?></a></li>
                 </ul>
             </div>
             <div class="col s12 l3">
-                <h5 class="white-text">GfBio Consortium</h5>
+                <h5><?php _e('GfBio Consortium', 'gfbio') ?></h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="/partners/"><?php _e('Partners', 'gfbio') ?></a></li>
-                    <li><a class="grey-text text-lighten-3" href="/contact/"><?php _e('Contact', 'gfbio') ?></a></li>
-                    <li><a class="grey-text text-lighten-3" href="/imprint/"><?php _e('Imprint', 'gfbio') ?></a></li>
+                    <li><a href="/partners/"><?php _e('Partners', 'gfbio') ?></a></li>
+                    <li><a href="/contact/"><?php _e('Contact', 'gfbio') ?></a></li>
+                    <li><a href="/imprint/"><?php _e('Imprint', 'gfbio') ?></a></li>
                 </ul>
             </div>
         </div>

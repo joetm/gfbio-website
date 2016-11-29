@@ -34,7 +34,7 @@ get_header(); ?>
 </section>
 
 
-<section id="api_widgets" class="grey lighten-3">
+<section id="api_widgets" class="alt">
 <div class="container">
 <div class="row">
 
@@ -65,7 +65,7 @@ get_header(); ?>
 </div>
 
         <div class="col s12 m6">
-          <div class="card hoverable white darken-1 z-depth-4">
+          <div class="card hoverable white z-depth-4">
             <div class="card-content black-text">
               <span class="card-title flow-text"><?php _e('API', 'gfbio') ?></span>
                 <p>
@@ -81,7 +81,7 @@ get_header(); ?>
           </div>
         </div>
         <div class="col s12 m6">
-          <div class="card hoverable white darken-1 z-depth-4">
+          <div class="card hoverable white z-depth-4">
             <div class="card-content black-text">
               <span class="card-title flow-text"><?php _e('Widgets', 'gfbio') ?></span>
                 <p>

@@ -25,7 +25,7 @@ endwhile;
     </section>
     -->
 
-    <section id="introduction" class="grey lighten-3">
+    <section id="introduction" class="alt">
 		<div class="container">
 		<div class="row">
 	        <p>
@@ -77,7 +77,7 @@ endwhile;
     	    </p>
 
             <div class="col s12 m6 l3">
-              <div class="card hoverable grey lighten-3 z-depth-3" data-href="explore">
+              <div class="card hoverable alt z-depth-3" data-href="explore">
                 <div class="center-align white">
 
                   <div class="card-icon">
@@ -86,7 +86,7 @@ endwhile;
                   <span class="card-title"><?php _e('Explore') ?></span>
 
                 </div>
-                <div class="card-content grey lighten-3">
+                <div class="card-content">
                   <p>Browse and search for terminologies that can be interesting for your research</p>
                 </div>
                 <!--
@@ -98,7 +98,7 @@ endwhile;
             </div>
 
             <div class="col s12 m6 l3">
-              <div class="card hoverable grey lighten-3 z-depth-3" data-href="access">
+              <div class="card hoverable alt z-depth-3" data-href="access">
                 <div class="center-align white">
 
                   <div class="card-icon">
@@ -107,7 +107,7 @@ endwhile;
                   <span class="card-title"><?php _e('Access') ?></span>
 
                 </div>
-                <div class="card-content grey lighten-3">
+                <div class="card-content">
                   <p>Use information from terminologies programmatically to provide semantically enriched applications</p>
                 </div>
                 <!--
@@ -118,7 +118,7 @@ endwhile;
               </div>
             </div>
             <div class="col s12 m6 l3">
-              <div class="card hoverable grey lighten-3 z-depth-3" data-href="consume">
+              <div class="card hoverable alt z-depth-3" data-href="consume">
                 <div class="center-align white">
 
                   <div class="card-icon">
@@ -127,7 +127,7 @@ endwhile;
                   <span class="card-title"><?php _e('Consume') ?></span>
 
                 </div>
-                <div class="card-content grey lighten-3">
+                <div class="card-content">
                   <p>Retrieve and store Information from terminologies in your local information system</p>
                 </div>
                 <!--
@@ -138,7 +138,7 @@ endwhile;
               </div>
             </div>
             <div class="col s12 m6 l3">
-              <div class="card hoverable grey lighten-3 z-depth-3" data-href="contribute">
+              <div class="card hoverable alt z-depth-3" data-href="contribute">
                 <div class="center-align white">
 
                   <div class="card-icon">
@@ -216,7 +216,7 @@ endwhile;
 	</section><!--scenarios-->
 
 
-    <section id="explore" class="grey lighten-3">
+    <section id="explore" class="alt">
         <div class="container">
         <div class="row">
             <h2 class="center-align"><?php _e('Explore', 'gfbio') ?></h2>
@@ -224,7 +224,7 @@ endwhile;
             The GFBio TS provides access to all terminologies useful in the GFBio context. The task of terminology mobilization is carried out in close connection with our project partners. There are two different possibilities to explore the terminologies that could be interesting for your research:
             </p>
             <div class="col s12 m6">
-              <div class="card hoverable grey lighten-5 z-depth-3" data-href="/browse/">
+              <div class="card hoverable z-depth-3" data-href="/browse/">
                 <div class="card-content">
                 <p class="flow-text center-align"><?php _e('Browse', 'gfbio') ?></p>
                   <p>Browsing a terminology hierarchy enables you to understand its structure and content in order to determine if the terminology is useful for your research. A list of all connected terminologies can be found under <a href="/browse/">Browse</a>.</p>
@@ -232,7 +232,7 @@ endwhile;
               </div>
             </div>
             <div class="col s12 m6">
-              <div class="card hoverable grey lighten-5 z-depth-3" data-href="/search/">
+              <div class="card hoverable z-depth-3" data-href="/search/">
                 <div class="card-content">
                   <p class="flow-text center-align"><?php _e('Search', 'gfbio') ?></p>
                   <p>Under <a href="/search/">Search</a> you can query all connected terminologies for terms to determine their usefulness for your work, e.g. for annotating or connecting controlled vocabulary.</p>
@@ -321,7 +321,7 @@ endwhile;
         </div><!--container-->
     </section><!--access-->
 
-    <section id="consume" class="grey lighten-3">
+    <section id="consume" class="alt">
         <div class="container">
         <div class="row">
             <h2 class="center-align"><?php _e('Consume', 'gfbio') ?></h2>
@@ -364,7 +364,7 @@ endwhile;
     </section><!--contribute-->
 
 
-    <section id="consortium" class="grey lighten-3">
+    <section id="consortium" class="alt">
         <div class="container">
         <div class="row">
         <div class="col s12">

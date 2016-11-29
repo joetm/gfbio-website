@@ -35,7 +35,7 @@ while ( have_posts() ) : the_post();
 
 
     <div class="col s6 m3">
-      <div class="card hoverable grey lighten-3 z-depth-3" data-link="/widgets/search">
+      <div class="card hoverable alt z-depth-3" data-link="/widgets/search">
         <div class="card-title widget-title white center-align">
           <?php _e('Search Bar', 'gfbio') ?>
         </div>
@@ -49,7 +49,7 @@ while ( have_posts() ) : the_post();
     </div>
 
     <div class="col s6 m3">
-      <div class="card hoverable grey lighten-3 z-depth-3" data-link="/widgets/visualization">
+      <div class="card hoverable alt z-depth-3" data-link="/widgets/visualization">
         <div class="card-title widget-title white center-align">
           <?php _e('Visualization', 'gfbio') ?>
         </div>
@@ -63,7 +63,7 @@ while ( have_posts() ) : the_post();
     </div>
 
     <div class="col s6 m3">
-      <div class="card hoverable grey lighten-3 z-depth-3" data-link="/widgets/browse">
+      <div class="card hoverable alt z-depth-3" data-link="/widgets/browse">
         <div class="card-title widget-title white center-align">
           <?php _e('Browse', 'gfbio') ?>
         </div>
@@ -77,7 +77,7 @@ while ( have_posts() ) : the_post();
     </div>
 
     <div class="col s6 m3">
-      <div class="card hoverable grey lighten-3 z-depth-3" data-link="/widgets/suggest">
+      <div class="card hoverable alt z-depth-3" data-link="/widgets/suggest">
         <div class="card-title widget-title white center-align">
           <?php _e('Suggest', 'gfbio') ?>
         </div>

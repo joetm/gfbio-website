@@ -56,6 +56,9 @@ section {
   padding: 1.78rem 0;
   margin-bottom: 0; }
 
+.alt {
+  background-color: #ECECEA; }
+
 .bold {
   font-weight: bold; }
 
@@ -70,6 +73,12 @@ div.navbtn {
   right: 20px;
   bottom: 20px; }
 
+a, a:visited {
+  color: #E94D18; }
+
+a:hover {
+  color: #878786; }
+
 /* ---------- */
 /* navigation */
 /* ---------- */
@@ -82,13 +91,13 @@ div.nav-wrapper ul#nav_dropdown {
   margin-top: 64px; }
 
 div.nav-wrapper #nav-mobile a, div.nav-wrapper #nav-mobile a:visited {
-  color: #000; }
+  color: #E94D18; }
 
-div.nav-wrapper #nav-mobile a:hover {
-  color: #f48fb1; }
+div.nav-wrapper #nav-mobile a:hover, div.nav-wrapper #nav-mobile a:active {
+  color: #00131A; }
 
 #mobile-navigation .indicator {
-  background-color: black; }
+  background-color: #00131A; }
 
 #mobile-navigation ul.tabs {
   display: block;
@@ -102,9 +111,16 @@ div.nav-wrapper #nav-mobile a:hover {
 /* ------ */
 footer.page-footer {
   margin-top: 0;
-  background-color: #e74b12; }
+  background-color: #E94D18;
+  color: #EEEEEE; }
   footer.page-footer div.footer-copyright a {
     margin-left: 2em; }
+  footer.page-footer h1, footer.page-footer h2, footer.page-footer h3, footer.page-footer h4, footer.page-footer h5 {
+    color: #FFFFFF; }
+  footer.page-footer a, footer.page-footer a:visited {
+    color: #EEEEEE; }
+  footer.page-footer a:hover {
+    color: #FFFFFF; }
 
 /* --------- */
 /* home page */
