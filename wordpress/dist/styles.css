@@ -111,7 +111,6 @@ div.nav-wrapper #nav-mobile a:hover, div.nav-wrapper #nav-mobile a:active {
 /* ------ */
 footer.page-footer {
   margin-top: 0;
-  background-color: #E94D18;
   color: #EEEEEE; }
   footer.page-footer div.footer-copyright a {
     margin-left: 2em; }
@@ -121,6 +120,18 @@ footer.page-footer {
     color: #EEEEEE; }
   footer.page-footer a:hover {
     color: #FFFFFF; }
+
+footer.page-footer.full.top-part {
+  background-color: #E94D18; }
+
+footer.page-footer.full .bottom-part {
+  background-color: #878786; }
+
+footer.page-footer.small.top-part {
+  background-color: #878786; }
+
+footer.page-footer.small .bottom-part {
+  background-color: #E94D18; }
 
 /* --------- */
 /* home page */

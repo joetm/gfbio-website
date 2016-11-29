@@ -4,12 +4,13 @@
  */
 ?>
 
-<footer class="page-footer">
 
 <?php
     /* a large footer for the homepage */
     if (is_home() || is_front_page()) :
 ?>
+
+<footer class="page-footer full top-part">
     <div class="container">
         <div class="row">
             <div class="col s12 l4">
@@ -42,26 +43,31 @@
             </div>
         </div>
     </div>
-    <div class="footer-copyright">
+    <div class="footer-copyright bottom-part">
         <div class="container">
             &copy; 2014-<?php echo date('Y') ?> GFBio - All Rights Reserved.
         </div>
     </div>
+</footer>
+
 <?php
     /* a smaller footer for all other pages */
     else:
 ?>
-    <div class="footer-copyright">
+
+<footer class="page-footer small top-part">
+    <div class="footer-copyright bottom-part">
         <div class="container">
             &copy; 2014-<?php echo date('Y') ?> GFBio - <?php _e('All Rights Reserved', 'gfbio') ?>.
-            <a class="grey-text text-lighten-3 right" href="/imprint/"><?php _e('Imprint', 'gfbio') ?></a>
-            <a class="grey-text text-lighten-4 right" href="/about/#contact"><?php _e('Contact', 'gfbio') ?></a>
+            <a class="right" href="/imprint/"><?php _e('Imprint', 'gfbio') ?></a>
+            <a class="right" href="/about/#contact"><?php _e('Contact', 'gfbio') ?></a>
         </div>
     </div>
+</footer>
+
 <?php
 endif;
 ?>
 
-</footer>
 
 <?php wp_footer() ?>

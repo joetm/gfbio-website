@@ -3,7 +3,7 @@
       if (url && url.length > 1) {
         url = decodeURIComponent(url[1]);
       } else {
-        url = "http://vccw.dev/dist/swagger/swagger.json";
+        url = "/dist/swagger/swagger.json";
       }
 
       hljs.configure({

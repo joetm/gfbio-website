@@ -135,7 +135,6 @@ div.nav-wrapper {
 
 footer.page-footer {
 	margin-top:0;
-	background-color:$footer-primary-color;
 	color: $grey-text;
 
 	div.footer-copyright a {
@@ -152,6 +151,20 @@ footer.page-footer {
 	a:hover {
 		color: $white-text;
 	}
+}
+
+footer.page-footer.full.top-part {
+	background-color:$footer-primary-color;
+}
+footer.page-footer.full .bottom-part {
+	background-color:$footer-secondary-color;
+}
+
+footer.page-footer.small.top-part {
+	background-color:$footer-secondary-color;
+}
+footer.page-footer.small .bottom-part {
+	background-color:$footer-primary-color;
 }
 
 /* --------- */
