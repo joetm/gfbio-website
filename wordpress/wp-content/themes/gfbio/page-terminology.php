@@ -39,13 +39,8 @@ $loader_html = '
 
 
 
-<div class="">
-    <?php _e('Terminologies', 'gfbio') ?> &gt; <span class="terminology-title"></span>
-</div>
-
-
-
 <h1 class="terminology-title flow-text center-align"><?php _e('Loading', 'gfbio') ?>...</h1>
+
 
 <div id="term-details">
     <div class="left-side col s12"> <!-- m6 -->
@@ -183,7 +178,7 @@ $(function() {
             break;
         }
         return ret;
-    };
+    };// filters
 
     var load_details = function load_details (url, klass, section) {
 
@@ -202,7 +197,7 @@ $(function() {
                     return; // abort
                 }
                 ontology = data.results[0];
-                if (ontology.name !== undefined && $('.terminology-title').first().text() === '') {
+                if (ontology.name !== undefined) {
                     $('.terminology-title').text(ontology.name);
                     delete ontology.name;
                 }
@@ -234,8 +229,7 @@ $(function() {
             }
         });// $.ajax
 
-    };
-
+    };// load_details
 
     function load_ontology(base, klass, key) {
         try {
@@ -244,7 +238,7 @@ $(function() {
             console.error(err + ' missing');
             $('.'+section).remove();
         }
-    }
+    }// load_ontology
 
     var onts = [
         {base: base + id, klass: '.general', key: 'general'},

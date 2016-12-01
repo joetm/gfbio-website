@@ -27,7 +27,7 @@ while ( have_posts() ) : the_post();
     <?php
       if ($content = get_the_content()) {
         echo '<p>';
-          echo $content;
+            echo $content;
         echo '</p>';
         unset($content);
       }
@@ -37,10 +37,12 @@ while ( have_posts() ) : the_post();
     <div class="col s6 m3">
       <div class="card hoverable alt z-depth-3" data-link="/widgets/search">
         <div class="card-title widget-title white center-align">
-          <?php _e('Search Bar', 'gfbio') ?>
+          <?php _e('Search Results', 'gfbio') ?>
         </div>
         <div class="card-content">
-          <p>Researchers can peruse ontologies that are interesting for their research.</p>
+          <p>
+            This widget allows you to search for terms included in terminologies  to determine their usefulness for your work, e.g. for annotating research data or collection objects to a controlled vocabulary (terminology). Whereas the <a href="/search/">search bar</a> is restricted to a search inside internal terminologies only, this widget lets you search in external terminologies as well.
+          </p>
         </div>
         <div class="card-action white">
           <a href="#">Use the Widget</a>
@@ -51,10 +53,12 @@ while ( have_posts() ) : the_post();
     <div class="col s6 m3">
       <div class="card hoverable alt z-depth-3" data-link="/widgets/visualization">
         <div class="card-title widget-title white center-align">
-          <?php _e('Visualization', 'gfbio') ?>
+          <?php _e('Term Visualization', 'gfbio') ?>
         </div>
         <div class="card-content">
-          <p>Information from the ontologies can be retrieved and stored to your local information system.</p>
+          <p>
+            This widget presents all available details of a single term in a user-friendly manner. Besides a structured representation of the term metadata like URI, description or synonyms, two visualizations are provided. The tree view allows to explore the term within the hierarchical structure based on the &quot;is_a&quot;-relationsships whereas the graph view shows terms with all existing relationsships.
+          </p>
         </div>
         <div class="card-action white">
           <a href="#">Use the Widget</a>
@@ -68,28 +72,15 @@ while ( have_posts() ) : the_post();
           <?php _e('Browse', 'gfbio') ?>
         </div>
         <div class="card-content">
-          <p>Scientists can store or connect their terminologies to the TS in order to access all services provided by the TS automatically.</p>
+          <p>
+            This widget allows you to see information about a selected terminology to find the one that fits your needs best. For internally hosted terminologies, we provide a tree-view of the hierarchy to browse all contained terms. Additionally, you will find metadata and metrics information such as creation date, version or number of children.
+          </p>
         </div>
         <div class="card-action white">
           <a href="#">Use the Widget</a>
         </div>
       </div>
     </div>
-
-    <div class="col s6 m3">
-      <div class="card hoverable alt z-depth-3" data-link="/widgets/suggest">
-        <div class="card-title widget-title white center-align">
-          <?php _e('Suggest', 'gfbio') ?>
-        </div>
-        <div class="card-content">
-          <p>Suggest widget................</p>
-        </div>
-        <div class="card-action white">
-          <a href="#">Use the Widget</a>
-        </div>
-      </div>
-    </div>
-
 
 </div><!--row-->
 </div><!--container-->

@@ -18,7 +18,7 @@ get_header(); ?>
     <?php edit_post_link(__('Edit page', 'gfbio'), '<div class="right-align">', "</div>", null, "") ?>
 
     <p>
-        The main feature of the TS is the possibility to search for terms to determine their usefulness for your work, e.g. for annotating or connecting controlled vocabulary. This search interface is restricted to <a href="#">internal terminologies</a> only.
+       You can easily search for terms over locally hosted terminologies. The search service includes all labels, synonyms, common names and abbreviations when provided by terminologies. It is additionally possible to extend the search to external terminologies also by checking the corresponding check box below the search box. However, this might extensively slowering the response time of the search service.
     </p>
 
 

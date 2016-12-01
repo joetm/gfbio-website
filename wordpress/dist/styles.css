@@ -122,10 +122,10 @@ footer.page-footer {
     color: #FFFFFF; }
 
 footer.page-footer.full.top-part {
-  background-color: #E94D18; }
+  background-color: #878786; }
 
 footer.page-footer.full .bottom-part {
-  background-color: #878786; }
+  background-color: #E94D18; }
 
 footer.page-footer.small.top-part {
   background-color: #878786; }
@@ -194,6 +194,20 @@ footer.page-footer.small .bottom-part {
     padding: 20px 0 10px 0; }
   #widgets .card .card-action.white {
     width: 100%; }
+
+/* ------------ */
+/*   parallax   */
+/* ------------ */
+.parallax {
+  /* The image used */
+  /* background-image: url("img_parallax.jpg"); */
+  /* Set a specific height */
+  height: auto;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
 @charset "UTF-8";
 @media print {
   html, body {

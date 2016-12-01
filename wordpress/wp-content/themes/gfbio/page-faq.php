@@ -23,7 +23,138 @@ endwhile;
 
 <?php edit_post_link(__('Edit page', 'gfbio'), '<div class="right-align">', "</div>", null, "") ?>
 
+<h2 class="flow-text center-align"><?php _e('General', 'gfbio') ?></h2>
+
 <ul id="faqlist" class="collapsible" data-collapsible="expandable">
+
+    <li>
+      <div class="collapsible-header">
+        Who are you and your partners?
+        <i class="ico material-icons right">expand_more</i>
+      </div>
+      <div class="collapsible-body">
+        <p>
+
+        </p>
+      </div>
+    </li>
+
+    <li>
+      <div class="collapsible-header">
+        What is your mission?
+        <i class="ico material-icons right">expand_more</i>
+      </div>
+      <div class="collapsible-body">
+        <p>
+
+        </p>
+      </div>
+    </li>
+
+    <li>
+      <div class="collapsible-header">
+        For whom are your services?
+        <i class="ico material-icons right">expand_more</i>
+      </div>
+      <div class="collapsible-body">
+        <p>
+
+        </p>
+      </div>
+    </li>
+
+    <li>
+      <div class="collapsible-header">
+        What is GFBio?
+        <i class="ico material-icons right">expand_more</i>
+      </div>
+      <div class="collapsible-body">
+        <p>
+		
+        </p>
+      </div>
+    </li>
+
+    <li>
+      <div class="collapsible-header">
+        Are you working on the TS after GFBio finished?
+        <i class="ico material-icons right">expand_more</i>
+      </div>
+      <div class="collapsible-body">
+        <p>
+		
+        </p>
+      </div>
+    </li>
+
+    <li>
+      <div class="collapsible-header">
+        Is there a fee to use your services?
+        <i class="ico material-icons right">expand_more</i>
+      </div>
+      <div class="collapsible-body">
+        <p>
+		
+        </p>
+      </div>
+    </li>
+
+    <li>
+      <div class="collapsible-header">
+          What is the best way to cite you?
+          <i class="ico material-icons right">expand_more</i>
+      </div>
+      <div class="collapsible-body">
+         <p>
+         	Our suggested citation is as following:<br/>
+	         <code>
+	         Karam, N.; Fichtmueller, D.; Gleisberg, M.; Bohlen, V; Tolksdorf, R. & Güntsch, A. (eds.) 2014 onwards. The Terminology Server of the German Federation for Biological Data (GFBio) - Server and service of semantic technologies in scientific environments. - hfalsettp://terminologies.gfbio.org/
+    	     </code>
+         </p>
+      </div>
+    </li>
+
+</ul>
+
+<h2 class="flow-text center-align"><?php _e('About the Terminology Service', 'gfbio') ?></h2>
+
+<ul class="collapsible" data-collapsible="expandable">
+
+    <li>
+      <div class="collapsible-header">
+          What are the TS and its objective? How does the TS work?
+          <i class="ico material-icons right">expand_more</i>
+      </div>
+      <div class="collapsible-body">
+         <p>
+         	
+         </p>
+      </div>
+    </li>
+
+    <li>
+      <div class="collapsible-header">
+          Why should I use the TS?
+          <i class="ico material-icons right">expand_more</i>
+      </div>
+      <div class="collapsible-body">
+         <p>
+         	
+         </p>
+      </div>
+    </li>
+
+    <li>
+      <div class="collapsible-header">
+          What does “semantic information” mean and how is it included in your work?
+          <i class="ico material-icons right">expand_more</i>
+      </div>
+      <div class="collapsible-body">
+         <p>
+         	
+         </p>
+      </div>
+    </li>
 
     <li>
       <div class="collapsible-header">
@@ -50,7 +181,37 @@ endwhile;
 	    <span class="faq-subheadline"><?php _e('Ontology', 'gfbio') ?></span>
 	    An Ontology represents the highest level of formality a terminology can reach. It is a formal representation of a set of concepts and the relationships between them using semantically rich descriptions, allowing a    n unambiguous interpretation of classes and term relationships according to logic-based rules.
 		</p>
-    </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="collapsible-header">
+          What is a &quot;term&quot; in the TS context?
+          <i class="ico material-icons right">expand_more</i>
+      </div>
+      <div class="collapsible-body">
+         <p>
+         	
+         </p>
+      </div>
+    </li>
+
+</ul>
+
+<h2 class="flow-text center-align"><?php _e('Explore', 'gfbio') ?></h2>
+
+<ul class="collapsible" data-collapsible="expandable">
+
+    <li>
+      <div class="collapsible-header">
+          What is the difference between internal and external terminologies?
+          <i class="ico material-icons right">expand_more</i>
+      </div>
+      <div class="collapsible-body">
+         <p>
+         	
+         </p>
+      </div>
     </li>
 
     <li>
@@ -97,16 +258,87 @@ endwhile;
       </div>
     </li>
 
+</ul>
+
+<h2 class="flow-text center-align"><?php _e('Consume', 'gfbio') ?></h2>
+
+<ul class="collapsible" data-collapsible="expandable">
+
     <li>
       <div class="collapsible-header">
-          How to cite us?
+          What is the format of a downloaded terminology?
           <i class="ico material-icons right">expand_more</i>
       </div>
       <div class="collapsible-body">
-         <p>Our suggested citation is as following:<br/>
-         <code>
-         Karam, N.; Fichtmueller, D.; Gleisberg, M.; Bohlen, V; Tolksdorf, R. & Güntsch, A. (eds.) 2014 onwards. The Terminology Server of the German Federation for Biological Data (GFBio) - Server and service of semantic technologies in scientific environments. - hfalsettp://terminologies.gfbio.org/</p>
-         </code>
+         <p>
+         	
+         </p>
+      </div>
+    </li>
+
+    <li>
+      <div class="collapsible-header">
+          What happens when an external terminology is updated? Is there an update service?
+          <i class="ico material-icons right">expand_more</i>
+      </div>
+      <div class="collapsible-body">
+         <p>
+         	
+         </p>
+      </div>
+    </li>
+
+</ul>
+
+<h2 class="flow-text center-align"><?php _e('Contribute', 'gfbio') ?></h2>
+
+<ul class="collapsible" data-collapsible="expandable">
+
+    <li>
+      <div class="collapsible-header">
+          Why should I contribute to the TS?
+          <i class="ico material-icons right">expand_more</i>
+      </div>
+      <div class="collapsible-body">
+         <p>
+         	
+         </p>
+      </div>
+    </li>
+
+    <li>
+      <div class="collapsible-header">
+          How can I contribute to your service? What do I need to contribute to your service?
+          <i class="ico material-icons right">expand_more</i>
+      </div>
+      <div class="collapsible-body">
+         <p>
+         	
+         </p>
+      </div>
+    </li>
+
+    <li>
+      <div class="collapsible-header">
+          What happens after contributing to your service?
+          <i class="ico material-icons right">expand_more</i>
+      </div>
+      <div class="collapsible-body">
+         <p>
+         	
+         </p>
+      </div>
+    </li>
+
+    <li>
+      <div class="collapsible-header">
+          Is a contribution possible for people outside the biodiversity context?
+          <i class="ico material-icons right">expand_more</i>
+      </div>
+      <div class="collapsible-body">
+         <p>
+         	
+         </p>
       </div>
     </li>
 
@@ -125,7 +357,7 @@ endwhile;
 <script>
 $(function(){
 
-    $('#faqlist').collapsible({
+    $('.collapsible').collapsible({
         accordion: false,
         onOpen: function(el) {
           $(el).find('.ico').text('expand_less');

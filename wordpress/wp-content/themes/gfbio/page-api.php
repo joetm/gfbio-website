@@ -30,7 +30,7 @@ get_header();
 <section id="introduction">
     <div class="container">
         <div class="row">
-            <h1 class="center-align flow-text">API</h1>
+            <h1 class="center-align flow-text"><?php _e('API', 'gfbio') ?></h1>
             <?php edit_post_link(__('Edit page', 'gfbio'), '<div class="right-align">', "</div>", null, "") ?>
             <?php
             while (have_posts() ) : the_post();
@@ -47,6 +47,11 @@ get_header();
 
 <section class="swagger-section">
     <div class="container">
+        <div class="row">
+            <p>
+            The Terminology Service API offers a <strong>single access</strong> point to a set of internal and external terminologies. Internal terminologies are hosted locally at the Terminology Service in a Semantic Web repository, external terminologies are only registered at the Terminology Service and are remotely accessed via their own services. The TS service output is delivered in a JSON, XML, CSV or JSON-LD format.
+            </p>
+        </div>
         <div class="row">
 
             <div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
