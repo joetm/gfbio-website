@@ -22,13 +22,8 @@
     <div class="container">
 	<div class="nav-wrapper clearfix">
 		<a href="<?php echo esc_url(home_url('/')) ?>" class="brand-logo black-text">
-			<img src="/static/logo.png" alt="GfBio Terminology Service">
+			<img src="/static/logo.png" alt="GFBio Terminology Service">
 		</a>
-        <!-- Dropdown Structure -->
-        <ul id="nav_dropdown" class="dropdown-content hide-on-med-and-down">
-            <li><a href="/api/"><?php _e('API', 'gfbio') ?></a></li>
-            <li><a href="/widgets/"><?php _e('Widgets', 'gfbio') ?></a></li>
-        </ul>
 		<ul id="nav-mobile" class="right">
             <?php
                 $current_page = get_queried_object();
@@ -38,7 +33,9 @@
                 }
             ?>
                 <li class="<?php echo (in_array($active_page, array('browse', 'terminology')) ? 'active' : '') ?>">
-                    <a href="/browse/"><?php _e('Browse', 'gfbio') ?></a>
+                    <a href="/browse/">
+                        <?php _e('Browse', 'gfbio') ?>
+                    </a>
                 </li>
                 <li class="<?php echo ($active_page === 'search' ? 'active' : '') ?>">
                     <a href="/search/"><?php _e('Search', 'gfbio') ?></a>
@@ -46,9 +43,17 @@
                 <!--
                 <li><a href="/contribute/"><?php _e('Contribute', 'gfbio') ?></a></li>
                 -->
-                <li class="<?php echo (in_array($active_page, array('developer', 'api', 'widgets')) ? 'active' : '') ?>">
-                    <a class="dropdown-button" data-activates="nav_dropdown" href="/developer/"><?php _e('Developer', 'gfbio') ?><i class="material-icons right">arrow_drop_down</i></a>
+                <li class="<?php echo ($active_page === 'api' ? 'active' : '') ?>">
+                    <a href="/api/">
+                        <?php _e('API', 'gfbio') ?>
+                    </a>
                 </li>
+                <li class="<?php echo ($active_page === 'widgets' ? 'active' : '') ?>">
+                    <a href="/widgets/">
+                        <?php _e('Widgets', 'gfbio') ?>
+                    </a>
+                </li>
+
                 <li class="<?php echo ($active_page === 'faq' ? 'active' : '') ?>">
                     <a href="/faq/"><?php _e('FAQ', 'gfbio') ?></a>
                 </li>
@@ -84,27 +89,27 @@
       <a href="#" class="button-collapse" title="<?php _e('Menu', 'gfbio') ?>"><i class="material-icons">menu</i></a>
       <ul class="tabs tabs-transparent">
             <li class="<?php echo ($active_page === 'browse' ? 'active' : '') ?>">
-                <a class="black-text" href="/browse/"><?php _e('Browse', 'gfbio') ?></a>
+                <a class="black-text" href="/browse/" target="_self"><?php _e('Browse', 'gfbio') ?></a>
             </li>
             <li class="<?php echo ($active_page === 'search' ? 'active' : '') ?>">
-                <a class="black-text" href="/search/"><?php _e('Search', 'gfbio') ?></a>
+                <a class="black-text" href="/search/" target="_self"><?php _e('Search', 'gfbio') ?></a>
             </li>
             <!--
             <li class="<?php echo ($active_page === 'contribute' ? 'active' : '') ?>">
-                <a class="black-text" href="/contribute/"><?php _e('Contribute', 'gfbio') ?></a>
+                <a class="black-text" href="/contribute/" target="_self"><?php _e('Contribute', 'gfbio') ?></a>
             </li>
             -->
             <li class="<?php echo ($active_page === 'api' ? 'active' : '') ?>">
-                <a class="black-text" href="/api/"><?php _e('API', 'gfbio') ?></a>
+                <a class="black-text" href="/api/" target="_self"><?php _e('API', 'gfbio') ?></a>
             </li>
             <li class="<?php echo ($active_page === 'widgets' ? 'active' : '') ?>">
-                <a class="black-text" href="/widgets/"><?php _e('Widgets', 'gfbio') ?></a>
+                <a class="black-text" href="/widgets/" target="_self"><?php _e('Widgets', 'gfbio') ?></a>
             </li>
             <li class="<?php echo ($active_page === 'faq' ? 'active' : '') ?>">
-                <a class="black-text" href="/faq/"><?php _e('FAQ', 'gfbio') ?></a>
+                <a class="black-text" href="/faq/" target="_self"><?php _e('FAQ', 'gfbio') ?></a>
             </li>
             <li class="<?php echo ($active_page === 'about' ? 'active' : '') ?>">
-                <a class="black-text" href="/about/"><?php _e('About', 'gfbio') ?></a>
+                <a class="black-text" href="/about/" target="_self"><?php _e('About', 'gfbio') ?></a>
             </li>
       </ul>
     </div>

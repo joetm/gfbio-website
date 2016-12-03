@@ -7,6 +7,13 @@
  *
  */
 
+// redirect, if no specific ontology was queried
+if ((!isset($_GET['ontology']) || !$_GET['ontology']) && !headers_sent()) {
+    header('Location: /browse/');
+    exit;
+}
+
+
 get_header(); ?>
 
 <?php
@@ -38,8 +45,7 @@ $loader_html = '
 <div class="row">
 
 
-
-<h1 class="terminology-title flow-text center-align"><?php _e('Loading', 'gfbio') ?>...</h1>
+<h2 class="terminology-title center-align"><?php _e('Loading', 'gfbio') ?>...</h2>
 
 
 <div id="term-details">
@@ -104,6 +110,11 @@ $(function() {
     var id = '<?php echo htmlentities($_GET['ontology'], ENT_QUOTES) ?>',
         base = 'http://terminologies.gfbio.org/api/terminologies/';
 
+    var successRequests = [];
+    var $r1 = $.Deferred();
+    var $r2 = $.Deferred();
+    var $r3 = $.Deferred();
+
     var transformation = {
         general: [
             {'acronym': 'Acronym'},
@@ -156,8 +167,7 @@ $(function() {
         ]
     };
 
-
-    var filters = function filters (key, val) {
+    function filters (key, val) {
         var ret = val;
         switch (key) {
         case 'hasOntologyLanguage':
@@ -178,12 +188,12 @@ $(function() {
             break;
         }
         return ret;
-    };// filters
+    }// filters
 
-    var load_details = function load_details (url, klass, section) {
+    /* Query the general info of the terminology */
+    function load_details(url, klass, section, $deferred) {
 
-        /* Query the general info of the terminology */
-        $.ajax({
+        return $.ajax({
             url: url,
             dataType: 'json',
             success: function(data) {
@@ -201,7 +211,6 @@ $(function() {
                     $('.terminology-title').text(ontology.name);
                     delete ontology.name;
                 }
-                console.log(ontology);
                 // fill the page with the contents
                 // $.each(ontology, function (key, item) {
                 $.each(transformation[section], function (key, item) {
@@ -215,39 +224,35 @@ $(function() {
                 });// $.each
                 tpl = '<ul>'+tpl+'</ul>';
                 $('#term-details .left-side ' + klass).html(tpl);
+                successRequests.push(section);
+                $deferred.resolve(section);
             },
             error: function(data, textStatus, errorThrown) {
                 // console.error(capitalizeFirstLetter(textStatus), ':', errorThrown);
+                $deferred.resolve(false);
             },
             complete: function (jqXHR, status) {
+                var $klass = $(klass);
                 // remove the loader
-                $(klass).children('.preloader-wrapper').remove();
+                $klass.children('.preloader-wrapper').remove();
                 // if no results were loaded, remove the div
-                if ($(klass).children().length === 0) {
-                    $(klass).parents('.api_result').remove();
+                if ($klass.children().length === 0) {
+                    $klass.parents('.api_result').remove();
                 }
             }
         });// $.ajax
 
-    };// load_details
+    }// load_details
 
-    function load_ontology(base, klass, key) {
-        try {
-            load_details(base, klass, key);
-        } catch (err) {
-            console.error(err + ' missing');
-            $('.'+section).remove();
+    load_details(base + id,                '.general',     'general',       $r1);
+    load_details(base + id + '/metadata',  '.metadata',    'annotations',   $r2);
+    load_details(base + id + '/metrics',   '.metrics',     'metrics',       $r3);
+
+    // check if at least one of the requests was successful
+    $.when($r1, $r2, $r3).then(function() {
+        if (!successRequests.length) {
+            $('.terminology-title').text('Error loading the requested terminology');
         }
-    }// load_ontology
-
-    var onts = [
-        {base: base + id, klass: '.general', key: 'general'},
-        {base: base + id + '/metadata', klass: '.metadata', key: 'annotations'},
-        {base: base + id + '/metrics', klass: '.metrics', key: 'metrics'}
-    ];
-
-    onts.forEach(function(item) {
-        load_ontology(item.base, item.klass, item.key);
     });
 
 });

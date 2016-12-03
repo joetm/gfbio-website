@@ -14,7 +14,7 @@ get_header(); ?>
 <div class="container">
 <div class="row center-align">
 
-  <h1 class="flow-text"><?php _e('Developer', 'gfbio') ?></h1>
+  <h2 class=""><?php _e('Developer', 'gfbio') ?></h2>
 
   <?php edit_post_link(__('Edit page', 'gfbio'), '<div class="right-align">', "</div>", null, "") ?>
 

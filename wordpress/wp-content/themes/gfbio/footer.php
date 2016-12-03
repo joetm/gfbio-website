@@ -23,7 +23,7 @@
                 </ul>
             </div>
             <div class="col s12 offset-l1 l4">
-                <h5><?php _e('Explore', 'gfbio') ?> <span title="<?php _e('Terminology Service', 'gfbio') ?>">TS</span></h5>
+                <h5><?php _e('Explore', 'gfbio') ?> <span title="<?php _e('Terminology Service', 'gfbio') ?>"><?php _e('TS', 'gfbio') ?></span></h5>
                 <ul>
                     <li><a href="/browse/"><?php _e('Browse the terminologies', 'gfbio') ?></a></li>
                     <li><a href="/search/"><?php _e('Search the terminologies', 'gfbio') ?></a></li>

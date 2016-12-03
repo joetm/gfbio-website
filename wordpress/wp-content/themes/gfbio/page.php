@@ -15,9 +15,9 @@ the_post();
 <div class="container" id="page">
 <div class="row">
 
-	<h1 class="flow-text center-align">
+	<h2 class="center-align">
 		<?php the_title() ?>
-	</h1>
+	</h2>
 
 	<?php edit_post_link(__('Edit page', 'gfbio'), '<div class="right-align">', "</div>", null, "") ?>
 

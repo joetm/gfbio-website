@@ -48,7 +48,6 @@ function inject_gfbio() {
 add_action('wp_enqueue_scripts', 'inject_gfbio');
 
 
-
 // remove the emoji code
 function disable_wp_emojicons() {
   // all actions related to emojis
@@ -100,6 +99,7 @@ add_filter('rest_jsonp_enabled', '_return_false');
 function off_admin_bar(){return false;}
 add_filter('show_admin_bar','off_admin_bar');
 
+
 //prevent akismet from injecting a javascript on EVERY page
 // add_action('wp_print_scripts', 'my_deregister_scripts', 100);
 // function my_deregister_scripts() {
@@ -110,9 +110,11 @@ add_filter('show_admin_bar','off_admin_bar');
 // 	}
 // }
 
+
 // is_admin variable
 // $is_admin = false;
 // if(function_exists('is_admin') && is_admin()) $is_admin = true;
+
 
 // don't add <p> tags to content
 remove_filter ('the_content',  'wpautop');
@@ -166,45 +168,6 @@ add_action('init', 'remove_header_links');
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
 
 
-// filter posts being tagged with a single tag
-// add_action('get_header', 'block_singletag');
-// 	function singletag_wordpress_groupby($groupby)
-// 	{
-// 		if(empty($groupby)) $groupby = "wp_posts.ID";
-// 		return $groupby . "
-// 					HAVING COUNT( tag_terms.term_id ) <> 1
-// 					OR MAX( tag_terms.term_id ) <> 1122 ";
-// 	}
-// 	function singletag_wordpress_join($join)
-// 	{
-// 		return $join . " INNER JOIN wp_term_relationships AS tag_term_relationships ON (wp_posts.ID = tag_term_relationships.object_id)
-// 			INNER JOIN wp_term_taxonomy AS tag_term_taxonomy ON (tag_term_relationships.term_taxonomy_id = tag_term_taxonomy.term_taxonomy_id AND tag_term_taxonomy.taxonomy = 'post_tag')
-// 			INNER JOIN wp_terms AS tag_terms ON (tag_term_taxonomy.term_id = tag_terms.term_id) ";
-// 	}
-
-// function block_singletag()
-// {
-// 	if(is_home() || is_tag() || (is_single() && !is_page(22552)) || (!is_page(22552) && !has_tag(array('articles','videos')))) //not submission queue or article
-// 	{
-// 		//exclude the single tag from showing up
-// 		//$includetags = array(107,1127,1140,1141,932,3,1151,1143,1139,1142,1316,1138,950);
-// 		$excludetags = array(599,1122);
-
-// 		//posts_groupby hook to remove single tag posts
-// 		//full query:
-// 		//SELECT SQL_CALC_FOUND_ROWS wp_posts.* FROM wp_posts
-// 		//		INNER JOIN wp_term_relationships AS tag_term_relationships ON (wp_posts.ID = tag_term_relationships.object_id)
-// 		//		INNER JOIN wp_term_taxonomy AS tag_term_taxonomy ON (tag_term_relationships.term_taxonomy_id = tag_term_taxonomy.term_taxonomy_id AND tag_term_taxonomy.taxonomy = 'post_tag')
-// 		//		INNER JOIN wp_terms AS tag_terms ON (tag_term_taxonomy.term_id = tag_terms.term_id)
-// 		//WHERE 1=1 AND wp_posts.post_type = 'post' AND (wp_posts.post_status = 'publish') GROUP BY wp_posts.ID HAVING COUNT( tag_terms.term_id ) <> 1 OR MAX( tag_terms.term_id ) <> 1122 ORDER BY wp_posts.post_date DESC LIMIT 0, 10
-
-// 		//1: add join tags into query (to receive the above query)
-// 		add_filter('posts_join', 'singletag_wordpress_join', 10);
-
-// 		//2: exclusion of single tag
-// 		add_filter('posts_groupby', 'singletag_wordpress_groupby', 10);
-// 	}
-// }
 
 /* Remove injected jquery-migrate.min.js
  * See:
@@ -223,19 +186,6 @@ function dequeue_jquery_migrate( $scripts ) {
 add_action('wp_default_scripts', 'dequeue_jquery_migrate');
 
 
-
-
-/** Script injection **/
-// function add_scripts_to_footer() {
-// ? >
-// <script>
-// 	console.log('browse script');
-// </script>
-// < ? php
-// }
-// //if (is_page('browse')) {
-// 	add_action('wp_footer', 'add_scripts_to_footer', 99);
-// //}
 
 
 

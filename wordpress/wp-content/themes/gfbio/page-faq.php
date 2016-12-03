@@ -19,11 +19,11 @@ endwhile;
 <div class="container" id="faq">
 <div class="row">
 
-<h1 class="flow-text center-align"><?php the_title() ?></h1>
+<h2 class="center-align"><?php the_title() ?></h2>
 
 <?php edit_post_link(__('Edit page', 'gfbio'), '<div class="right-align">', "</div>", null, "") ?>
 
-<h2 class="flow-text center-align"><?php _e('General', 'gfbio') ?></h2>
+<h3 class="flow-text center-align"><?php _e('General', 'gfbio') ?></h3>
 
 <ul id="faqlist" class="collapsible" data-collapsible="expandable">
 
@@ -108,7 +108,7 @@ endwhile;
          <p>
          	Our suggested citation is as following:<br/>
 	         <code>
-	         Karam, N.; Fichtmueller, D.; Gleisberg, M.; Bohlen, V; Tolksdorf, R. & Güntsch, A. (eds.) 2014 onwards. The Terminology Server of the German Federation for Biological Data (GFBio) - Server and service of semantic technologies in scientific environments. - hfalsettp://terminologies.gfbio.org/
+	         Karam, N.; Fichtmueller, D.; Gleisberg, M.; Bohlen, V; Tolksdorf, R. &amp; Güntsch, A. (eds.) 2014 onwards. The Terminology Server of the German Federation for Biological Data (GFBio) - Server and service of semantic technologies in scientific environments. - hfalsettp://terminologies.gfbio.org/
     	     </code>
          </p>
       </div>
@@ -116,7 +116,7 @@ endwhile;
 
 </ul>
 
-<h2 class="flow-text center-align"><?php _e('About the Terminology Service', 'gfbio') ?></h2>
+<h3 class="flow-text center-align"><?php _e('About the Terminology Service', 'gfbio') ?></h3>
 
 <ul class="collapsible" data-collapsible="expandable">
 
@@ -198,7 +198,7 @@ endwhile;
 
 </ul>
 
-<h2 class="flow-text center-align"><?php _e('Explore', 'gfbio') ?></h2>
+<h3 class="flow-text center-align"><?php _e('Explore', 'gfbio') ?></h3>
 
 <ul class="collapsible" data-collapsible="expandable">
 
@@ -260,7 +260,7 @@ endwhile;
 
 </ul>
 
-<h2 class="flow-text center-align"><?php _e('Consume', 'gfbio') ?></h2>
+<h3 class="flow-text center-align"><?php _e('Consume', 'gfbio') ?></h3>
 
 <ul class="collapsible" data-collapsible="expandable">
 
@@ -290,7 +290,7 @@ endwhile;
 
 </ul>
 
-<h2 class="flow-text center-align"><?php _e('Contribute', 'gfbio') ?></h2>
+<h3 class="flow-text center-align"><?php _e('Contribute', 'gfbio') ?></h3>
 
 <ul class="collapsible" data-collapsible="expandable">
 

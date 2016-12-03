@@ -23,6 +23,7 @@ Version: 0.1
 /* ============= */
 /*  Definitions  */
 /* ============= */
+/* =========================================================== */
 /* ------------ */
 /* work-arounds */
 /* ------------ */
@@ -56,15 +57,18 @@ section {
   padding: 1.78rem 0;
   margin-bottom: 0; }
 
+aside {
+  margin: 0;
+  padding: 0; }
+
 .alt {
   background-color: #ECECEA; }
 
 .bold {
   font-weight: bold; }
 
-.card .card-icon img {
-  max-width: 100%;
-  height: auto; }
+.secondary-color {
+  background-color: #B7CEE2; }
 
 div.navbtn {
   display: none;
@@ -78,6 +82,12 @@ a, a:visited {
 
 a:hover {
   color: #878786; }
+
+.headline-icon {
+  height: 3.56rem;
+  vertical-align: top;
+  display: inline;
+  width: auto; }
 
 /* ---------- */
 /* navigation */
@@ -101,10 +111,12 @@ div.nav-wrapper #nav-mobile a:hover, div.nav-wrapper #nav-mobile a:active {
 
 #mobile-navigation ul.tabs {
   display: block;
-  text-align: center; }
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto; }
 
 #mobile-navigation ul.tabs li {
-  display: inline-block; }
+  display: inline; }
 
 /* ------ */
 /* footer */
@@ -128,7 +140,7 @@ footer.page-footer.full .bottom-part {
   background-color: #E94D18; }
 
 footer.page-footer.small.top-part {
-  background-color: #878786; }
+  background-color: #B7CEE2; }
 
 footer.page-footer.small .bottom-part {
   background-color: #E94D18; }
@@ -136,28 +148,36 @@ footer.page-footer.small .bottom-part {
 /* --------- */
 /* home page */
 /* --------- */
-#home .card {
-  cursor: pointer; }
-
-#home .box {
-  cursor: pointer; }
-
-#home .card {
+#home {
   /*
-		.card-action {
-			position: absolute;
-			bottom: 0;
-			left:0;
-		}
-		*/ }
-
-#home #banner {
-  padding: 0;
-  margin: 0;
-  line-height: 0; }
-
-#home #introduction {
-  margin-top: 0; }
+	#explore {
+		background-image:url(/static/testbg.jpg);
+		background-repeat:repeat;
+		background-attachment: fixed;
+		background-position:center;
+		background-size: cover;
+	}
+	*/ }
+  #home .card {
+    cursor: pointer; }
+    #home .card .card-icon img {
+      padding: 20px;
+      width: 75%;
+      height: auto; }
+  #home #banner {
+    padding: 0;
+    margin: 0;
+    line-height: 0; }
+  #home #introduction {
+    margin-top: 0; }
+  #home .partnerlogos img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: 0.7;
+    filter: alpha(opacity=70); }
+  #home #maincards .card-title {
+    width: 100%;
+    display: inline-block; }
 
 /* ----------- */
 /* browse page */
@@ -189,25 +209,20 @@ footer.page-footer.small .bottom-part {
 /* widgets page */
 /* ------------ */
 #widgets .card {
-  cursor: pointer; }
+  /* cursor:pointer; */ }
   #widgets .card .card-title.widget-title {
     padding: 20px 0 10px 0; }
   #widgets .card .card-action.white {
     width: 100%; }
 
 /* ------------ */
-/*   parallax   */
+/*  about page  */
 /* ------------ */
-.parallax {
-  /* The image used */
-  /* background-image: url("img_parallax.jpg"); */
-  /* Set a specific height */
-  height: auto;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+#contact .card .title {
+  padding: 0.1em 0 0.1em 0; }
+
+#contact .sub-title.valign-wrapper .valign {
+  width: 100%; }
 @charset "UTF-8";
 @media print {
   html, body {

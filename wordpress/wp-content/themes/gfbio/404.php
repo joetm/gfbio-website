@@ -1,31 +1,61 @@
 <?php
 /**
- * The template for displaying 404 pages (not found)
+ * The template for displaying 404 pages (Not Found)
  */
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+<section class="error-404 not-found center-align">
 
-		<section class="error-404 not-found center-align">
-			<header class="page-header">
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col m6 hide-on-med-and-down" style="border-right:1px solid #999999">
+
+				<div style="padding-left:1em;">
+                    <img src="/static/browse.svg" style="max-width:100%;" alt="Consume">
+                </div>
+
+			</div>
+
+			<div class="col s12 m12 l6">
+
 				<h1 class="page-title">
 					<?php _e('Error 404', 'gfbio' ); ?>
-					-
-					<?php _e('Page Not Found', 'gfbio' ); ?>
 				</h1>
-			</header><!-- .page-header -->
+				<h2 class="flow-text">
+					<?php _e('Page Not Found', 'gfbio' ); ?>
+				</h2>
+				<p>
+					<?php _e("We can't find the page you were looking for.", 'gfbio'); ?>
+				</p>
+				<p>
+					<?php _e("Here are some helpful links instead:", 'gfbio'); ?>
 
-			<div class="page-content">
-				<p><?php _e('It looks like nothing was found at this location. Maybe try another page?', 'gfbio'); ?></p>
+					<ul>
+		            <?php
+		                $page_links = array(
+		                    [ 'name' => __('About', 'gfbio'), 'uri' => 'about'],
+		                    [ 'name' => __('FAQ', 'gfbio'), 'uri' => 'faq'],
+		                    [ 'name' => __('Browse', 'gfbio'), 'uri' => 'browse'],
+		                    [ 'name' => __('Search', 'gfbio'), 'uri' => 'search'],
+		                    [ 'name' => __('Contribute', 'gfbio'), 'uri' => 'contribute'],
+		                    [ 'name' => __('Developer', 'gfbio'), 'uri' => 'developer'],
+		                );
+		                foreach($page_links as $page_link) {
+		                    echo '<li class="' . $page_link['uri'] . '"><a href="/'.$page_link['uri'].'/">'. $page_link['name'] . '</a></li>';
+		                }
+		            ?>
+					</ul>
 
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
+				</p>
+			</div>
 
-	</main><!-- .site-main -->
+		</div><!-- row -->
+	</div><!-- container -->
 
-</div><!-- .content-area -->
+</section><!-- section -->
 
 <?php get_footer(); ?>
 

@@ -12,6 +12,7 @@ Version: 0.1
 
 $text-color: #00131A;
 
+$black: $text-color;
 $black-text: $text-color;
 $white-text: #FFFFFF;
 $grey-text:  #EEEEEE;
@@ -21,11 +22,17 @@ $link-color-hover: #878786;
 $link-color-active: #878786;
 
 $footer-primary-color: #E94D18;
-$footer-secondary-color: #878786;
+$footer-secondary-color: #B7CEE2;
+$footer-homepage-color: #878786;
+
+$primary-color: #E94D18;
+$secondary-color: #B7CEE2;
 
 $section-background: #ECECEA;
 
 $base-nav-height: 64px;
+
+/* =========================================================== */
 
 
 /* ------------ */
@@ -66,6 +73,10 @@ section {
 	padding: 1.78rem 0;
 	margin-bottom:0;
 }
+aside {
+	margin:0;
+	padding:0;
+}
 
 .alt {
 	background-color:$section-background;
@@ -75,9 +86,8 @@ section {
 	font-weight:bold;
 }
 
-.card .card-icon img {
-	max-width:100%;
-	height:auto;
+.secondary-color {
+	background-color: $secondary-color;
 }
 
 div.navbtn {
@@ -93,6 +103,13 @@ a, a:visited {
 }
 a:hover {
     color: $link-color-hover;
+}
+
+.headline-icon {
+	height:3.56rem;
+	vertical-align:top;
+	display:inline;
+	width:auto;
 }
 
 /* ---------- */
@@ -123,9 +140,11 @@ div.nav-wrapper {
 	ul.tabs {
 		display:block;
 		text-align:center;
+		margin-left:auto;
+		margin-right:auto;
 	}
 	ul.tabs li {
-		display: inline-block;
+		display: inline;
 	}
 }
 
@@ -154,7 +173,7 @@ footer.page-footer {
 }
 
 footer.page-footer.full.top-part {
-	background-color:$footer-secondary-color;
+	background-color:$footer-homepage-color;
 }
 footer.page-footer.full .bottom-part {
 	background-color:$footer-primary-color;
@@ -175,19 +194,12 @@ footer.page-footer.small .bottom-part {
 
 	.card {
 		cursor:pointer;
-	}
-	.box {
-		cursor:pointer;
-	}
 
-	.card {
-		/*
-		.card-action {
-			position: absolute;
-			bottom: 0;
-			left:0;
+		.card-icon img {
+			padding:20px;
+			width:75%;
+			height:auto;
 		}
-		*/
 	}
 
 	#banner {
@@ -198,6 +210,31 @@ footer.page-footer.small .bottom-part {
 
 	#introduction {
 		margin-top:0;
+	}
+
+	/*
+	#explore {
+		background-image:url(/static/testbg.jpg);
+		background-repeat:repeat;
+		background-attachment: fixed;
+		background-position:center;
+		background-size: cover;
+	}
+	*/
+
+	.partnerlogos {
+		img {
+		    -webkit-filter: grayscale(100%);
+	    	filter: grayscale(100%);
+
+			opacity: 0.7;
+			filter: alpha(opacity=70);
+		}
+	}
+
+	#maincards .card-title {
+		width: 100%;
+		display:inline-block;
 	}
 
 }
@@ -246,7 +283,7 @@ footer.page-footer.small .bottom-part {
 
 #widgets {
 	.card {
-		cursor:pointer;
+		/* cursor:pointer; */
 		.card-title.widget-title {
 			padding:20px 0 10px 0;
 		}
@@ -254,22 +291,20 @@ footer.page-footer.small .bottom-part {
 			width:100%;
 		}
 	}
+	.widget-section {
+
+	}
 }
 
 /* ------------ */
-/*   parallax   */
+/*  about page  */
 /* ------------ */
 
-.parallax { 
-    /* The image used */
-    /* background-image: url("img_parallax.jpg"); */
-
-    /* Set a specific height */
-    height: auto;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+#contact {
+	.card .title {
+		padding: 0.1em 0 0.1em 0;
+	}
+	.sub-title.valign-wrapper .valign {
+		width:100%;
+	}
 }
