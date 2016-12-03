@@ -89,6 +89,9 @@ a:hover {
   display: inline;
   width: auto; }
 
+.subheadline {
+  margin-top: 2em; }
+
 /* ---------- */
 /* navigation */
 /* ---------- */

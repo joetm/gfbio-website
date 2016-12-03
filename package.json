@@ -13,6 +13,7 @@
     "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
     "webpack": "node node_modules/webpack/bin/webpack.js --config webpack.config.js",
     "webpack-watch": "node node_modules/webpack/bin/webpack.js --config webpack.config.js -w",
+    "watch": "node node_modules/webpack/bin/webpack.js --config webpack.config.js -w",
     "webpack-hot": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline"
   },
   "license": "UNLICENSED",

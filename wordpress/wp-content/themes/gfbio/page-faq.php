@@ -38,7 +38,6 @@ endwhile;
         </p>
       </div>
     </li>
-
     <li>
       <div class="collapsible-header">
         What is your mission?
@@ -50,7 +49,6 @@ endwhile;
         </p>
       </div>
     </li>
-
     <li>
       <div class="collapsible-header">
         For whom are your services?
@@ -62,7 +60,6 @@ endwhile;
         </p>
       </div>
     </li>
-
     <li>
       <div class="collapsible-header">
         What is GFBio?
@@ -74,7 +71,6 @@ endwhile;
         </p>
       </div>
     </li>
-
     <li>
       <div class="collapsible-header">
         Are you working on the TS after GFBio finished?
@@ -86,7 +82,6 @@ endwhile;
         </p>
       </div>
     </li>
-
     <li>
       <div class="collapsible-header">
         Is there a fee to use your services?
@@ -98,7 +93,6 @@ endwhile;
         </p>
       </div>
     </li>
-
     <li>
       <div class="collapsible-header">
           What is the best way to cite you?
@@ -116,7 +110,9 @@ endwhile;
 
 </ul>
 
-<h3 class="flow-text center-align"><?php _e('About the Terminology Service', 'gfbio') ?></h3>
+<h3 class="flow-text subheadline center-align">
+  <?php _e('About the Terminology Service', 'gfbio') ?>
+</h3>
 
 <ul class="collapsible" data-collapsible="expandable">
 
@@ -131,7 +127,6 @@ endwhile;
          </p>
       </div>
     </li>
-
     <li>
       <div class="collapsible-header">
           Why should I use the TS?
@@ -143,7 +138,6 @@ endwhile;
          </p>
       </div>
     </li>
-
     <li>
       <div class="collapsible-header">
           What does “semantic information” mean and how is it included in your work?
@@ -155,7 +149,6 @@ endwhile;
          </p>
       </div>
     </li>
-
     <li>
       <div class="collapsible-header">
         What is a &quot;terminology&quot; in the GFBio context?
@@ -183,7 +176,6 @@ endwhile;
 		</p>
       </div>
     </li>
-
     <li>
       <div class="collapsible-header">
           What is a &quot;term&quot; in the TS context?
@@ -198,10 +190,10 @@ endwhile;
 
 </ul>
 
-<h3 class="flow-text center-align"><?php _e('Explore', 'gfbio') ?></h3>
-
+<h3 class="flow-text subheadline center-align">
+  <?php _e('Explore', 'gfbio') ?>
+</h3>
 <ul class="collapsible" data-collapsible="expandable">
-
     <li>
       <div class="collapsible-header">
           What is the difference between internal and external terminologies?
@@ -213,7 +205,6 @@ endwhile;
          </p>
       </div>
     </li>
-
     <li>
       <div class="collapsible-header">
           Which terminologies are included in the Terminology Server?
@@ -236,7 +227,6 @@ endwhile;
 		</p>
       </div>
     </li>
-
     <li>
       <div class="collapsible-header">
           Which external terminologies are connected to the TS?
@@ -257,13 +247,10 @@ endwhile;
         </p>
       </div>
     </li>
-
 </ul>
 
-<h3 class="flow-text center-align"><?php _e('Consume', 'gfbio') ?></h3>
-
+<h3 class="flow-text subheadline center-align"><?php _e('Consume', 'gfbio') ?></h3>
 <ul class="collapsible" data-collapsible="expandable">
-
     <li>
       <div class="collapsible-header">
           What is the format of a downloaded terminology?
@@ -275,7 +262,6 @@ endwhile;
          </p>
       </div>
     </li>
-
     <li>
       <div class="collapsible-header">
           What happens when an external terminology is updated? Is there an update service?
@@ -287,13 +273,10 @@ endwhile;
          </p>
       </div>
     </li>
-
 </ul>
 
-<h3 class="flow-text center-align"><?php _e('Contribute', 'gfbio') ?></h3>
-
+<h3 class="flow-text subheadline center-align"><?php _e('Contribute', 'gfbio') ?></h3>
 <ul class="collapsible" data-collapsible="expandable">
-
     <li>
       <div class="collapsible-header">
           Why should I contribute to the TS?
@@ -305,7 +288,6 @@ endwhile;
          </p>
       </div>
     </li>
-
     <li>
       <div class="collapsible-header">
           How can I contribute to your service? What do I need to contribute to your service?
@@ -317,7 +299,6 @@ endwhile;
          </p>
       </div>
     </li>
-
     <li>
       <div class="collapsible-header">
           What happens after contributing to your service?
@@ -329,7 +310,6 @@ endwhile;
          </p>
       </div>
     </li>
-
     <li>
       <div class="collapsible-header">
           Is a contribution possible for people outside the biodiversity context?
@@ -341,13 +321,11 @@ endwhile;
          </p>
       </div>
     </li>
-
 </ul>
 
 
 </div><!--row-->
 </div><!--container-->
-
 </section><!--faq-->
 
 
@@ -356,7 +334,6 @@ endwhile;
 
 <script>
 $(function(){
-
     $('.collapsible').collapsible({
         accordion: false,
         onOpen: function(el) {

@@ -13,33 +13,38 @@
 <footer class="page-footer full top-part">
     <div class="container">
         <div class="row">
-            <div class="col s12 l4">
+            <div class="col s12 m4">
                 <h5><?php _e('About', 'gfbio') ?></h5>
                 <p>
-                    The Terminology Service is a ... consortium of partners... gfbio.... lorem ipsum....
+                    The Terminology Service is part of the German Federation for Biological Data (GFBio) infrastructure, a sustainable, service oriented, national data infrastructure facilitating data sharing for biological and environmental research.
                 </p>
-                <ul>
-                    <li><a href="/faq/"><?php _e('FAQ', 'gfbio') ?></a></li>
-                </ul>
             </div>
-            <div class="col s12 offset-l1 l4">
-                <h5><?php _e('Explore', 'gfbio') ?> <span title="<?php _e('Terminology Service', 'gfbio') ?>"><?php _e('TS', 'gfbio') ?></span></h5>
-                <ul>
-                    <li><a href="/browse/"><?php _e('Browse the terminologies', 'gfbio') ?></a></li>
-                    <li><a href="/search/"><?php _e('Search the terminologies', 'gfbio') ?></a></li>
-                    <li><a href="/contribute/"><?php _e('Contribute', 'gfbio') ?></a></li>
-                    <li><a href="/developer/"><?php _e('Developer Section', 'gfbio') ?></a></li>
-                    <li><a href="/api/">- <?php _e('API', 'gfbio') ?></a></li>
-                    <li><a href="/widgets/">- <?php _e('Widgets', 'gfbio') ?></a></li>
-                </ul>
-            </div>
-            <div class="col s12 l3">
-                <h5><?php _e('GfBio Consortium', 'gfbio') ?></h5>
-                <ul>
-                    <li><a href="/partners/"><?php _e('Partners', 'gfbio') ?></a></li>
-                    <li><a href="/contact/"><?php _e('Contact', 'gfbio') ?></a></li>
-                    <li><a href="/imprint/"><?php _e('Imprint', 'gfbio') ?></a></li>
-                </ul>
+            <div class="col s12 m8">
+                <div class="row">
+                    <div class="col s12 m6" style="border-left:1px solid #999999;padding-left:2em;">
+                        <h5><?php _e('Explore', 'gfbio') ?> <span title="<?php _e('Terminology Service', 'gfbio') ?>"><?php _e('TS', 'gfbio') ?></span></h5>
+                        <ul>
+                            <li><a href="/browse/"><?php _e('Browse the terminologies', 'gfbio') ?></a></li>
+                            <li><a href="/search/"><?php _e('Search the terminologies', 'gfbio') ?></a></li>
+                            <li><a href="/faq/"><?php _e('Frequently Asked Questions', 'gfbio') ?></a></li>
+                            <li><a href="/contribute/"><?php _e('Contribute', 'gfbio') ?></a></li>
+                        </ul>
+                    </div>
+                    <div class="col s12 m6" style="border-left:1px solid #999999;padding-left:2em;">
+                        <h5><?php _e('Developer Section', 'gfbio') ?></h5>
+                        <ul>
+                            <li><a href="/api/"><?php _e('API', 'gfbio') ?></a></li>
+                            <li><a href="/widgets/"><?php _e('Widgets', 'gfbio') ?></a></li>
+                        </ul>
+
+                        <h5><?php _e('GfBio Consortium', 'gfbio') ?></h5>
+                        <ul>
+                            <li><a href="/partners/"><?php _e('Partners', 'gfbio') ?></a></li>
+                            <li><a href="/contact/"><?php _e('Contact', 'gfbio') ?></a></li>
+                            <li><a href="/imprint/"><?php _e('Imprint', 'gfbio') ?></a></li>
+                        </ul>
+                    </div>
+                </div><!--row-->
             </div>
         </div>
     </div>

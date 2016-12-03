@@ -17,6 +17,8 @@ window.jQuery = $;
 
 require("imports?$=jquery!waypoints/lib/jquery.waypoints.min.js");
 
+require("./vendor/modernizr-svg.js");
+
 // require("imports?$=jquery!jquery.nicescroll/jquery.nicescroll.min.js");
 
 require("imports?$=jquery!materialize-css/dist/js/materialize.min.js");
