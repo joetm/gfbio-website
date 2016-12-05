@@ -40,7 +40,7 @@
                         <h5><?php _e('GfBio Consortium', 'gfbio') ?></h5>
                         <ul>
                             <li><a href="/partners/"><?php _e('Partners', 'gfbio') ?></a></li>
-                            <li><a href="/contact/"><?php _e('Contact', 'gfbio') ?></a></li>
+                            <li><a href="/contact/"><?php _e('Contact Us', 'gfbio') ?></a></li>
                             <li><a href="/imprint/"><?php _e('Imprint', 'gfbio') ?></a></li>
                         </ul>
                     </div>

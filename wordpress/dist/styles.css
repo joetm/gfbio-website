@@ -94,7 +94,8 @@ a, a:visited {
   color: #E94D18; }
 
 a:hover {
-  color: #878786; }
+  color: #878786;
+  text-decoration: underline; }
 
 .headline-icon {
   height: 3.56rem;
@@ -120,7 +121,8 @@ div.nav-wrapper #nav-mobile a, div.nav-wrapper #nav-mobile a:visited {
   color: #E94D18; }
 
 div.nav-wrapper #nav-mobile a:hover, div.nav-wrapper #nav-mobile a:active {
-  color: #00131A; }
+  color: #00131A;
+  text-decoration: none; }
 
 #mobile-navigation .indicator {
   background-color: #00131A; }

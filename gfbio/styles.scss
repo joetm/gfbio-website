@@ -121,6 +121,7 @@ a, a:visited {
 }
 a:hover {
     color: $link-color-hover;
+    text-decoration:underline;
 }
 
 .headline-icon {
@@ -152,6 +153,7 @@ div.nav-wrapper {
 	}
 	#nav-mobile a:hover, #nav-mobile a:active {
 		color: $text-color;
+	    text-decoration:none;
 	}
 }
 
