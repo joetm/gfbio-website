@@ -11,15 +11,11 @@ get_header(); ?>
 
 		<div class="row">
 
-			<div class="col m6 hide-on-med-and-down" style="border-right:1px solid #999999">
+			<div class="leftside col s12 m12 l6">
 
-				<div style="padding-left:1em;">
-                    <img src="/static/browse.svg" style="max-width:100%;" alt="Consume">
+				<div class="hide-on-large-only center-align" style="padding-top:2em;">
+                    <img src="/static/TS-logo.png" style="width:20%;max-width:100px;" alt="Consume">
                 </div>
-
-			</div>
-
-			<div class="col s12 m12 l6">
 
 				<h1 class="page-title">
 					<?php _e('Ooops!', 'gfbio' ); ?>
@@ -39,7 +35,6 @@ get_header(); ?>
 		                    [ 'name' => __('Browse', 'gfbio'), 'uri' => '/browse/'],
 		                    [ 'name' => __('Search', 'gfbio'), 'uri' => '/search/'],
 		                    [ 'name' => __('Contribute', 'gfbio'), 'uri' => '/contribute/'],
-		                    [ 'name' => __('Developer', 'gfbio'), 'uri' => '/developer/'],
 		                );
 		                foreach($page_links as $page_link) {
 		                    echo '<li class="' . strtolower($page_link['name']) . '"><a href="'.$page_link['uri'].'">'. $page_link['name'] . '</a></li>';
@@ -50,12 +45,30 @@ get_header(); ?>
 				</p>
 			</div>
 
+			<div class="rightside center-align col m6 hide-on-med-and-down valign-wrapper"
+				style="border-left:1px solid #999999;">
+
+				<div class="valign center-align" style="padding-left:2em;">
+                    <img src="/static/TS-logo.png" style="max-width:80%;" alt="Consume">
+                </div>
+
+			</div>
+
 		</div><!-- row -->
 	</div><!-- container -->
 
 </section><!-- section -->
 
 <?php get_footer(); ?>
+
+<script>
+$(function(){
+
+    // equal heights
+    $('.leftside, .rightside').matchHeight();
+
+});
+</script>
 
 </body>
 </html>

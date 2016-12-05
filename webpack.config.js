@@ -8,6 +8,10 @@ module.exports = {
     entry: {
         // libs - see also CommonsPlugin
         vendor: "./gfbio/libs.js",
+        // home page
+        home: "./gfbio/home.js",
+        // api page
+        // api: "./gfbio/api.js",
         // vendor: [
         //     "jquery",
         //     "materialize-css/dist/js/materialize.min.js",

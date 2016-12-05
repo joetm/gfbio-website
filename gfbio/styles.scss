@@ -15,7 +15,7 @@ $text-color: #00131A;
 $black: $text-color;
 $black-text: $text-color;
 $white-text: #FFFFFF;
-$grey-text:  #EEEEEE;
+$grey-text:  #878786;
 
 $link-color: #E94D18;
 $link-color-hover: #878786;
@@ -24,6 +24,7 @@ $link-color-active: #878786;
 $footer-primary-color: #E94D18;
 $footer-secondary-color: #B7CEE2;
 $footer-homepage-color: #878786;
+$footer-item-text: #EEEEEE;
 
 $primary-color: #E94D18;
 $secondary-color: #B7CEE2;
@@ -32,8 +33,9 @@ $section-background: #ECECEA;
 
 $base-nav-height: 64px;
 
-/* =========================================================== */
+$font: 'Roboto';
 
+/* =========================================================== */
 
 /* ------------ */
 /* work-arounds */
@@ -64,6 +66,22 @@ main {
 	flex: 1 0 auto;
 }
 */
+
+
+/* ---------- */
+/* typography */
+/* ---------- */
+
+html,body {
+	font-family: $font, sans-serif;
+	font-weight: 300;
+}
+.flow-text {
+	color: $grey-text;
+}
+h1,h2,h3,h4,h5 {
+	font-weight:300;
+}
 
 /* ------- */
 /* general */
@@ -158,7 +176,7 @@ div.nav-wrapper {
 
 footer.page-footer {
 	margin-top:0;
-	color: $grey-text;
+	color: $footer-item-text;
 
 	div.footer-copyright a {
 		margin-left: 2em;
@@ -169,7 +187,7 @@ footer.page-footer {
 	}
 
 	a, a:visited {
-		color: $grey-text;
+		color: $footer-item-text;
 	}
 	a:hover {
 		color: $white-text;

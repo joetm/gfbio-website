@@ -50,6 +50,19 @@ main {
 	flex: 1 0 auto;
 }
 */
+/* ---------- */
+/* typography */
+/* ---------- */
+html, body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300; }
+
+.flow-text {
+  color: #878786; }
+
+h1, h2, h3, h4, h5 {
+  font-weight: 300; }
+
 /* ------- */
 /* general */
 /* ------- */

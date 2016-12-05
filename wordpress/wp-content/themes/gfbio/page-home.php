@@ -8,7 +8,7 @@
  */
 
 // Add special CSS from homepage
-function homepage_css() {
+function homepage_logo_css() {
 echo '<style type="text/css">
     /* initial size of the header */
     nav .brand-logo img,
@@ -19,8 +19,16 @@ echo '<style type="text/css">
     }
 </style>';
 }
-add_action('wp_head', 'homepage_css', 10);
+add_action('wp_head', 'homepage_logo_css', 10);
 
+function inject_icon_font() {
+  // cache busting for development
+  $version = time();
+  // $version = null;
+  // material font icons
+  wp_enqueue_style('material-font-style', "https://fonts.googleapis.com/icon?family=Material+Icons", [], $version, 'all');
+}
+add_action('wp_enqueue_scripts', 'inject_icon_font');
 
 get_header();
 
@@ -46,6 +54,7 @@ endwhile;
 		        The Terminology Service (TS) helps you connect through a single access point to various kinds of terminologies in a uniform and transparent manner. A terminology can range from a simple controlled vocabulary to a complex ontology. The TS provides services and tools to find, explore, share and reuse terminologies for semantic enhancement of research platforms.
 		        <a id="readmore" href="#"><?php _e('More...', 'gfbio') ?></a>
 		    </p>
+
             <aside id="more" style="display:none">
                 <p>
                     The Terminology Service (TS) enables the vision of a semantically enriched data management and archiving solution by introducing a semantic-aware component to research infrastructures. It is our approach for integrating and harmonizing terminological resources to serve as a backbone for such infrastructures. The TS acts as a semantic platform for access, development and reasoning over internally and externally maintained terminological resources within the biological and environmental domain.
@@ -64,6 +73,7 @@ endwhile;
                     </ul>
                 </p>
             </aside>
+
         </div>
         <div id="maincards" class="row">
             <div class="col s12 m6 l3">
@@ -372,116 +382,7 @@ endwhile;
 <?php get_footer(); ?>
 
 
-<script type="text/javascript">
-//(function($){
-$(function(){
-
-    // 'read more...' link
-    $('#readmore').click(function (e) {
-        e.preventDefault();
-        var $el = $('#more').first();
-        if ($el.css('display') === 'none') {
-            $el.slideDown('slow');
-            $(e.target).text("<?php _e('Hide...') ?>");
-        } else {
-            $el.slideUp('fast');
-            $(e.target).text("<?php _e('Read more...') ?>");
-        }
-    });
-
-    // clicking on the boxes -> scroll to element
-    // requires event bubbling
-    $('#introduction .card').click(function(e) {
-        e.preventDefault();
-        var link = $(this).data('href');
-        if (link) {
-            // save the original position so that we can jump back
-            $('.navbtn').data('origpos', $(window).scrollTop());
-            // scroll down to the section
-            $('html, body').animate({
-                scrollTop: $("#"+link).offset().top - 24
-            }, 800);
-            // show the nav button
-            $('.navbtn').show();
-        }
-    });
-
-    // clicking on the boxes
-    // requires event bubbling
-    $('.card.clickable').click(function(e) {
-        e.preventDefault();
-        var link = $(this).data('href');
-        if (link) {
-            window.location = link;
-        }
-    });
-
-    // clicking on the nav button
-    $('.navbtn').click(function(e) {
-        e.preventDefault();
-        // var target = $(this).data('target');
-        var origpos = $(this).data('origpos');
-        if (origpos >= 0) {
-            $('html, body').animate({
-                scrollTop: +origpos
-            }, 800);
-            // hide the nav button
-            $(this).hide();
-        }
-    });
-
-    // equal heights for the cards
-    $('.card').matchHeight();
-
-    // equal heights for the logos
-    $('.logo').matchHeight();
-
-    // track the scroll position
-    // $(window).scroll(function() {
-    //     let logoHeight,
-    //         minHeight = 64,
-    //         maxHeight = 84,
-    //         startAnimAt = 64,
-    //         endAnimAt = 164,
-    //         offset = $(this).scrollTop();
-    //     // console.log('offset', offset);
-    // });// $(window).scroll
-
-    var navbarToggle = new Waypoint({
-        element: document.getElementById('explore'),
-        handler: function(direction) {
-            console.log('resize header event', direction);
-            $logo = $('nav .brand-logo img');
-            $menu_items = $('nav .nav-wrapper ul li a, nav .nav-wrapper ul li a i');
-            console.log($menu_items.css('height'));
-            switch (direction) {
-            case "down":
-                $logo.animate({'height':'64px'}, 700);
-                $menu_items.animate({'height':'64px', 'line-height':'64px'}, 700);
-                break;
-            case "up":
-                $logo.animate({'height':'84px'}, 700);
-                $menu_items.animate({'height':'84px', 'line-height':'84px'}, 700);
-                break;
-            }// switch
-        }
-    });
-
-    var deactivateNavBtn = new Waypoint({
-        element: document.getElementById('maincards'),
-        handler: function(direction) {
-            if (direction === "up") {
-                $('.navbtn').hide();
-            }
-        }
-    });
-
-
-
-}); // end of document ready
-//})(window.jQuery); // end of jQuery name space
-
-</script>
+<script type="text/javascript" src="/dist/home.js"></script>
 
 </body>
 </html>

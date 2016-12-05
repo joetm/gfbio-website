@@ -11,8 +11,13 @@
 <!--[if IE 8]> <html class="no-js ie8" <?php language_attributes() ?>> <![endif]-->
 <!--[if (gte IE 8)|!(IE)]><!--> <html class="no-js" <?php language_attributes() ?>> <!--<![endif]-->
 <head>
-	<meta charset="<?php bloginfo( 'charset' ) ?>">
+	<meta charset="<?php strtolower(bloginfo('charset')) ?>">
+    <meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo('charset') ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="googlebot" content="index,follow">
+    <meta name="robots" content="all,index, follow">
+    <meta name="HandheldFriendly" content="true" />
 	<?php wp_head() ?>
 </head>
 <body <?php body_class() ?>>

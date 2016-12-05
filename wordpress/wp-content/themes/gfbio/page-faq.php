@@ -3,6 +3,15 @@
  * The template for displaying pages
  */
 
+function inject_icons() {
+  // cache busting for development
+  $version = time();
+  // $version = null;
+  // material font icons
+  wp_enqueue_style('material-font-style', "https://fonts.googleapis.com/icon?family=Material+Icons", [], $version, 'all');
+}
+add_action('wp_enqueue_scripts', 'inject_icons');
+
 get_header(); ?>
 
 <?php

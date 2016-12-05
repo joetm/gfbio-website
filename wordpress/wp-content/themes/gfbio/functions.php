@@ -39,8 +39,12 @@ function inject_gfbio() {
 	// print.css is merged into the normal style
 	// wp_enqueue_style('gfbio-print-style', BUILD_FOLDER . "/print.css", [], $version, 'all');
 
-	// material font
-	wp_enqueue_style('material-font-style', "https://fonts.googleapis.com/icon?family=Material+Icons", [], $version, 'all');
+	// material font icons
+	// wp_enqueue_style('material-font-style', "https://fonts.googleapis.com/icon?family=Material+Icons", [], $version, 'all');
+
+	// Roboto Regular font
+	wp_enqueue_style('font-style', "https://fonts.googleapis.com/css?family=Roboto", [], $version, 'all');
+
 
     wp_enqueue_script('gfbio-libs', BUILD_FOLDER . "/libs.js", [], $version, 'all');
     wp_enqueue_script('gfbio-app', BUILD_FOLDER . "/app.js", [], $version, 'all');
@@ -310,7 +314,7 @@ function twentysixteen_widgets_init() {
 }
 add_action( 'widgets_init', 'twentysixteen_widgets_init' );
 
-if ( ! function_exists( 'gfbio_fonts_url' ) ) :
+//if ( ! function_exists( 'gfbio_fonts_url' ) ) :
 /**
  * Register Google fonts for Twenty Sixteen.
  *
@@ -320,36 +324,31 @@ if ( ! function_exists( 'gfbio_fonts_url' ) ) :
  *
  * @return string Google fonts URL for the theme.
  */
-function gfbio_fonts_url() {
-	$fonts_url = '';
-	$fonts     = array();
-	$subsets   = 'latin,latin-ext';
-
+//function gfbio_fonts_url() {
+//	$fonts_url = '';
+//	$fonts     = array();
+//	$subsets   = 'latin,latin-ext';
 	/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'twentysixteen' ) ) {
-		$fonts[] = 'Merriweather:400,700,900,400italic,700italic,900italic';
-	}
-
-	/* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'twentysixteen' ) ) {
-		$fonts[] = 'Montserrat:400,700';
-	}
-
+//	if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'twentysixteen' ) ) {
+//		$fonts[] = 'Merriweather:400,700,900,400italic,700italic,900italic';
+//	}
+//	 translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. 
+//	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'twentysixteen' ) ) {
+//		$fonts[] = 'Montserrat:400,700';
+//	}
 	/* translators: If there are characters in your language that are not supported by Inconsolata, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'twentysixteen' ) ) {
-		$fonts[] = 'Inconsolata:400';
-	}
-
-	if ( $fonts ) {
-		$fonts_url = add_query_arg( array(
-			'family' => urlencode( implode( '|', $fonts ) ),
-			'subset' => urlencode( $subsets ),
-		), 'https://fonts.googleapis.com/css' );
-	}
-
-	return $fonts_url;
-}
-endif;
+//	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'twentysixteen' ) ) {
+//		$fonts[] = 'Inconsolata:400';
+//	}
+//	if ( $fonts ) {
+//		$fonts_url = add_query_arg( array(
+//			'family' => urlencode( implode( '|', $fonts ) ),
+//			'subset' => urlencode( $subsets ),
+//		), 'https://fonts.googleapis.com/css' );
+//	}
+//	return $fonts_url;
+//}
+//endif;
 
 /**
  * Handles JavaScript detection.
@@ -377,9 +376,9 @@ add_action('wp_head', 'javascript_detection', 0);
  *
  * @since Twenty Sixteen 1.0
  */
-function gfbio_scripts() {
+//function gfbio_scripts() {
 	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'gfbio-fonts', gfbio_fonts_url(), array(), null);
+	// wp_enqueue_style( 'gfbio-fonts', gfbio_fonts_url(), array(), null);
 
 	// Load the Internet Explorer specific stylesheet.
 		// wp_enqueue_style( 'twentysixteen-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentysixteen-style' ), '20160816');
@@ -413,8 +412,8 @@ function gfbio_scripts() {
 	// 	'expand'   => __( 'expand child menu', 'twentysixteen' ),
 	// 	'collapse' => __( 'collapse child menu', 'twentysixteen' ),
 	// ) );
-}
-add_action('wp_enqueue_scripts', 'gfbio_scripts');
+//}
+//add_action('wp_enqueue_scripts', 'gfbio_scripts');
 
 /**
  * Adds custom classes to the array of body classes.

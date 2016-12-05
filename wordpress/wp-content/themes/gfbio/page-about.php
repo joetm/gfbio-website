@@ -14,12 +14,13 @@ endwhile;
 ?>
 
 
-<h2 class="center-align"><?php the_title() ?></h2>
-<?php edit_post_link(__('Edit page', 'gfbio'), '<div class="right-align">', "</div>", null, "") ?>
-
 <section id="about">
 <div class="container">
 <div class="row">
+
+	<h2 class="center-align"><?php the_title() ?></h2>
+	<?php edit_post_link(__('Edit page', 'gfbio'), '<div class="right-align">', "</div>", null, "") ?>
+
     <h2 class="flow-text center-align">About the Terminology Service</h2>
     <p>
         The GFBio TS is the terminological backbone of the GFBio project. The GFBio project is funded by the Deutsche Forschungsgemeinschaft (DFG) under the grant No. SE 553/7-1. The Terminology Server is being developed within the GFBio work package 7.4 &quot;WP7.4 Terminology Management&quot;.
@@ -70,10 +71,13 @@ endwhile;
                     </div>
                 </div>
                 <div class="card-content">
-                    Freie Universit&auml;t Berlin<br />
-                    Institute of Computer Science<br />
-                    K&ouml;nigin-Luise-Str. 24-26<br />
-                    14195 Berlin<br />
+                    <div class="address">
+                        Freie Universit&auml;t Berlin<br />
+                        Institute of Computer Science<br />
+                        K&ouml;nigin-Luise-Str. 24-26<br />
+                        14195 Berlin
+                    </div>
+                    <div class="divider" style="margin:1em 0"></div>
                     Phone: +49 30 838 56435<br />
                     Email: naouel.karam@fu-berlin.de
                 </div>
@@ -93,15 +97,18 @@ endwhile;
                 </div>
                 <div class="sub-title white valign-wrapper">
                     <div class="valign center-align">
-                        Widget Development, API Usability
+                        Widget Development,<br />API Usability
                     </div>
                 </div>
                 <div class="card-content">
-                    Freie Universit&auml;t Berlin<br />
-                    Institute of Computer Science<br />
-                    K&ouml;nigin-Luise-Str. 24-26<br />
-                    14195 Berlin<br />
-                    Phone: +49 30 838<br />
+                    <div class="address">
+                        Freie Universit&auml;t Berlin<br />
+                        Institute of Computer Science<br />
+                        K&ouml;nigin-Luise-Str. 24-26<br />
+                        14195 Berlin
+                    </div>
+                    <div class="divider" style="margin:1em 0"></div>
+                    Phone: +49 30 838 56435<br />
                     Email: robert.lorenz@fu-berlin.de
                 </div>
                 <!--
@@ -124,9 +131,12 @@ endwhile;
                     </div>
                 </div>
                 <div class="card-content">
-                    Freie Universit&auml;t Berlin, Botanic Garden and Botanical Museum Berlin (BGBM)<br />
-                    K&ouml;nigin-Luise-Str. 6-8<br />
-                    14195 Berlin<br />
+                    <div class="address">
+                        Freie Universit&auml;t Berlin, Botanic Garden and Botanical Museum Berlin (BGBM)<br />
+                        K&ouml;nigin-Luise-Str. 6-8<br />
+                        14195 Berlin
+                    </div>
+                    <div class="divider" style="margin:1em 0"></div>
                     Phone: +49 30 838 57856<br />
                     Email: d.fichtmueller@bgbm.de
                 </div>
@@ -150,9 +160,12 @@ endwhile;
                     </div>
                 </div>
                 <div class="card-content">
-                    Freie Universit&auml;t Berlin, Botanic Garden and Botanical Museum Berlin (BGBM)<br />
-                    K&ouml;nigin-Luise-Str. 6-8<br />
-                    14195 Berlin<br />
+                    <div class="address">
+                        Freie Universit&auml;t Berlin, Botanic Garden and Botanical Museum Berlin (BGBM)<br />
+                        K&ouml;nigin-Luise-Str. 6-8<br />
+                        14195 Berlin
+                    </div>
+                    <div class="divider" style="margin:1em 0"></div>
                     Phone: +49 30 838 50584<br />
                     Email: m.gleisberg@bgbm.org
                 </div>
@@ -229,6 +242,9 @@ $(function(){
 
     // equal heights for the card images
     $('.card .card-image').matchHeight();
+
+    // equal heights for the addresses
+    $('.card .card-content .address').matchHeight();
 
     // equal heights for the cards
     $('.card').matchHeight();

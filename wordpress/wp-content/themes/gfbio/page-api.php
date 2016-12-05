@@ -89,6 +89,11 @@ get_header();
 <?php get_footer() ?>
 
 
+<!-- TODO -->
+<!--
+<script src='/dist/api.js' type='text/javascript'></script>
+-->
+
 
 <script src='/dist/swagger/lib/object-assign-pollyfill.js' type='text/javascript'></script>
 <script src='/dist/swagger/lib/handlebars-4.0.5.js' type='text/javascript'></script>
@@ -96,10 +101,14 @@ get_header();
 <script src='/dist/swagger/lib/backbone-min.js' type='text/javascript'></script>
 <script src='/dist/swagger/swagger-ui.min.js' type='text/javascript'></script>
 <script src='/dist/swagger/lib/highlight.9.1.0.pack.js' type='text/javascript'></script>
+<!--
 <script src='/dist/swagger/lib/highlight.9.1.0.pack_extended.js' type='text/javascript'></script>
+-->
 <script src='/dist/swagger/lib/jsoneditor.min.js' type='text/javascript'></script>
 <script src='/dist/swagger/lib/marked.js' type='text/javascript'></script>
+<!--
 <script src='/dist/swagger/lib/swagger-oauth.js' type='text/javascript'></script>
+-->
 <script type='text/javascript'>
 	jQuery.browser = {};
 	(function () {
@@ -118,6 +127,7 @@ get_header();
 <!--
 <script src='/dist/swagger/lang/en.js' type='text/javascript'></script>
 -->
+
 
 </body>
 </html>
